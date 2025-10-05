@@ -1,0 +1,24 @@
+DB Overview
+
+data models
+-hierarchical model, network model
+-ER-model (notations of cardinalities)
+-relational model (referential integrity)
+
+transformations
+-ER-model to relational model
+-normal forms
+
+SQL
+-SELECT FROM WHERE (aggregate functions, joins, )
+-DML
+-DDL
+-relational algebra, relational calculus
+-constraints 
+-views (modification)
+
+Transactions (ACID)
+
+DB Applications(ODBC/JDBC,Stored Procedures)
+
+Integrity and Trigger

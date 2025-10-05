@@ -1,0 +1,144 @@
+Ievgenii Nudga
+2159839
+
+Software used : IntelliJ IDEA 14.1
+
+To generate a tree from *a**d*c!*rb  we have to remember that here we don't have a principle "smaller in the left and bigger in the right".
+No need to worry about it. Instead, here's the principle:
+1) first star (or a point, if we look in the lecture slides) is always the root
+2) then we fill symbols(a, _, -, whatever) into left and right (in such order) leaves
+3) if there's a star after a star, then it's put in the left side
+4) if there's a star after a letter - we go up until we find a free right leaf
+
+Now we build a tree *a**d*c!*rb
+1) * as a root
+2) a -> into the left leaf
+3) * -> we go up and then from root star go to right leaf and put a star there
+3) * -> into left leaf after second *
+4) d -> into left leaf after third *
+5) * -> go up and then from third star go to right leaf and put a star there
+6) c and ! -> into left and right leaves
+7) * -> go up to the second star (it has free right leaf)
+8) r and b -> into left and right leaves 
+            *
+           / \
+          a   *_____
+             /      \
+            *        *
+           / \      / \
+          d   *     r  b
+             / \
+            c   !
+
+
+
+///////////////////////////----------------------------------------
+
+****kbl_***cta*of
+                            *_____
+                          0/      \ 1      
+                          *        *___
+                        0/ \1    0/    \1
+                        *   _    *      *
+                      0/ \1    0/ \1  0/ \1
+                      *   l    *   a   o  f
+                    0/ \1    0/ \1
+                    k   b    c   t
+
+0 for every left node and 1 for every right node
+doesn't matter if we make a table in alphabet order, but OK, we do it in such way
+for "b" start the route from root star 0, then 0, then 0, then riiiight, it's 1 and thus 0001
+a 101
+b 0001
+c 1000
+k 0000
+f 111
+l 001
+o 110
+t 1001
+_ 01
+
+Calculate in a table the frequency of the characters {_, a, b, ..., o } in the s1="a_flock_of_bat_of_a_block_of_flat_of_lot_of_a_cat_flab_a_flat_cab"
+a = 10 (0 = x1 1 = x2)  (we wrote how many 0 and 1 for each symbol)
+b = 4  (0 = x3 1 = x1)  (don't mind the "x", just three 0 (x3) and one 1 (x1) )
+c = 4  (0 = x3 1 = x1)
+k = 2  (0 = x4 1 = x0)
+f = 9  (0 = x0 1 = x3)
+l = 6  (0 = x2 1 = x1)
+o = 8  (0 = x1 1 = x2)
+t = 5  (0 = x2 1 = x2)
+_ = 17 (0 = x1 1 = x1)
+  65      
+                            
+The number of bits needed to encode the String s1 = 10*3 + 4*4 + 4*4 + 2*4 + 9*3 + 6*3 + 8*3 + 5*4 + 17*2 =
+                                                  = 30 + 16 + 16 + 8 + 27 + 18 + 24 + 20 + 34 = 30 + 40 + 45 + 78 = 115 + 78 = 193 bits
+as well as the number of 0's and 1's that will appear
+0 => 10*1 + 4*3 + 4*3 + 2*4 + 9*0 + 6*2 + 8*1 + 5*2 + 17*1 = 89  bits
+1 => 10*2 + 4*1 + 4*1 + 2*0 + 9*3 + 6*1 + 8*2 + 5*2 + 17*1 = 104 bits
+                                                             193 bits
+
+
+                         Frequency
+    Zeros       Ones     of symbols  Number of 0    Number of 1 
+a |   1     |     2     |    10     |    10      |      20
+b |   3     |     1     |    4      |    12      |      4
+c |   3     |     1     |    4      |    12      |      4        
+k |   4     |     0     |    2      |     8      |      0        
+f |   0     |     3     |    9      |     0      |      27        
+l |   2     |     1     |    6      |    12      |      6         
+o |   1     |     2     |    8      |     8      |      16         
+t |   2     |     2     |    5      |    10      |      10         
+_ |   1     |     1     |    17     |    17      |      17       
+
+
+-----------------------------------------------------------
+Provide a coding tree for the String s2 = "Sam's_shop_stocks_short_spotted_socks"
+First we count the amount of every unique symbol
+s
+a
+m
+'
+_
+h
+o
+p
+t
+c
+k
+r
+e
+d
+14 symbols
+
+Now we know that for coding this string we need 5 more symbols than in previous example.
+We can take the tree from previous example and add these 5 symbols.
+                            *_____                                      
+                          0/      \ 1      
+                          *        *___
+                        0/ \1    0/    \1
+                        *   p    *      *
+                      0/ \1    0/ \1  0/ \1
+                      *   o    *   k  r   e
+                    0/ \1    0/ \1
+                    *   h    *   c
+                   / \      / \
+                  *   _    t   d
+                 / \
+                *   '
+               / \
+              *   m
+             / \
+            s   a  
+
+********sam'_hop****tdck*re
+Of course, it's not the most optimal tree (could be better), but it will work for sure.
+
+------Huffman coding:
+
+For Huffman coding we don't get something like ********sam'_hop****tdck*re  from a program.
+This method needs an example (a string). It takes and counts the frequency of each symbol.
+For example:
+a b r a c a d a b r a !
+symbol "c" can be found 1 time, symbol "!" - 1 time too, but "a" is found 5 times (the max possible amount).
+Thus it's more optipal to insert "a" in the tree as close to the first root as possible to get the shortest code.
+While symbols with min frequency (like "c") - as far from first root as possible (well, it's considered as a sacrifice in favor of optimality).

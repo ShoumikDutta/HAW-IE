@@ -1,0 +1,12 @@
+D:\work\vs\c_sharp\test\qsort\bin\Debug\qsort.exe.config
+D:\work\vs\c_sharp\test\qsort\bin\Debug\qsort.exe
+D:\work\vs\c_sharp\test\qsort\bin\Debug\qsort.pdb
+D:\work\vs\c_sharp\test\qsort\obj\Debug\qsort.csprojResolveAssemblyReference.cache
+D:\work\vs\c_sharp\test\qsort\obj\Debug\qsort.exe
+D:\work\vs\c_sharp\test\qsort\obj\Debug\qsort.pdb
+D:\1Univ\AD_Algorithms_and_Data_Structure\1_AD_16\Exams\qsort\bin\Debug\qsort.exe.config
+D:\1Univ\AD_Algorithms_and_Data_Structure\1_AD_16\Exams\qsort\obj\Debug\qsort.exe
+D:\1Univ\AD_Algorithms_and_Data_Structure\1_AD_16\Exams\qsort\obj\Debug\qsort.pdb
+D:\1Univ\AD_Algorithms_and_Data_Structure\1_AD_16\Exams\qsort\bin\Debug\qsort.exe
+D:\1Univ\AD_Algorithms_and_Data_Structure\1_AD_16\Exams\qsort\bin\Debug\qsort.pdb
+D:\1Univ\AD_Algorithms_and_Data_Structure\1_AD_16\Exams\qsort\obj\Debug\qsort.csprojResolveAssemblyReference.cache

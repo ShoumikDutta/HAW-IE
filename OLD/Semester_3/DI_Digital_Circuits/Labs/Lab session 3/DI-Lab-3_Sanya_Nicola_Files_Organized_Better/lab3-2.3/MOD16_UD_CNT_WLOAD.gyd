@@ -1,0 +1,46 @@
+Pin Freeze File:  version P.49d
+
+2C128144 XC2C128-7-TQ144
+ARESETN S:PIN35
+CLK S:PIN32
+CNTEN S:PIN50
+DIR S:PIN49
+LOAD S:PIN45
+PRE<0> S:PIN56
+PRE<1> S:PIN54
+PRE<2> S:PIN53
+PRE<3> S:PIN52
+TCEN S:PIN51
+CNT<0> S:PIN59
+CNT<1> S:PIN60
+CNT<2> S:PIN61
+CNT<3> S:PIN68
+DIG0<0> S:PIN94
+DIG0<1> S:PIN95
+DIG0<2> S:PIN96
+DIG0<3> S:PIN97
+DIG1<0> S:PIN101
+DIG1<1> S:PIN102
+DIG1<2> S:PIN103
+DIG1<3> S:PIN104
+TC S:PIN58
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+
+
+
+
+PARTITION FB5_1 DIG0<0> DIG0<1> DIG0<2> DIG0<3>
+		
+PARTITION FB5_7 DIG1<0>
+PARTITION FB5_11 DIG1<1> DIG1<2> DIG1<3>
+
+
+
+PARTITION FB8_11 CNT<3>
+PARTITION FB8_13 CNT<2> CNT<1> CNT<0> TC
+		
+

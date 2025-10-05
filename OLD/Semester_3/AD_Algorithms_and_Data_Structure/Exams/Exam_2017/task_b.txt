@@ -1,0 +1,78 @@
+void postOrderTraverse(Node x)
+{
+    if (node!=NULL) //если узел не пустой
+        postorder(node.left);
+        postorder(node.right);
+        visit(node);
+}
+
+
+        A
+      B   C
+     D E F G
+     
+ D E B F G C A
+ 
+все начинается с самого первого вызова postOrderTraverse(root);
+где root - указывает на узел со значением A
+этот вызов приходит откуда-то из внешнего мира, у себя для этого я сделал метод 
+	//public method
+	public void postOrderTraverse()
+	{
+		expression = "";
+		if (root != null)
+			postOrderTraverse(root);
+	}
+
+после этого вызова мы попадаем во внутрь второго метода, который описал ты, а именно в void postOrderTraverse(Node x)
+с x, который ссылается на узел со значением A. Expression = ""
+    
+ 1) if (node!=NULL)
+    A
+    if (node!=NULL)
+    B
+    if (node!=NULL)
+    D
+    if (node!=NULL)
+    NULL
+    
+
+class Tree
+{
+	//fields
+	private Node root;
+	private String expression;
+	
+	//getter
+	public String GetExpression()
+	{
+		return expression;
+	}
+
+	//public method
+	public void postOrderTraverse()
+	{
+		expression = "";
+		if (root != null)
+			postOrderTraverse(root);
+	}
+
+	//private recursive method
+	void postOrderTraverse(Node x)
+	{
+		if(x !=  null) 
+		{  
+			postOrderTraverse(x.left);  
+			postOrderTraverse(x.right);  
+			expression = expression + x.data;
+		}
+	}
+}
+
+
+//somewhere in program
+Tree treeA = new Tree("1/sqrt(2*pi/a)*exp(-(a*t^2-b)*cos(2*pi*t/c))");
+treeA.postOrderTraverse();
+System.out.printf("result expression is <%s>\n", treeA.GetExpression());
+
+под call имеют в виду treeA.GetExpression()

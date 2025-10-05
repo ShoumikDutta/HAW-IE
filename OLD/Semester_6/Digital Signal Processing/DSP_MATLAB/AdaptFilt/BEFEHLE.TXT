@@ -1,0 +1,2 @@
+load HerzMutt -ascii
+sound(HerzMutt,8192,16)

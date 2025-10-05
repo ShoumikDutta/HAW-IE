@@ -1,0 +1,61 @@
+Basic OP-AMP Circuits
+
+1) Which basis op-amp circuit is suitable for detecting whether
+ one input voltage is lower or higher than the other input voltage?
+
+	-> comparator
+
+2) Which input of a comparator is normally supplied with the reference voltage?
+
+	-> the negative input
+
+3) What does it mean if a comparator has an input offset voltage of 0.2V?
+
+	-> this is the same as if the reference voltage would have a value of V_REF - 0.2V
+
+4) The input voltages of a summing amplifier are supplied via a 3.9kOhm resistor. Calculate the feedback resistor if
+ the amplifier shall have a voltage gain of 10.
+
+	-> R_F = 39kOhm
+
+5) A scaling adder shall has an input voltage of 3V @ 10kOhm and 2V @ 100kOhm. Calculate the output voltage if
+ the feedback resistor is 10kOhm.
+
+	-> V_OUT = - 10kOhm * ( 1 / 10kOhm * 3V + 1 / 100kOhm * 2V ) = - 3.2V
+
+6) What is the maximum feedback resistor if the maximum output voltage is limited to 2.5V?
+
+	-> R_F = 7.813kOhm
+
+7) Which value should be chosen if only 7.68kOhm or 7.87kOhm is availabe?
+
+	-> 7.68kOhm because than the output is definitely smaller than 2.5V so there's no limitation.
+
+8) Which circuit is built if there's a capacitor in the feedback of an op-amp?
+
+	-> integrator
+
+9) A characteristic parameter of an integrator is the output slope dV_OUT / dt. What's about the value of the capacitor if
+ the slope sould be very high?
+
+	-> dt must be very small; since dt = R*C the capacitor must also be very small
+
+10) What has to be changed if a differentiator shall be built?
+
+11) Draw a single-pole low- and high-pass active filter.
+
+12) Why do we use op-amps for active filtering?
+
+	-> higher linearity in contrast to a passive filter
+
+13) Draw a double-pole high-low-pass active filter combination.
+
+14) An op-amp has a natural low-pass characteristic. What does that mean if
+ the op-amp should be used in an active low-pass filter?
+
+	-> Normally a low-pass active filter has unity gain. That means the cut-off frequency of the low-pass active filter
+ must be smaller than the natural cut-off frequency of the op-amp for unity gain.
+
+15) What is the slop of the transfer characteristik of active filters?
+
+	-> -20dB/DEC

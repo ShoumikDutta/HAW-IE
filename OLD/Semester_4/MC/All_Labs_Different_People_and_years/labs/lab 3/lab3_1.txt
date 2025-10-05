@@ -1,0 +1,99 @@
+/*---------------------------------------------------------------------------------------
+ * Testprogram:  PortD Leds on/off
+ * 	             Print "MP-Labor" on console
+ *                                                                          Prosch 3/2014
+ *---------------------------------------------------------------------------------------
+*/
+#define  PART_LM3S9B92
+
+#include "lm3s9b92.h"
+#include "stdio.h"
+
+void wait(void){
+	int tmp;
+	for(tmp=0;tmp<1000000;tmp++);
+}
+void ConfigSys()
+{
+	SYSCTL_RCC_R = ((SYSCTL_RCC_R | 0x00000540) & ~0x000002B1); // Enable oscillator
+	SYSCTL_RCGC2_R = (1<<8)|(1<<6)|(1<<4)|(1<<3); // Configure clock for Ports J, G, E, D
+	//Configure Timer 0
+	unsigned short waitcycle = 0;
+	SYSCTL_RCGC1_R |= (1<<16);
+	waitcycle++; // wait for timer0 activation
+	TIMER0_CTL_R &= ~0x0001; // disable timer0
+	TIMER0_CFG_R = 0x04; // 2 x 16 bit mode
+	TIMER0_TAMR_R = 0x22; // periodic mode + match enable
+	TIMER0_TAPR_R = 2; // prescaler PR = ceil((16M/2^16)*0.01)1
+	TIMER0_TAILR_R = 159; // ILR = 16M/3 * (microsec/1000000) 1, microsec = 30
+	TIMER0_CTL_R |= 0x0001; // enable Timer 0
+	//Configure	GPIO_PORTD
+	GPIO_PORTD_DEN_R |= 0xFF; // PD(7:0) enable
+	GPIO_PORTD_DIR_R |= 0xFF; // PD(7:0) output
+	//Configure	GPIO_PORTE
+	GPIO_PORTE_DEN_R |= 0x07; // Enable PE(2:0)
+	GPIO_PORTE_DIR_R |= 0x07; // PE(2:0) set as output
+	//Configure	GPIO_PORTG
+	GPIO_PORTG_DEN_R |= 0x03; // PG(1:0) enable
+	GPIO_PORTG_DIR_R |= 0x00; // PG(1:0) set as input
+	//Configure	GPIO_PORTJ
+	GPIO_PORTJ_DEN_R |= 0xFF; // PJ(7:0) enable
+	GPIO_PORTJ_DIR_R |= 0xFF; // PJ(7:0) output
+}
+
+void timerWait()
+{
+	TIMER0_TAILR_R = 159; //(16000000/3)* (microsec/1000000)-1;
+	while((TIMER0_RIS_R & (1<<0)) == 0)		;
+	TIMER0_ICR_R |= (1<<0); // clear interrupt
+}
+
+void displayValue(unsigned long voltage) // assuming SAR is the decimal value of D(9:0) 10bit-resolution
+{
+	unsigned short dig1, dig2, dig3, dig4;
+	timerWait();
+	dig1 = voltage/1000;
+	voltage = voltage%1000;
+	dig2 = voltage/100;
+	voltage = voltage%100;
+	GPIO_PORTJ_DATA_R = (dig1<<4)|(dig2);
+	GPIO_PORTE_DATA_R = 0x02; // enable first panel
+	timerWait();
+	GPIO_PORTE_DATA_R = 0x00; // enable first panel
+	dig3 = voltage/10;
+	voltage = voltage%10;
+	dig4 = voltage;
+	GPIO_PORTJ_DATA_R = (dig3<<4)|(dig4);
+	GPIO_PORTE_DATA_R = 0x01; // enable second panel
+	timerWait();
+	GPIO_PORTE_DATA_R = 0x00; // enable first panel
+
+}
+
+int main(void)
+{
+	int i;
+	unsigned long SAR;
+
+	ConfigSys();
+
+	while(1){
+		GPIO_PORTE_DATA_R |= 0x04;
+//		timerWait();
+		GPIO_PORTE_DATA_R &= ~0x04;
+		SAR = 0x00;
+
+		for (i = 7; i>=0; i--)
+		{
+			GPIO_PORTD_DATA_R = SAR | (1<<i);
+			timerWait();
+			if ((GPIO_PORTG_DATA_R & 0x01) == 0x00)
+				SAR &= ~(1<<i);
+			else
+				SAR |= (1<<i);
+		}
+		displayValue((unsigned long)SAR*5000/256);
+		SAR = 0x00;
+	    GPIO_PORTD_DATA_R = SAR;
+	 }
+}

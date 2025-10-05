@@ -1,0 +1,17 @@
+Launch ISE Design Suite 14.4
+New Project
+Import the VHDL files and board related UCF files
+Open them, verify correctness of the VHDL
+Edit UCF files so the pins have the right names connecting to them (inputs, outputs denoted in the VHDL file)
+HAVE TO SELECT THE VHLD FILE IN THE TREE STRUCTURE ON TOP TO VIEW THESE STEPS
+Select Run in "Implement design"
+Run "Implement Top Module" in the same place
+Verify RTL Schematic and Technology schematic if necessary
+Verify the CPLD Report (pin list)
+
+Select the Configure Target Device (connect the programmator to the PC and the device, power on the device)
+Click Run
+In the window select Initialize
+Erase the device
+Assign the JED file
+Program

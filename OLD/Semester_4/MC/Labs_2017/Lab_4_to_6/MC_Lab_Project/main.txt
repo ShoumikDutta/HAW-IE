@@ -1,0 +1,28 @@
+//main.c
+
+#include "int_handler.h"   //
+
+volatile unsigned char Inverted = FALSE;
+
+void main(void)
+{
+	configPortP();
+}
+
+void configPortP()
+{
+	int waitcycle=0;
+	SYSCTL_RCGCGPIO_R |= (1<<13);
+	while(!(SYSCTL_RCGCGPIO_R & (1<<13) );  //ready?
+
+	GPIO_PORTP_DEN_R |= (1<<0); // enable pins
+	GPIO_PORTP_DIR_R |= (1<<0); // PortP(0) input
+	
+	GPIO_PORTP_IS_R &= ~0x01; // sense to "edge-sensitive"
+	GPIO_PORTP_IBE_R &= ~0x01; // trigger set to "single edge"
+	GPIO_PORTP_IEV_R |= 0x01; // interrupt event to rising edge
+	GPIO_PORTP_ICR_R |= 0x01; // clear interrupt PORTP(0)
+	GPIO_PORTP_IM_R |= 0x01; // unmask PORTP(0) = S1
+	
+	NVIC_EN0_R |= (1<<13); // enable PortP interrupt (Int#4/Vec#20) in NVIC
+}

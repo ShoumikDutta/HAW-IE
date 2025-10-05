@@ -1,0 +1,41 @@
+Testing string array from the lecture:
+S O R T E X A M P L E 
+
+A E E L M O P R S T X 
+Insertion sort algorithm ran 43 comparisons and 36 exchanges!
+
+"A","E","E","L","M","O","P","R","S","T","X",
+Selection sort algorithm ran 55 comparisons and 11 exchanges!
+
+---------------------------------------------------------------------------
+
+Test for a string array of varrying length (2,4,8, 16,..., 1024)
+Sort Type   ||   Comparions   ||   Exchanges   ||   Number of strings
+Insertion:           1                 1             N = 2
+Selection:           1                 2             N = 2
+Insertion:           6                 5             N = 4
+Selection:           6                 4             N = 4
+Insertion:          26                21             N = 8
+Selection:          28                 8             N = 8
+Insertion:          89                76             N = 16
+Selection:         120                16             N = 16
+Insertion:         242               213             N = 32
+Selection:         496                32             N = 32
+Insertion:        1085              1025             N = 64
+Selection:        2016                64             N = 64
+Insertion:        4207              4084             N = 128
+Selection:        8128               128             N = 128
+Insertion:       16603             16353             N = 256
+Selection:       32640               256             N = 256
+Insertion:       63117             62612             N = 512
+Selection:      130816               512             N = 512
+Insertion:      254766            253750             N = 1024
+Selection:      523776              1024             N = 1024
+
+---------------------------------------------------------------
+
+Insertion sort; mincase for 1024 strings: 1023 comparisons and 0 exchanges!
+Selection sort; mincase for 1024 strings: 523776 ecomparisons and 1024 comparisons!
+
+Insertion sort; maxcase for 1024 strings: 523776 comparisons and 523776 exchanges!
+Selection sort; maxcase for 1024 strings: 523776 ecomparisons and 1024 comparisons!

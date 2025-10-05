@@ -1,0 +1,823 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+<ul>
+    <li><a href="#2">Аннотация</a></li>
+	<li><a href="#3">Оглавление (по частям)</a></li>
+	<ul>
+		<li><a href="#3">Часть I. Знакомство с SQL</a></li>
+		<li><a href="#5">Часть II. Сложные вопросы</a></li>
+		<li><a href="#11">Часть III. Средства администрирования СУБД
+	MySQL</a></li>
+		<li><a href="#13">Часть IV. Нововведения MySQL 5.0</a></li>
+		<li><a href="#14">Часть V. Взаимодействие MySQL c языками
+	программирования</a></li>
+	</ul>
+	<li><a href="#17">Введение</a></li>
+	<ul>
+	    <li><a href="#17">Для кого и о чём эта книга</a></li>
+	    <li><a href="#18">Благодарности</a></li>
+	</ul>
+	
+	<li><a href="#19">Часть I. Знакомство с SQL</a></li>
+	<ul>
+		<li><a href="#20">Глава 1. История развития баз данных. Понятие реляционной базы данных</a></li>
+		<ul>
+		   <li><a href="#21">1.1. История развития СУБД. Реляционные базы данных</a></li>
+		   <ul>
+		       <li><a href="#21">1.1.1. Иерархические базы данных</a></li>
+		       <li><a href="#23">1.1.2. Сетевые базы данных</a></li>
+		   </ul>
+		   
+		   <li><a href="#24">1.2. Особенности реляционных баз данных</a></li>	   
+		   <ul>
+		       <li><a href="#26">1.2.1 Первичные ключи</a></li>
+		       <li><a href="#28">1.2.2 Нормализация базы данных</a></li>
+		   </ul>
+		   
+		   <li><a href="#29">1.3. СУБД и сети</a></li>   
+		   <ul>
+		       <li><a href="#30">1.3.1 Централизованная архитектура</a></li>
+		       <li><a href="#31">1.3.2 Архитектура "клиент-сервер"</a></li>
+		       <li><a href="#32">1.3.3 Трёхуровневая архитектура Интернета</a></li>
+		       <li><a href="#34">1.3.4 Кластерная модель</a></li>
+		   </ul>
+		   
+		   <li><a href="#35">1.4. Как работают базы данных и что такое SQL?</a></li>
+		   <li><a href="#36">1.5. Версии MySQL</a></li>   
+		   <ul>
+		       <li><a href="#38">1.5.1 Что нового в MySQL 4.1?</a></li>
+		       <li><a href="#38">1.5.2 Что нового в MySQL 5.0?</a></li>
+		   </ul>
+		</ul>
+		
+		<li><a href="#39">Глава 2. Установка MySQL 5</a></li>
+		<ul>
+		       <li><a href="#39">2.1. Получение дистрибутива</a></li>
+		       <li><a href="#40">2.2. Установка на платформу Windows</a></li>
+		       <li><a href="#54">2.3. Установка на платформу Linux</a></li>
+		</ul>
+		
+		<li><a href="#58">Глава 3. Работа с утилитами MySQL</a></li>
+		<ul>
+		       <li><a href="#59">3.1. Утилита mysql</a></li>
+		       <li><a href="#78">3.2. Утилита mysqldump</a></li>
+		</ul>
+		
+		<li><a href="#84">Глава 4. Создание баз данных и таблиц. Типы
+		данных</a></li>
+		<ul>
+		       <li><a href="#84">4.1. Создание базы данных</a></li>
+		       <li><a href="#88">4.2. Создание таблицы</a></li>
+		       <li><a href="#91">4.3. Типы данных</a></li>
+			   <ul>
+		           <li><a href="#92">4.3.1. Числовые данные</a></li>
+		           <li><a href="#95">4.3.2. Строковые данные</a></li>
+		           <li><a href="#98">4.3.3. Календарные данные</a></li>
+		           <li><a href="#101">4.3.4. Тип данных NULL</a></li>
+		           <li><a href="#103">4.3.5. Выбор типа данных</a></li>
+		       </ul>
+		       <li><a href="#104">4.4. Учебная база данных</a></li>
+		</ul>
+		
+		<li><a href="#108">Глава 5. Индексы</a></li>
+	    <ul>
+		       <li><a href="#109">5.1. Первичный ключ</a></li>
+		       <li><a href="#113">5.2. Обычный и уникальный индексы</a></li>
+		</ul>
+		
+		<li><a href="#118">Глава 6. Добавление данных</a></li>
+	    <ul>
+		       <li><a href="#118">6.1. Однострочный оператор INSERT</a></li>
+		       <li><a href="#125">6.2. Многострочный оператор INSERT</a></li>
+		       <li><a href="#126">6.3. Отложенная вставка записей</a></li>
+		       <li><a href="#126">6.4. Пакетная загрузка данных</a></li>
+		       <li><a href="#130">6.5. Утилита mysqlimport</a></li>
+		</ul>
+		
+		<li><a href="#133">Глава 7. Выборка данных</a></li>
+		<ul>
+		       <li><a href="#133">7.1. Изменение количества и порядка следования столбцов</a></li>
+		       <li><a href="#136">7.2. Условия</a></li>
+		       <li><a href="#139">7.3. Сортировка</a></li>
+		       <li><a href="#143">7.4. Ограничение выборки</a></li>
+		       <li><a href="#144">7.5. Использование функций</a></li>
+		       <li><a href="#147">7.6. Группировка записей</a></li>
+		       <li><a href="#153">7.7. Объединение таблиц</a></li>
+		       <li><a href="#158">7.8. Сохранение результатов во внешний файл</a></li>
+		</ul>
+		
+		<li><a href="#162">Глава 8. Многотабличные запросы</a></li>
+		<ul>
+		       <li><a href="#162">8.1. Перекрёстное объединение таблиц</a></li>
+		       <li><a href="#174">8.2. Объединение таблиц при помощи JOIN</a></li>
+		</ul>
+		
+		<li><a href="#182">Глава 9. Удаление данных</a></li>
+		<ul>
+		       <li><a href="#182">9.1. Оператор DELETE</a></li>
+		       <li><a href="#183">9.2. Оператор TRANCUTE TABLE</a></li>
+		       <li><a href="#184">9.3. Удаление из нескольких таблиц</a></li>
+		</ul>
+		
+		<li><a href="#188">Глава 10. Обновление данных</a></li>
+		<ul>
+		       <li><a href="#188">10.1. Оператор UPDATE</a></li>
+		       <li><a href="#193">10.2. Многотабличный оператор UPDATE</a></li>
+		       <li><a href="#196">10.3. Оператор REPLACE</a></li>
+		</ul>
+		
+	</ul>
+	
+	<li><a href="#198">Часть II. Сложные вопросы</a></li>
+	<ul>
+		<li><a href="#199">Глава 11. Типы и структура таблиц</a></li>
+		<ul>
+		       <li><a href="#199">11.1. MyISAM</a></li>
+		       <li><a href="#200">11.2. MERGE</a></li>
+		       <li><a href="#202">11.3. MEMORY (HEAP)</a></li>
+		       <li><a href="#203">11.4. EXAMPLE</a></li>
+		       <li><a href="#204">11.5. BDB (BerkeleyDB)</a></li>
+		       <li><a href="#205">11.6. InnoDB</a></li>
+		       <li><a href="#206">11.7. NDB Cluster</a></li>
+		       <li><a href="#206">11.8. ARCHIVE</a></li>
+		       <li><a href="#207">11.9. CSV</a></li>
+		       <li><a href="#208">11.10. FEDERATED</a></li>
+		       <li><a href="#210">11.11. BLACKHOLE</a></li>
+		</ul>
+		
+		<li><a href="#212">Глава 12. Создание таблиц и удаление таблиц</a></li>
+		<ul>
+		       <li><a href="#212">12.1. Оператор CREATE TABLE</a></li>
+			   <ul>
+		          <li><a href="#213">12.1.1. Структура таблицы</a></li>
+			      <li><a href="#220">12.1.2. Параметры таблицы</a></li>
+				  <ul>
+				      <li><a href="#220">ENGINE(TYPE)</a></li>
+				      <li><a href="#221">AUTO_INCREMENT</a></li>
+				      <li><a href="#221">AVG_ROW_LENGTH</a></li>
+				      <li><a href="#221">[DEFAULT] CHARACTER SET</a></li>
+				      <li><a href="#222">CHECKSUM</a></li>
+				      <li><a href="#222">COMMENT</a></li>
+				      <li><a href="#222">CONNECTION</a></li>
+				      <li><a href="#223">DATA DIRECTORY</a></li>
+				      <li><a href="#223">DELAY_KEY_WRITE</a></li>
+				      <li><a href="#223">INDEX DIRECTORY</a></li>
+				      <li><a href="#223">INSERT_METHOD</a></li>
+				      <li><a href="#224">MAX_ROWS</a></li>
+				      <li><a href="#224">MIN_ROWS</a></li>
+				      <li><a href="#224">PACK_KEYS</a></li>
+				      <li><a href="#224">PASSWORD</a></li>
+				      <li><a href="#225">ROW_FORMAT</a></li>
+				      <li><a href="#225">UNION</a></li>
+				  </ul>
+		       </ul>
+		       <li><a href="#225">12.2. Оператор DROP TABLE</a></li>
+		</ul>
+		
+		<li><a href="#227">Глава 13. Редактирование структуры таблиц</a></li>
+		<ul>
+		       <li><a href="#227">13.1. Добавление и удаление столбцов</a></li>
+		       <li><a href="#230">13.2. Изменение уже существующих столбцов</a></li>
+		       <li><a href="#232">13.3. Добавление и удаление индексов</a></li>
+		       <li><a href="#234">13.4. Преобразование параметров таблицы</a></li>
+		</ul>
+		
+		<li><a href="#239">Глава 14. Приведение типов</a></li>
+		<ul>
+		       <li><a href="#239">14.1. Ключевое слово BINARY</a></li>
+		       <li><a href="#240">14.2. Функция CAST()</a></li>
+		       <li><a href="#242">14.3. Функция CONVERT()</a></li>
+		       <li><a href="#243">14.4. Поддержка кодировок</a></li>
+		       <li><a href="#251">14.5. Преобразование кодировок</a></li>
+		       <li><a href="#252">14.6. Применение ключевого слова COLLATE</a></li>
+		</ul>
+		
+		<li><a href="#254">Глава 15. Операторы и математические
+		функции</a></li>
+		<ul>
+		       <li><a href="#254">15.1. Операторы</a></li>
+			   <ul>
+			       <li><a href="#254">15.1.1. Арифметические операторы</a></li>
+		           <li><a href="#259">15.1.2. Операторы сравнения</a></li>
+		           <li><a href="#271">15.1.3. Логические операторы</a></li>
+		           <li><a href="#273">15.1.4. Битовые операторы</a></li>
+		           <li><a href="#279">15.1.5. Приоритет операторов</a></li>
+			   </ul>
+		       <li><a href="#280">15.2. Математические функции</a></li>
+			   <ul>
+			       <li><a href="#280">15.2.1. Функция ABS()</a></li>
+			       <li><a href="#281">15.2.2. Функция ACOS()</a></li>
+			       <li><a href="#281">15.2.3. Функция ASIN()</a></li>
+			       <li><a href="#281">15.2.4. Функция ATAN()</a></li>
+			       <li><a href="#282">15.2.5. Функция ATAN2()</a></li>
+			       <li><a href="#282">15.2.6. Функция CEILING()</a></li>
+			       <li><a href="#283">15.2.7. Функция COS()</a></li>
+			       <li><a href="#284">15.2.8. Функция COT()</a></li>
+			       <li><a href="#284">15.2.9. Функция CRC32()</a></li>
+			       <li><a href="#284">15.2.10. Функция DEGREES()</a></li>
+			       <li><a href="#285">15.2.11. Функция EXP()</a></li>
+			       <li><a href="#285">15.2.12. Функция FLOOR()</a></li>
+			       <li><a href="#286">15.2.13. Функция LOG()</a></li>
+			       <li><a href="#286">15.2.14. Функция LOG2()</a></li>
+			       <li><a href="#287">15.2.15. Функция LOG10()</a></li>
+			       <li><a href="#287">15.2.16. Функция MOD()</a></li>
+			       <li><a href="#287">15.2.17. Функция PI()</a></li>
+			       <li><a href="#287">15.2.18. Функция POW()</a></li>
+			       <li><a href="#288">15.2.19. Функция RADIANS()</a></li>
+			       <li><a href="#288">15.2.20. Функция RAND()</a></li>
+			       <li><a href="#289">15.2.21. Функция ROUND()</a></li>
+			       <li><a href="#290">15.2.22. Функция SIGN()</a></li>
+			       <li><a href="#291">15.2.23. Функция SIN()</a></li>
+			       <li><a href="#291">15.2.24. Функция SQRT()</a></li>
+			       <li><a href="#291">15.2.25. Функция TAN()</a></li>
+			       <li><a href="#292">15.2.26. Функция TRUNCATE()</a></li>
+			   </ul>
+		</ul>
+		
+		<li><a href="#293">Глава 16. Функции даты и времени</a></li>
+		<ul>
+		       <li><a href="#293">16.1. Функция ADDDATE()</a></li>
+		       <li><a href="#299">16.2. Функция ADDTIME()</a></li>
+		       <li><a href="#300">16.3. Функция CONVERT_TZ()</a></li>
+		       <li><a href="#300">16.4. Функция CURDATE()</a></li>
+		       <li><a href="#301">16.5. Функция CURTIME()</a></li>
+		       <li><a href="#301">16.6. Функция DATE()</a></li>
+		       <li><a href="#302">16.7. Функция DATEDIFF()</a></li>
+		       <li><a href="#302">16.8. Функция DATE_FORMAT()</a></li>
+		       <li><a href="#305">16.9. Функция DAY()</a></li>
+		       <li><a href="#305">16.10. Функция DAYNAME()</a></li>
+		       <li><a href="#306">16.11. Функция DAYOFMONTH()</a></li>
+		       <li><a href="#307">16.12. Функция DAYOFWEEK()</a></li>
+		       <li><a href="#307">16.13. Функция DAYOFYEAR()</a></li>
+		       <li><a href="#307">16.14. Функция EXTRACT()</a></li>
+		       <li><a href="#309">16.15. Функция FROM_DAYS()</a></li>
+		       <li><a href="#309">16.16. Функция FROM_UNIXTIME()</a></li>
+		       <li><a href="#311">16.17. Функция GET_FORMAT()</a></li>
+		       <li><a href="#312">16.18. Функция HOUR()</a></li>
+		       <li><a href="#313">16.19. Функция LAST_DAY()</a></li>
+		       <li><a href="#314">16.20. Функция MAKEDATE()</a></li>
+		       <li><a href="#315">16.21. Функция MAKETIME()</a></li>
+		       <li><a href="#315">16.22. Функция MICROSECOND()</a></li>
+		       <li><a href="#316">16.23. Функция MINUTE()</a></li>
+		       <li><a href="#316">16.24. Функция MONTH()</a></li>
+		       <li><a href="#316">16.25. Функция MONTHNAME()</a></li>
+		       <li><a href="#317">16.26. Функция NOW()</a></li>
+		       <li><a href="#318">16.27. Функция PERIOD_ADD()</a></li>
+		       <li><a href="#318">16.28. Функция PERIOD_DIFF()</a></li>
+		       <li><a href="#319">16.29. Функция QUARTER()</a></li>
+		       <li><a href="#319">16.30. Функция SECOND()</a></li>
+		       <li><a href="#319">16.31. Функция SEC_TO_TIME()</a></li>
+		       <li><a href="#320">16.32. Функция STR_TO_DATE()</a></li>
+		       <li><a href="#321">16.33. Функция SUBDATE()</a></li>
+		       <li><a href="#321">16.34. Функция SUBTIME()</a></li>
+		       <li><a href="#322">16.35. Функция TIME()</a></li>
+		       <li><a href="#323">16.36. Функция TIMEDIFF()</a></li>
+		       <li><a href="#323">16.37. Функция TIMESTAMP()</a></li>
+		       <li><a href="#324">16.38. Функция TIMESTAMPADD()</a></li>
+		       <li><a href="#325">16.39. Функция TIMESTAMPDIFF()</a></li>
+		       <li><a href="#326">16.40. Функция TIME_FORMAT()</a></li>
+		       <li><a href="#326">16.41. Функция TIME_TO_SEC()</a></li>
+		       <li><a href="#327">16.42. Функция TO_DAYS()</a></li>
+		       <li><a href="#328">16.43. Функция UNIX_TIMESTAMP()</a></li>
+		       <li><a href="#328">16.44. Функция UTC_DATE()</a></li>
+		       <li><a href="#329">16.45. Функция UTC_TIME()</a></li>
+		       <li><a href="#329">16.46. Функция UTC_TIMESTAMP()</a></li>
+		       <li><a href="#330">16.47. Функция WEEK()</a></li>
+		       <li><a href="#331">16.48. Функция WEEKDAY()</a></li>
+		       <li><a href="#331">16.49. Функция WEEKOFYEAR()</a></li>
+		       <li><a href="#332">16.50. Функция YEAR()</a></li>
+		       <li><a href="#332">16.51. Функция YEARWEEK()</a></li>
+		</ul>
+		
+		<li><a href="#334">Глава 17. Строковые функции</a></li>
+		<ul>
+		       <li><a href="#334">17.1. Функция ASCII()</a></li>
+		       <li><a href="#335">17.2. Функция BIN()</a></li>
+		       <li><a href="#335">17.3. Функция BIT_LENGTH()</a></li>
+		       <li><a href="#335">17.4. Функция CHAR()</a></li>
+		       <li><a href="#337">17.5. Функция CHAR_LENGTH()</a></li>
+		       <li><a href="#338">17.6. Функция CHARSET()</a></li>
+		       <li><a href="#339">17.7. Функция COLLATION()</a></li>
+		       <li><a href="#339">17.8. Функция COMPRESS()</a></li>
+		       <li><a href="#341">17.9. Функция CONCAT()</a></li>
+		       <li><a href="#342">17.10. Функция CONCAT_WS()</a></li>
+		       <li><a href="#343">17.11. Функция CONV()</a></li>
+		       <li><a href="#343">17.12. Функция ELT()</a></li>
+		       <li><a href="#344">17.13. Функция EXPORT_SET()</a></li>
+		       <li><a href="#345">17.14. Функция FIELD()</a></li>
+		       <li><a href="#345">17.15. Функция FIND_IN_SET()</a></li>
+		       <li><a href="#346">17.16. Функция FORMAT()</a></li>
+		       <li><a href="#347">17.17. Функция HEX()</a></li>
+		       <li><a href="#347">17.18. Функция INSERT()</a></li>
+		       <li><a href="#348">17.19. Функция INSTR()</a></li>
+		       <li><a href="#349">17.20. Функция LEFT()</a></li>
+		       <li><a href="#349">17.21. Функция LENGTH()</a></li>
+		       <li><a href="#349">17.22. Функция LOAD_FILE()</a></li>
+		       <li><a href="#350">17.23. Функция LOCATE()</a></li>
+		       <li><a href="#351">17.24. Функция LOWER()</a></li>
+		       <li><a href="#351">17.25. Функция LPAD()</a></li>
+		       <li><a href="#352">17.26. Функция LTRIM()</a></li>
+		       <li><a href="#352">17.27. Функция MAKE_SET()</a></li>
+		       <li><a href="#352">17.28. Функция MID()</a></li>
+		       <li><a href="#354">17.29. Функция OCT()</a></li>
+		       <li><a href="#354">17.30. Функция ORD()</a></li>
+		       <li><a href="#355">17.31. Функция POSITION()</a></li>
+		       <li><a href="#355">17.32. Функция QUOTE()</a></li>
+		       <li><a href="#355">17.33. Функция REPEAT()</a></li>
+		       <li><a href="#356">17.34. Функция REPLACE()</a></li>
+		       <li><a href="#358">17.35. Функция REVERSE()</a></li>
+		       <li><a href="#358">17.36. Функция RIGHT()</a></li>
+		       <li><a href="#359">17.37. Функция RPAD()</a></li>
+		       <li><a href="#359">17.38. Функция RTRIM()</a></li>
+		       <li><a href="#360">17.39. Функция SOUNDEX()</a></li>
+		       <li><a href="#360">17.40. Функция SPACE()</a></li>
+		       <li><a href="#360">17.41. Функция SUBSTRING()</a></li>
+		       <li><a href="#362">17.42. Функция SUBSTRING_INDEX()</a></li>
+		       <li><a href="#362">17.43. Функция TRIM()</a></li>
+		       <li><a href="#363">17.44. Функция UNCOMPRESS()</a></li>
+		       <li><a href="#364">17.45. Функция UNCOMPRESSED_LENGTH()</a></li>
+		       <li><a href="#365">17.46. Функция UNHEX()</a></li>
+		       <li><a href="#365">17.47. Функция UPPER()</a></li>
+		</ul>
+		
+		<li><a href="#366">Глава 18. Безопасность и MySQL</a></li>
+		<ul>
+		       <li><a href="#366">18.1. Функции AES_ENCRYPT() и AES_DECRYPT()</a></li>
+		       <li><a href="#369">18.2. Функции ENCODE() и DECODE()</a></li>
+		       <li><a href="#369">18.3. Функции DES_ENCRYPT() и DES_DECRYPT()</a></li>
+		       <li><a href="#370">18.4. Функция ENCRYPT()</a></li>
+		       <li><a href="#371">18.5. Функция MD5()</a></li>
+		       <li><a href="#372">18.6. Функция PASSWORD()</a></li>
+		       <li><a href="#373">18.7. Функция SHA1()</a></li>
+		</ul>
+		
+		<li><a href="#375">Глава 19. Поиск и регулярные выражения</a></li>
+		<ul>
+		       <li><a href="#375">19.1. Оператор LIKE</a></li>
+		       <li><a href="#380">19.2. Оператор NOT LIKE</a></li>
+		       <li><a href="#381">19.3. Оператор SOUND LIKE</a></li>
+		       <li><a href="#381">19.4. Оператор RLIKE(REGEXP)</a></li>
+		       <li><a href="#393">19.5. Оператор NOT RLIKE</a></li>
+		       <li><a href="#394">19.6. Функция STRCMP()</a></li>
+		</ul>
+		
+		<li><a href="#395">Глава 20. Полнотекстовый поиск</a></li>
+		<ul>
+		       <li><a href="#395">20.1. Индекс FULLTEXT</a></li>
+		       <li><a href="#397">20.2. Конструкция MATCH(...) AGAINST(...)</a></li>
+		       <li><a href="#402">20.3. Логический режим</a></li>
+		       <li><a href="#409">20.4. Режим расширения запроса</a></li>
+		</ul>
+		
+		<li><a href="#411">Глава 21. Функции, применяемые вместе с
+		конструкцией GROUP BY</a></li>
+		<ul>
+		       <li><a href="#411">21.1. Функция AVG()</a></li>
+		       <li><a href="#414">21.2. Функция BIT_AND()</a></li>
+		       <li><a href="#415">21.3. Функция BIT_OR()</a></li>
+		       <li><a href="#416">21.4. Функция BIT_XOR()</a></li>
+		       <li><a href="#417">21.5. Функция COUNT()</a></li>
+		       <li><a href="#420">21.6. Функция GROUP_CONCAT()</a></li>
+		       <li><a href="#422">21.7. Функция MIN()</a></li>
+		       <li><a href="#423">21.8. Функция MAX()</a></li>
+		       <li><a href="#424">21.9. Функция STD()</a></li>
+		       <li><a href="#425">21.10. Функция STDDEV_SAMP()</a></li>
+		       <li><a href="#426">21.11. Функция SUM()</a></li>
+		       <li><a href="#426">21.12. Функция VAR_POP()</a></li>
+		       <li><a href="#427">21.13. Функция VAR_SAMP()</a></li>
+		       <li><a href="#427">21.14. Конструкция WITH ROLLUP()</a></li>
+		</ul>
+		
+		<li><a href="#431">Глава 22. Разные функции</a></li>
+		<ul>
+		       <li><a href="#431">22.1. Функции управления потоком выполнения</a></li>
+			   <ul>
+		           <li><a href="#431">22.1.1. Функция CASE()</a></li>
+		           <li><a href="#432">22.1.2. Функция IF()</a></li>
+		           <li><a href="#434">22.1.3. Функция IFNULL()</a></li>
+		           <li><a href="#435">22.1.4. Функция NULLIF()</a></li>
+		       </ul>
+			   
+		       <li><a href="#435">22.2. Информационные функции</a></li>
+			   <ul>
+		           <li><a href="#436">22.2.1. Функция BENCHMARK()</a></li>
+		           <li><a href="#436">22.2.2. Функция CONNECTION_ID()</a></li>
+		           <li><a href="#437">22.2.3. Функция CURRENT_USER()</a></li>
+		           <li><a href="#437">22.2.4. Функция DATABASE()</a></li>
+		           <li><a href="#438">22.2.5. Функция FOUND_ROWS()</a></li>
+		           <li><a href="#439">22.2.6. Функция LAST_INSERT_ID()</a></li>
+		           <li><a href="#441">22.2.7. Функция ROW_COUNT()</a></li>
+		           <li><a href="#443">22.2.8. Функция USER()</a></li>
+		           <li><a href="#443">22.2.9. Функция VERSION()</a></li>
+		       </ul>			   
+			   
+		       <li><a href="#444">22.3. Разные функции</a></li>
+			   <ul>
+		           <li><a href="#444">22.3.1. Функция DEFAULT()</a></li>
+		           <li><a href="#446">22.3.2. Функция GET_LOCK()</a></li>
+		           <li><a href="#447">22.3.3. Функция INET_ATON()</a></li>
+		           <li><a href="#447">22.3.4. Функция INET_NTOA()</a></li>
+		           <li><a href="#448">22.3.5. Функция IS_FREE_LOCK()</a></li>
+		           <li><a href="#449">22.3.6. Функция IS_USED_LOCK()</a></li>
+		           <li><a href="#449">22.3.7. Функция NAME_CONST()</a></li>
+		           <li><a href="#450">22.3.8. Функция RELEASE_LOCK()</a></li>
+		           <li><a href="#450">22.3.9. Функция SLEEP()</a></li>
+		           <li><a href="#450">22.3.10. Функция UUID()</a></li>
+		       </ul>			   
+			   
+		</ul>
+		
+		<li><a href="#452">Глава 23. Переменные и временные таблицы</a></li>
+		<ul>
+		       <li><a href="#452">23.1. Переменные SQL</a></li>
+		       <li><a href="#456">23.2. Временные таблицы</a></li>
+		</ul>
+		
+		<li><a href="#460">Глава 24. Вложенные запросы</a></li>
+		<ul>
+		       <li><a href="#463">24.1. Вложенный запрос как скалярный операнд</a></li>
+		       <li><a href="#466">24.2. Вложенные запросы, возвращающие несколько строк</a></li>
+			   <ul>
+		           <li><a href="#467">24.2.1. Ключевое слово IN</a></li>
+		           <li><a href="#468">24.2.2. Ключевое слово ANY (SOME)</a></li>
+		           <li><a href="#470">24.2.3. Ключевое слово ALL</a></li>
+		       </ul>
+		
+		       <li><a href="#472">24.3. Проверка на существование</a></li>
+		       <li><a href="#475">24.4. Коррелированные запросы</a></li>
+		       <li><a href="#475">24.5. Вложенные запросы, возвращающие несколько столбцов</a></li>
+		       <li><a href="#477">24.6. Подзапросы в конструкции FROM</a></li>
+		       <li><a href="#480">24.7. Вложенные запросы в операторе CREATE TABLE</a></li>
+		       <li><a href="#483">24.8. Вложенные запросы в операторе INSERT</a></li>
+		</ul>
+		
+		<li><a href="#487">Глава 25. Внешние ключи и ссылочная
+		целостность</a></li>
+		
+		<li><a href="#495">Глава 26. Транзакции и блокировки</a></li>
+		<ul>
+		       <li><a href="#495">26.1. Транзакции</a></li>
+		       <li><a href="#501">26.2. Блокировка таблиц</a></li>
+		</ul>
+		
+		<li><a href="#504">Глава 27. Управление учетными записями
+		пользователей</a></li>
+		<ul>
+		       <li><a href="#504">27.1. Учётные записи СУБД MySQL</a></li>
+		       <li><a href="#507">27.2. Оператор CREATE USER</a></li>
+		       <li><a href="#509">27.3. Оператор DROP USER</a></li>
+		       <li><a href="#511">27.4. Оператор RENAME USER</a></li>
+		       <li><a href="#512">27.5. Оператор GRANT</a></li>
+		       <li><a href="#522">27.6. Оператор REVOKE</a></li>
+		</ul>
+		
+	</ul>
+	<li><a href="#523">Часть III. Средства администрирования СУБД
+	MySQL</a></li>
+	<ul>
+		<li><a href="#524">Глава 28. Администрирование СУБД MySQL</a></li>
+		<ul>
+		       <li><a href="#524">28.1. Параметры запуска сервера MySQL</a></li>
+		       <li><a href="#532">28.2. Системные переменные сервера</a></li>
+		       <li><a href="#553">28.3. Режим SQL-сервера</a></li>
+		       <li><a href="#557">28.4. Журнальные файлы</a></li>
+			   <ul>
+			       <li><a href="#557">28.4.1. Журнальные таблицы</a></li>
+			       <li><a href="#558">28.4.2. Журнал ошибок</a></li>
+			       <li><a href="#559">28.4.3. Общий журнал запросов</a></li>
+			       <li><a href="#559">28.4.4. Бинарный журнал регистраций</a></li>
+			       <li><a href="#562">28.4.5. Утилита mysqlbinlog</a></li>
+			       <li><a href="#564">28.4.6. Журнал медленных запросов</a></li>
+			   </ul>
+			   
+		       <li><a href="#565">28.5. Оператор CACHE INDEX</a></li>
+		       <li><a href="#566">28.6. Оператор FLUSH</a></li>
+		       <li><a href="#567">28.7. Оператор KILL</a></li>
+		       <li><a href="#568">28.8. Оператор LOAD INDEX INTO CACHE</a></li>
+		       <li><a href="#568">28.9. Оператор RESET</a></li>
+		       <li><a href="#569">28.10. Утилита mysqladmin</a></li>
+		</ul>
+		
+		<li><a href="#573">Глава 29. Оператор SET</a></li>
+		<li><a href="#586">Глава 30. Оператор SHOW</a></li>
+		<ul>
+
+		    <li><a href="#587">30.1. Оператор SHOW CHARACTER SET</a></li>
+		    <li><a href="#588">30.2. Оператор SHOW COLLATION</a></li>
+		    <li><a href="#589">30.3. Оператор SHOW COLUMNS</a></li>
+		    <li><a href="#592">30.4. Оператор SHOW CREATE DATABASE</a></li>
+		    <li><a href="#592">30.5. Оператор SHOW CREATE TABLE</a></li>
+		    <li><a href="#593">30.6. Оператор SHOW DATABASES</a></li>
+		    <li><a href="#594">30.7. Оператор SHOW ENGINES</a></li>
+		    <li><a href="#595">30.8. Оператор SHOW ENGINE</a></li>
+		    <li><a href="#596">30.9. Оператор SHOW ERRORS</a></li>
+		    <li><a href="#598">30.10. Оператор SHOW GRANTS</a></li>
+		    <li><a href="#599">30.11. Оператор SHOW INDEX</a></li>
+		    <li><a href="#602">30.12. Оператор SHOW PLUGIN</a></li>
+		    <li><a href="#602">30.13. Оператор SHOW PRIVILEGES</a></li>
+		    <li><a href="#606">30.14. Оператор SHOW PROCESSLIST</a></li>
+		    <li><a href="#609">30.15. Оператор SHOW STATUS</a></li>
+		    <li><a href="#614">30.16. Оператор SHOW TABLE STATUS</a></li>
+		    <li><a href="#617">30.17. Оператор SHOW TABLES</a></li>
+		    <li><a href="#619">30.18. Оператор SHOW VARIABLES</a></li>
+		    <li><a href="#620">30.19. Оператор SHOW WARNINGS</a></li>
+		    <li><a href="#623">30.20. Утилита mysqlshow</a></li>
+		</ul>
+		
+		<li><a href="#626">Глава 31. Предотвращение катастроф и
+		восстановление</a></li>
+		<ul>
+		    <li><a href="#626">31.1. Оператор CHECK TABLE</a></li>
+		    <li><a href="#629">31.2. Оператор ANALYZE TABLE</a></li>
+		    <li><a href="#630">31.3. Оператор CHECKSUM TABLE</a></li>
+		    <li><a href="#632">31.4. Оператор OPTIMIZE TABLE</a></li>
+		    <li><a href="#633">31.5. Оператор REPAIR TABLE</a></li>
+		    <li><a href="#635">31.6. Оператор BACKUP TABLE</a></li>
+		    <li><a href="#636">31.7. Оператор RESTORE TABLE</a></li>
+		    <li><a href="#638">31.8. Резервное копирование</a></li>
+		    <li><a href="#640">31.9. Утилита mysqlcheck</a></li>
+		</ul>
+		
+		<li><a href="#643">Глава 32. Репликация в MySQL</a></li>
+		<ul>
+		    <li><a href="#643">32.1. Введение в репликацию</a></li>
+			
+		    <li><a href="#644">32.2. Детали реализации процесса репликации</a></li>
+			<ul>
+			    <li><a href="#647">32.2.1. Состояние потока репликации главного сервера</a></li>
+			    <li><a href="#647">32.2.2. Состояние потока ввода/вывода подчинённого сервера</a></li>
+			    <li><a href="#649">32.2.3. Состояние потока обработки ретрансляционных журналов подчинённого сервера</a></li>
+			    <li><a href="#649">32.2.4. Журнал ретрансляции и файлы состояния</a></li>
+			</ul>
+		    <li><a href="#651">32.3. Настройка репликации</a></li>
+		    <li><a href="#654">32.4. Совместимость репликации между версиями MySQL</a></li>
+		    <li><a href="#654">32.5. Параметры запуска репликации</a></li>
+		    <li><a href="#659">32.6. Операторы управления главным сервером</a></li>
+			<ul>
+			    <li><a href="#660">32.6.1. Оператор PURGE MASTER LOGS</a></li>
+			    <li><a href="#660">32.6.2. Оператор RESET MASTER</a></li>
+			    <li><a href="#660">32.6.3. Оператор SET SQL_BIN_LOG</a></li>
+			    <li><a href="#661">32.6.4. Оператор SHOW BINLOG EVENTS</a></li>
+			    <li><a href="#661">32.6.5. Оператор SHOW MASTER LOGS</a></li>
+			    <li><a href="#661">32.6.6. Оператор SHOW MASTER STATUS</a></li>
+			    <li><a href="#662">32.6.7. Оператор SHOW SLAVE HOSTS</a></li>
+			</ul>
+			
+		    <li><a href="#662">32.7. Операторы управления подчинёнными серверами</a></li>
+			<ul>
+			    <li><a href="#662">32.7.1. Оператор CHANGE MASTER TO</a></li>
+			    <li><a href="#664">32.7.2. Оператор LOAD DATA FROM MASTER</a></li>
+			    <li><a href="#665">32.7.3. Оператор LOAD TABLE FROM MASTER</a></li>
+			    <li><a href="#665">32.7.4. Функция MASTER_POS_WAIT()</a></li>
+			    <li><a href="#666">32.7.5. Оператор RESET SLAVE</a></li>
+			    <li><a href="#666">32.7.6. Оператор SET GLOBAL SQL_SLAVE_SKIP_COUNTER</a></li>
+			    <li><a href="#666">32.7.7. Оператор SHOW SLAVE STATUS</a></li>
+			    <li><a href="#669">32.7.8. Оператор START SLAVE</a></li>
+			    <li><a href="#670">32.7.9. Оператор STOP SLAVE</a></li>
+			</ul>
+			
+		</ul>
+		
+	</ul>
+	<li><a href="#671">Часть IV. Нововведения MySQL 5.0</a></li>
+	<ul>
+		<li><a href="#672">Глава 33. Хранимые процедуры</a></li>
+		<ul>
+		    <li><a href="#673">33.1. Хранимые процедуры и привилегии</a></li>
+		    <li><a href="#673">33.2. Создание хранимой процедуры</a></li>
+			<ul>
+		        <li><a href="#675">33.2.1. Тело процедуры</a></li>
+		        <li><a href="#679">33.2.2. Параметры процедуры</a></li>
+		        <li><a href="#682">33.2.3. Работа с таблицами базы данных</a></li>
+		        <li><a href="#690">33.2.4. Хранимые функции</a></li>
+		    </ul>
+			
+		    <li><a href="#692">33.3. Группа характеристик хранимых процедур</a></li>
+		    <li><a href="#695">33.4. Операторы управления потоком данных</a></li>
+			<ul>
+		        <li><a href="#695">33.4.1. Оператор IF...THEN...ELSE</a></li>
+		        <li><a href="#699">33.4.2. Оператор CASE</a></li>
+		        <li><a href="#702">33.4.3. Оператор WHILE</a></li>
+		        <li><a href="#707">33.4.4. Оператор REPEAT</a></li>
+		        <li><a href="#708">33.4.5. Оператор LOOP</a></li>
+		        <li><a href="#709">33.4.6. Оператор GOTO</a></li>
+		    </ul>
+			
+		    <li><a href="#711">33.5. Метаданные</a></li>
+			<ul>
+		        <li><a href="#711">33.5.1. Оператор SHOW PROCEDURE STATUS</a></li>
+		        <li><a href="#713">33.5.2. Оператор SHOW CREATE</a></li>
+		        <li><a href="#714">33.5.3. Извлечение информации из таблицы mysql.proc</a></li>
+		    </ul>
+			
+		    <li><a href="#717">33.6. Удаление хранимых процедур</a></li>
+		    <li><a href="#718">33.7. Редактирование хранимых процедур</a></li>
+		    <li><a href="#719">33.8. Обработчики ошибок</a></li>
+		    <li><a href="#725">33.9. Курсоры</a></li>
+		</ul>
+		
+		<li><a href="#729">Глава 34. Триггеры</a></li>
+		<ul>
+		    <li><a href="#729">34.1. Оператор CREATE TRIGGER</a></li>
+		    <li><a href="#733">34.2. Оператор DROP TRIGGER</a></li>
+		</ul>
+		
+		<li><a href="#734">Глава 35. Представления</a></li>
+		<ul>
+		    <li><a href="#735">35.1. Создание представлений</a></li>
+		    <li><a href="#749">35.2. Удаление представлений</a></li>
+		    <li><a href="#750">35.3. Редактирование представлений</a></li>
+		    <li><a href="#750">35.4. Оператор SHOW CREATE VIEW</a></li>
+		</ul>
+		
+		<li><a href="#752">Глава 36. Информационная схема</a></li>
+		<ul>
+		    <li><a href="#753">36.1. Представление CHARACTER_SETS</a></li>
+		    <li><a href="#756">36.2. Представление COLLATIONS</a></li>
+		    <li><a href="#758">36.3. Представление COLLATION_CHARACTER_SET_APPLICABILITY</a></li>
+		    <li><a href="#759">36.4. Представление COLUMN_PRIVILEGES</a></li>
+		    <li><a href="#762">36.5. Представление COLUMNS</a></li>
+		    <li><a href="#766">36.6. Представление KEY_COLUMN_USAGE</a></li>
+		    <li><a href="#768">36.7. Представление ROUTINES</a></li>
+		    <li><a href="#772">36.8. Представление SCHEMA_PRIVILEGES</a></li>
+		    <li><a href="#774">36.9. Представление SCHEMATA</a></li>
+		    <li><a href="#776">36.10. Представление STATISTICS</a></li>
+		    <li><a href="#780">36.11. Представление TABLE_CONSTRAINTS</a></li>
+		    <li><a href="#781">36.12. Представление TABLE_PRIVILEGES</a></li>
+		    <li><a href="#783">36.13. Представление TABLES</a></li>
+		    <li><a href="#786">36.14. Представление USER_PRIVILEGES</a></li>
+		    <li><a href="#787">36.15. Представление VIEWS</a></li>
+		</ul>
+		
+	</ul>
+	<li><a href="#789">Часть V. Взаимодействие MySQL c языками
+	программирования</a></li>
+	<ul>
+		<li><a href="#790">Глава 37. Взаимодействие MySQL и C/C++</a></li>
+		<ul>
+		    <li><a href="#790">37.1. Взаимодействие с MySQL в Linux</a></li>
+			<ul>
+		        <li><a href="#795">37.1.1. Типы данных</a></li>
+		        <li><a href="#800">37.1.2. Функции интерфейса C</a></li>
+		    </ul>
+		    <li><a href="#824">37.2. Взаимодействие с MySQL в Windows</a></li>
+		</ul>
+		
+		<li><a href="#847">Глава 38. Взаимодействие MySQL и Perl</a></li>
+		<li><a href="#853">Глава 39. Взаимодействие MySQL и PHP</a></li>
+		<ul>
+		    <li><a href="#853">39.1. Функция mysql_connect()</a></li>
+		    <li><a href="#855">39.2. Функция mysql_close()</a></li>
+		    <li><a href="#856">39.3. Функция mysql_select_db()</a></li>
+		    <li><a href="#859">39.4. Функция mysql_query()</a></li>
+		    <li><a href="#860">39.5. Функция mysql_result()</a></li>
+		    <li><a href="#861">39.6. Функция mysql_fetch_row()</a></li>
+		    <li><a href="#862">39.7. Функция mysql_fetch_assoc()</a></li>
+		    <li><a href="#864">39.8. Функция mysql_fetch_array()</a></li>
+		    <li><a href="#867">39.9. Функция mysql_fetch_object()</a></li>
+		    <li><a href="#868">39.10. Функция mysql_num_rows()</a></li>
+		    <li><a href="#871">39.11. Система регистрации</a></li>
+		    <li><a href="#880">39.12. Система авторизации</a></li>
+		    <li><a href="#882">39.13. Базовая HTTP-авторизация</a></li>
+		    <li><a href="#885">39.14. Пользователи online</a></li>
+		    <li><a href="#888">39.15. Постраничная навигация</a></li>
+		    <li><a href="#892">39.16. Алфавитная навигация</a></li>
+		    <li><a href="#894">39.17. Сортировка</a></li>
+		    <li><a href="#897">39.18. Двойной выпадающий список</a></li>
+		    <li><a href="#903">39.19. Удаление сразу нескольких позиций</a></li>
+		    <li><a href="#906">39.20. Хранение MP3-файлов в базе данных</a></li>
+		    <li><a href="#910">39.21. Хранение изображений в базе данных</a></li>
+		</ul>
+		
+	</ul>
+	<li><a href="#915">Заключение</a></li>
+	
+	<li><a href="#916">Приложения</a></li>
+	<ul>
+        <li><a href="#917">Приложение 1. Пространственные расширения MySQL</a></li>
+		<ul>
+		    <li><a href="#918">П1.1. Геометрическая модель OpenGIS</a></li>
+		    <ul>
+		        <li><a href="#919">П1.1.1. Класс Geometry</a></li>
+		        <li><a href="#920">П1.1.2. Класс Point</a></li>
+		        <li><a href="#921">П1.1.3. Класс Curve</a></li>
+		        <li><a href="#921">П1.1.4. Класс LineString</a></li>
+		        <li><a href="#922">П1.1.5. Класс Surface</a></li>
+		        <li><a href="#922">П1.1.6. Класс Polygon</a></li>
+		        <li><a href="#923">П1.1.7. Класс GeometryCollection</a></li>
+		        <li><a href="#923">П1.1.8. Класс MultiPoint</a></li>
+		        <li><a href="#923">П1.1.9. Класс MultiCurve</a></li>
+		        <li><a href="#924">П1.1.10. Класс MultiString</a></li>
+		        <li><a href="#924">П1.1.11. Класс MultiSurface</a></li>
+		        <li><a href="#924">П1.1.12. Класс MultiPolygon</a></li>
+		    </ul>
+		
+		    <li><a href="#924">П1.2. Форматы пространственных данных</a></li>
+		    <ul>
+		        <li><a href="#925">П1.2.1. Объект Point</a></li>
+		        <li><a href="#927">П1.2.2. Объект LineString</a></li>
+		        <li><a href="#927">П1.2.3. Объект Polygon</a></li>
+		        <li><a href="#928">П1.2.4. Объект MultiPoint</a></li>
+		        <li><a href="#929">П1.2.5. Объект MultiLineString</a></li>
+		        <li><a href="#930">П1.2.6. Объект MultiPolygon</a></li>
+		        <li><a href="#931">П1.2.7. Объект GeometryCollection</a></li>
+		    </ul>
+		
+		    <li><a href="#932">П1.3. Работа с геометрическими элементами в MySQL</a></li>
+		    <ul>
+		        <li><a href="#933">П1.3.1. Функция PointFromText()</a></li>
+		        <li><a href="#935">П1.3.2. Функция PointFromWKB()</a></li>
+		        <li><a href="#936">П1.3.3. Функция Point()</a></li>
+		        <li><a href="#936">П1.3.4. Функция LineFromText()</a></li>
+		        <li><a href="#937">П1.3.5. Функция LineFromWKB()</a></li>
+		        <li><a href="#937">П1.3.6. Функция LineString()</a></li>
+		        <li><a href="#939">П1.3.7. Функция PolyFromText()</a></li>
+		        <li><a href="#939">П1.3.8. Функция PolyFromWKB()</a></li>
+		        <li><a href="#940">П1.3.9. Функция Polygon()</a></li>
+		        <li><a href="#941">П1.3.10. Функция GeomFromText()</a></li>
+		        <li><a href="#942">П1.3.11. Функция GeomFromWKB()</a></li>
+		        <li><a href="#942">П1.3.12. Функция MPointFromText()</a></li>
+		        <li><a href="#943">П1.3.13. Функция MPointFromWKB()</a></li>
+		        <li><a href="#943">П1.3.14. Функция MultiPoint()</a></li>
+		        <li><a href="#944">П1.3.15. Функция MLineFromText()</a></li>
+		        <li><a href="#945">П1.3.16. Функция MLineFromWKB()</a></li>
+		        <li><a href="#945">П1.3.17. Функция MultiLineString()</a></li>
+		        <li><a href="#946">П1.3.18. Функция MPolyFromText()</a></li>
+		        <li><a href="#947">П1.3.19. Функция MPolyFromWKB()</a></li>
+		        <li><a href="#947">П1.3.20. Функция MultiPolygon()</a></li>
+		        <li><a href="#948">П1.3.21. Функция GeomCollFromText()</a></li>
+		        <li><a href="#949">П1.3.22. Функция GeomCollFromWKB()</a></li>
+		        <li><a href="#949">П1.3.23. Функция GeometryCollection()</a></li>
+		    </ul>
+		
+		    <li><a href="#950">П1.4. Общие функции геометрических объектов</a></li>
+		    <ul>
+		        <li><a href="#951">П1.4.1. Функция Dimension()</a></li>
+		        <li><a href="#951">П1.4.2. Функция Envelope()</a></li>
+		        <li><a href="#954">П1.4.3. Функция GeometryType()</a></li>
+		        <li><a href="#955">П1.4.4. Функция SRID()</a></li>
+		    </ul>
+		
+		    <li><a href="#955">П1.5. Функции для работы с объектом Point</a></li>
+		    <ul>
+		        <li><a href="#955">П1.5.1. Функция X()</a></li>
+		        <li><a href="#956">П1.5.2. Функция Y()</a></li>
+		    </ul>
+		
+		    <li><a href="#957">П1.6. Функции для работы с объектом LineString</a></li>
+		    <ul>
+		        <li><a href="#957">П1.6.1. Функция EndPoint()</a></li>
+		        <li><a href="#957">П1.6.2. Функция StartPoint()</a></li>
+		        <li><a href="#958">П1.6.3. Функция PointN()</a></li>
+		        <li><a href="#959">П1.6.4. Функция NumPoints()</a></li>
+		        <li><a href="#959">П1.6.5. Функция GLength()</a></li>
+		        <li><a href="#960">П1.6.6. Функция IsClosed()</a></li>
+		    </ul>
+		
+		    <li><a href="#961">П1.7. Функции для работы с объектом MultiLineString</a></li>
+		    <ul>
+		        <li><a href="#961">П1.7.1. Функция GLenght()</a></li>
+		        <li><a href="#962">П1.7.2. Функция IsClosed()</a></li>
+		    </ul>
+		
+		    <li><a href="#963">П1.8. Функции для работы с объектом Polygon</a></li>
+		    <ul>
+		        <li><a href="#963">П1.8.1. Функция Area()</a></li>
+		        <li><a href="#965">П1.8.2. Функция ExteriorRing()</a></li>
+		        <li><a href="#966">П1.8.3. Функция InteriorRingN()</a></li>
+		        <li><a href="#967">П1.8.4. Функция NumInteriorRings()</a></li>
+		    </ul>
+		
+		    <li><a href="#967">П1.9. Функции для работы с объектом MultiPolygon</a></li>
+		    <ul>
+		        <li><a href="#967">П1.9.1. Функция Area()</a></li>
+		    </ul>
+		
+		    <li><a href="#968">П1.10. Функции для работы с объектом GeometryCollection</a></li>
+		    <ul>
+		        <li><a href="#968">П1.10.1. Функция GeometryN()</a></li>
+		        <li><a href="#969">П1.10.2. Функция NumGeometries()</a></li>
+		    </ul>
+		
+		    <li><a href="#970">П1.11. Функции для проверки отношения минимальных ограничивающих прямоугольников</a></li>
+		    <ul>
+		        <li><a href="#970">П1.11.1. Функция MBRContaints()</a></li>
+		        <li><a href="#970">П1.11.2. Функция MBRDisjoint()</a></li>
+		        <li><a href="#972">П1.11.3. Функция MBREqual()</a></li>
+		        <li><a href="#973">П1.11.4. Функция MBRIntersects()</a></li>
+		        <li><a href="#974">П1.11.5. Функция MBROverlaps()</a></li>
+		        <li><a href="#976">П1.11.6. Функция MBRTouches()</a></li>
+		        <li><a href="#976">П1.11.7. Функция MBRWithin()</a></li>
+		    </ul>
+		
+		    <li><a href="#977">П1.12. Пространственные индексы</a></li>
+		</ul>
+        <li><a href="#979">Приложение 2. Описание компакт-диска</a></li>	
+	</ul>
+	<li><a href="#980">Предметный указатель</a></li>
+</ul>
+</body>
+</html>

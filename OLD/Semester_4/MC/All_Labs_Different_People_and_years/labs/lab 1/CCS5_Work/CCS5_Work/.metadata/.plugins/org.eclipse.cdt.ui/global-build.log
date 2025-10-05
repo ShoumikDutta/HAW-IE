@@ -1,0 +1,936 @@
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building file: ../uartstdio.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="uartstdio.pp"  "../uartstdio.c"
+'Finished building: ../uartstdio.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building file: ../uartstdio.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="uartstdio.pp"  "../uartstdio.c"
+'Finished building: ../uartstdio.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../student.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="student.pp"  "../student.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../student.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./student.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k clean 
+DEL /F  "student.out"
+DEL /F "main.pp" "uartstdio.pp" 
+DEL /F "main.obj" "uartstdio.obj" 
+'Finished clean'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../main.c'
+' '
+'Building file: ../uartstdio.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="uartstdio.pp"  "../uartstdio.c"
+'Finished building: ../uartstdio.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 45: error #20: identifier "GPIO_PA0_U0RX" is undefined
+"../main.c", line 46: error #20: identifier "GPIO_PA1_U0TX" is undefined
+"../main.c", line 57: error #20: identifier "GPIO_PG0_U2RX" is undefined
+
+"../main.c", line 58: error #20: identifier "GPIO_PG1_U2TX" is undefined
+>> Compilation failure
+4 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 19: fatal error #13: expected a file name
+1 fatal error detected in the compilation of "../main.c".
+Compilation terminated.
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 19: fatal error #13: expected a file name
+1 fatal error detected in the compilation of "../main.c".
+Compilation terminated.
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 19: fatal error #5: could not open source file "PART_LM3S9B92"
+1 fatal error detected in the compilation of "../main.c".
+Compilation terminated.
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 19: fatal error #13: expected a file name
+1 fatal error detected in the compilation of "../main.c".
+
+>> Compilation failure
+Compilation terminated.
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 45: error #20: identifier "GPIO_PA0_U0RX" is undefined
+"../main.c", line 46: error #20: identifier "GPIO_PA1_U0TX" is undefined
+
+>> Compilation failure
+"../main.c", line 57: error #20: identifier "GPIO_PG0_U2RX" is undefined
+"../main.c", line 58: error #20: identifier "GPIO_PG1_U2TX" is undefined
+4 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 45: error #20: identifier "GPIO_PA0_U0RX" is undefined
+"../main.c", line 46: error #20: identifier "GPIO_PA1_U0TX" is undefined
+"../main.c", line 57: error #20: identifier "GPIO_PG0_U2RX" is undefined
+"../main.c", line 58: error #20: identifier "GPIO_PG1_U2TX" is undefined
+4 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 45: error #20: identifier "GPIO_PA0_U0RX" is undefined
+"../main.c", line 46: error #20: identifier "GPIO_PA1_U0TX" is undefined
+
+>> Compilation failure
+"../main.c", line 57: error #20: identifier "GPIO_PG0_U2RX" is undefined
+"../main.c", line 58: error #20: identifier "GPIO_PG1_U2TX" is undefined
+4 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"E:/StellarisWare/driverlib/pin_map_LM3S9B92.h", line 353: warning #1-D: last line of file ends without a newline
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 48: error #20: identifier "GPIO_PA0_U0RX" is undefined
+"../main.c", line 49: error #20: identifier "GPIO_PA1_U0TX" is undefined
+"../main.c", line 60: error #20: identifier "GPIO_PG0_U2RX" is undefined
+"../main.c", line 61: error #20: identifier "GPIO_PG1_U2TX" is undefined
+4 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 48: error #20: identifier "GPIO_PA0_U0RX" is undefined
+
+>> Compilation failure
+"../main.c", line 49: error #20: identifier "GPIO_PA1_U0TX" is undefined
+"../main.c", line 60: error #20: identifier "GPIO_PG0_U2RX" is undefined
+"../main.c", line 61: error #20: identifier "GPIO_PG1_U2TX" is undefined
+4 errors detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+"../main.c", line 44: error #20: identifier "GPIO_PA0_U0RX" is undefined
+"../main.c", line 45: error #20: identifier "GPIO_PA1_U0TX" is undefined
+2 errors detected in the compilation of "../main.c".
+
+>> Compilation failure
+gmake: *** [main.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=256 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+C:\ti\ccsv5\utils\bin\gmake -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -O0 -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../startup_ccs.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -O0 -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="startup_ccs.pp"  "../startup_ccs.c"
+'Finished building: ../startup_ccs.c'
+' '
+'Building file: ../uartstdio.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -O0 -g --include_path="C:/ti/ccsv5/tools/compiler/tms470/include" --include_path="E:/StellarisWare" --include_path="D:/CCS5_Work/student/../../../.." --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="uartstdio.pp"  "../uartstdio.c"
+'Finished building: ../uartstdio.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/tms470/bin/cl470" -mv7M3 --code_state=16 --abi=eabi -me -O0 -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/tms470/lib" -i"C:/ti/ccsv5/tools/compiler/tms470/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./startup_ccs.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -O0 -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -O0 -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./uartstdio.obj" "./startup_ccs.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+error #10008-D: cannot find file
+   "C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib"
+
+error #10010: errors encountered during linking; "student.out" not built
+>> Compilation failure
+gmake: *** [student.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../mainStellarisWare.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="mainStellarisWare.pp"  "../mainStellarisWare.c"
+'Finished building: ../mainStellarisWare.c'
+' '
+'Building file: ../startup_ccs.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="startup_ccs.pp"  "../startup_ccs.c"
+'Finished building: ../startup_ccs.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=4000 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./startup_ccs.obj" "./mainStellarisWare.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+error #10008-D: cannot find file
+   "C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib"
+
+>> Compilation failure
+error #10056: symbol "main" redefined: first defined in
+   "./mainStellarisWare.obj"; redefined in "./main.obj"
+error #10056: symbol "wait" redefined: first defined in
+   "./mainStellarisWare.obj"; redefined in "./main.obj"
+error #10010: errors encountered during linking; "student.out" not built
+gmake: *** [student.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=4000 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./startup_ccs.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+error #10008-D: cannot find file
+   "C:\ti\ccsv5\tools\compiler\tms470\lib\rtsv7M3_T_le_eabi.lib"
+error #10010: errors encountered during linking; "student.out" not built
+
+>> Compilation failure
+gmake: *** [student.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=4000 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./startup_ccs.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\arm_5.0.4\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../mainStellarisWare.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="mainStellarisWare.pp"  "../mainStellarisWare.c"
+'Finished building: ../mainStellarisWare.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=4000 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./startup_ccs.obj" "./mainStellarisWare.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\arm_5.0.4\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=4000 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./startup_ccs.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\arm_5.0.4\lib\rtsv7M3_T_le_eabi.lib" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../startup_ccs.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="startup_ccs.pp"  "../startup_ccs.c"
+'Finished building: ../startup_ccs.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=4000 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./startup_ccs.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\arm_5.0.4\lib\rtsv7M3_T_le_eabi.lib" -l"libc.a" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../startup_ccs.c'
+'Invoking: ARM Compiler'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="E:/StellarisWare" --include_path="D:/" --diag_warning=225 --display_error_number --preproc_with_compile --preproc_dependency="startup_ccs.pp"  "../startup_ccs.c"
+'Finished building: ../startup_ccs.c'
+' '
+'Building target: student.out'
+'Invoking: ARM Linker'
+"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M3 --code_state=16 --abi=eabi -me -g --diag_warning=225 --display_error_number -z --stack_size=16000 -m"student.map" --heap_size=4000 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" -i"E:/StellarisWare" --reread_libs --warn_sections --rom_model -o "student.out"  "./startup_ccs.obj" "./main.obj" -l"E:\StellarisWare\driverlib\ccs-cm3\Debug\driverlib-cm3.lib" -l"C:\ti\ccsv5\tools\compiler\arm_5.0.4\lib\rtsv7M3_T_le_eabi.lib" -l"libc.a" "../lm3s9b92.cmd" 
+<Linking>
+'Finished building target: student.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project student ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****

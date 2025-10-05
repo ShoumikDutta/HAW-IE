@@ -1,0 +1,83 @@
+/*------------------------------------------------------------------------------------
+MC Lab 2
+Walter Keyes
+Ganesh Simha Reddy Pucha
+Ievgenii Nudga
+ *------------------------------------------------------------------------------------
+*/
+
+#include "tm4c1294ncpdt.h"
+#include "stdio.h"
+
+
+void timerConfig(void) {
+    SYSCTL_RCGCTIMER_R = 0x01;
+    while(SYSCTL_RCGCTIMER_R != 0x01);
+
+    TIMER0_CTL_R &= ~0x0001;
+    TIMER0_CFG_R = 0x4;
+    TIMER0_TAMR_R = 0x02;
+    TIMER0_TAPR_R = 3-1;
+}
+
+void timerWait(unsigned short usec) {
+    TIMER0_TAILR_R = (unsigned long) 16/3 * usec  - 0.5;
+    TIMER0_CTL_R |= 0x01;
+    while((TIMER0_RIS_R & 0x01)==0x00);
+    TIMER0_ICR_R |= 0x01;
+    TIMER0_CTL_R &= ~0x01;
+}
+char text[] = {0x00,
+			   0x7E,0x81,0x89,0x8E,0x00,
+			   0xFF,0x8C,0x8A,0x71,0x00,
+			   0x7E,0x81,0x81,0x7E,0x00,
+			   0xFE,0x01,0x01,0xFE,0x00,
+			   0xFF,0x90,0x90,0x60,0x00,
+			   0x00,0x41,0xFF,0x01,0x00};
+
+void displayText(int RL) {
+	int i;
+	timerWait(4000);
+	if(RL == 1){
+		for(i = 0; i < 31; i++) {
+			GPIO_PORTM_DATA_R = text[i];
+			timerWait(1800);
+		}
+	} else {
+		for(i = 30; i >= 0; i--) {
+			GPIO_PORTM_DATA_R = text[i];
+			timerWait(1800);
+		}
+	}
+
+}
+
+int main(void)
+{	// Port  Clock Gating Control
+		SYSCTL_RCGCGPIO_R |= 0x808;	    	// Port M and D clock ini
+		while ((SYSCTL_PRGPIO_R & 0x00000808) ==0);	// Port M and D ready ?
+
+	 // Set direction
+		GPIO_PORTM_DIR_R = 0xFF;
+		GPIO_PORTD_AHB_DIR_R = ~(0x01);
+
+	 // Digital enable
+		GPIO_PORTM_DEN_R = 0xFF;
+		GPIO_PORTD_AHB_DEN_R = 0x01;
+
+		timerConfig();
+
+		int previousRL = (GPIO_PORTD_AHB_DATA_R & 0x01);
+		while(1){
+			if(previousRL != GPIO_PORTD_AHB_DATA_R & 0x01) {
+			         if(previousRL == 0x00) {
+			              previousRL = 0x01;
+	                 }  else {
+                          previousRL = 0x00;
+	                 }
+			         displayText(previousRL);
+			}
+			else {
+			}
+		}
+}

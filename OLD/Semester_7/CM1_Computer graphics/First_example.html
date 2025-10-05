@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>First example</title>
+	</head>
+	<body>
+		<!-- <script type="text/javascript">
+			var n = Math.ceil(Math.random()*10);
+			var m = Math.ceil(Math.random()*10);
+			var ans = n*m;
+			while(ans != prompt("What is " +n+ "*" +m+" ?")){}
+		</script> -->
+		<!-- <script type="text/javascript">
+			function mysqrt(a, tol){
+				if(tol === undefined){			//if tol is omitted in the function call
+					tol = Math.pow(10, -8);
+				}
+				var x = a;
+				var counter = 0;
+				while(Math.abs(x*x - a) >= tol){
+					x = 0.5*(x + a/x);
+					counter++;
+				}
+				alert("Square root of " +a+" is: " +x+ "\nNumber of loops: " +counter);
+			}
+			var a = prompt("Enter number to find its square root");
+			mysqrt(a, 1e-8);
+		</script> -->
+		<script type="text/javascript">
+			function colon(start, end, incr){
+				"use strict";		//detects if variables are correct defined with var in front
+				if(incr === undefined)incr = 1;
+				var i=0;
+				var arr = [];
+				arr[i] = start;
+				while(arr[i] < end){
+					i++;
+					arr[i] = arr[i-1] + incr;
+				}
+				console.log(arr);
+				return arr;
+			}
+			colon(2,4,0.5);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+MDF Database:  version 1.0
+MDF_INFO | MOD16_UD_CNT_WLOAD | XC2C128-7-TQ144
+MACROCELL | 7 | 14 | CNT<0>_MC
+ATTRIBUTES | 2189722370 | 0
+OUTPUTMC | 5 | 7 | 14 | 7 | 13 | 7 | 12 | 7 | 10 | 7 | 15
+INPUTS | 4 | LOAD  | PRE<0>  | CNT<0>  | CNTEN
+INPUTMC | 1 | 7 | 14
+INPUTP | 3 | 38 | 47 | 41
+LCT | 1 | 4 | Internal_Name
+EQ | 5 | 
+   CNT<0> := LOAD & PRE<0>
+	# CNT<0> & !LOAD & CNTEN
+	# !CNT<0> & !LOAD & !CNTEN;	// (3 pt, 4 inp)
+   CNT<0>.CLK  =  CLK;	// GCK	(0 pt, 0 inp)
+    CNT<0>.AR = !ARESETN;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 13 | CNT<1>_MC
+ATTRIBUTES | 2185528066 | 0
+OUTPUTMC | 4 | 7 | 13 | 7 | 12 | 7 | 10 | 7 | 15
+INPUTS | 6 | LOAD  | CNT<1>  | PRE<1>  | CNT<0>  | CNTEN  | DIR
+INPUTMC | 2 | 7 | 13 | 7 | 14
+INPUTP | 4 | 38 | 45 | 41 | 40
+LCT | 1 | 4 | Internal_Name
+EQ | 6 | 
+   CNT<1>.T := LOAD & CNT<1> & !PRE<1>
+	# LOAD & !CNT<1> & PRE<1>
+	# CNT<0> & !LOAD & !CNTEN & DIR
+	# !CNT<0> & !LOAD & !CNTEN & !DIR;	// (4 pt, 6 inp)
+   CNT<1>.CLK  =  CLK;	// GCK	(0 pt, 0 inp)
+    CNT<1>.AR = !ARESETN;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 12 | CNT<2>_MC
+ATTRIBUTES | 2185528066 | 0
+OUTPUTMC | 3 | 7 | 12 | 7 | 10 | 7 | 15
+INPUTS | 7 | LOAD  | CNT<2>  | PRE<2>  | CNT<0>  | CNTEN  | DIR  | CNT<1>
+INPUTMC | 3 | 7 | 12 | 7 | 14 | 7 | 13
+INPUTP | 4 | 38 | 44 | 41 | 40
+LCT | 1 | 4 | Internal_Name
+EQ | 6 | 
+   CNT<2>.T := LOAD & CNT<2> & !PRE<2>
+	# LOAD & !CNT<2> & PRE<2>
+	# CNT<0> & !LOAD & !CNTEN & DIR & CNT<1>
+	# !CNT<0> & !LOAD & !CNTEN & !DIR & !CNT<1>;	// (4 pt, 7 inp)
+   CNT<2>.CLK  =  CLK;	// GCK	(0 pt, 0 inp)
+    CNT<2>.AR = !ARESETN;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 10 | CNT<3>_MC
+ATTRIBUTES | 2185528066 | 0
+OUTPUTMC | 2 | 7 | 10 | 7 | 15
+INPUTS | 8 | LOAD  | CNT<3>  | PRE<3>  | CNT<0>  | CNTEN  | DIR  | CNT<1>  | CNT<2>
+INPUTMC | 4 | 7 | 10 | 7 | 14 | 7 | 13 | 7 | 12
+INPUTP | 4 | 38 | 43 | 41 | 40
+LCT | 1 | 4 | Internal_Name
+EQ | 6 | 
+   CNT<3>.T := LOAD & CNT<3> & !PRE<3>
+	# LOAD & !CNT<3> & PRE<3>
+	# CNT<0> & !LOAD & !CNTEN & DIR & CNT<1> & CNT<2>
+	# !CNT<0> & !LOAD & !CNTEN & !DIR & !CNT<1> & !CNT<2>;	// (4 pt, 8 inp)
+   CNT<3>.CLK  =  CLK;	// GCK	(0 pt, 0 inp)
+    CNT<3>.AR = !ARESETN;	// CTR	(1 pt, 1 inp)
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 7 | 15 | TC_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 6 | CNT<0>  | DIR  | CNT<1>  | CNT<2>  | CNT<3>  | TCEN
+INPUTMC | 4 | 7 | 14 | 7 | 13 | 7 | 12 | 7 | 10
+INPUTP | 2 | 40 | 42
+EQ | 4 | 
+   TC = CNT<0> & DIR & CNT<1> & CNT<2> & CNT<3> & 
+	!TCEN
+	# !CNT<0> & !DIR & !CNT<1> & !CNT<2> & !CNT<3> & 
+	!TCEN;	// (2 pt, 6 inp)
+
+PIN | ARESETN | 64 | 16 | LVCMOS33 | 30 | 0
+PIN | CLK | 4096 | 16 | LVCMOS33 | 28 | 4 | 7 | 14 | 7 | 13 | 7 | 12 | 7 | 10
+PIN | LOAD | 64 | 16 | LVCMOS33 | 38 | 4 | 7 | 14 | 7 | 13 | 7 | 12 | 7 | 10
+PIN | CNTEN | 64 | 16 | LVCMOS33 | 41 | 4 | 7 | 14 | 7 | 13 | 7 | 12 | 7 | 10
+PIN | PRE<0> | 64 | 16 | LVCMOS33 | 47 | 1 | 7 | 14
+PIN | DIR | 64 | 16 | LVCMOS33 | 40 | 4 | 7 | 13 | 7 | 12 | 7 | 10 | 7 | 15
+PIN | PRE<1> | 64 | 16 | LVCMOS33 | 45 | 1 | 7 | 13
+PIN | PRE<2> | 64 | 16 | LVCMOS33 | 44 | 1 | 7 | 12
+PIN | PRE<3> | 64 | 16 | LVCMOS33 | 43 | 1 | 7 | 10
+PIN | TCEN | 64 | 16 | LVCMOS33 | 42 | 1 | 7 | 15
+PIN | CNT<0> | 536871040 | 0 | LVCMOS33 | 50
+PIN | CNT<1> | 536871040 | 0 | LVCMOS33 | 51
+PIN | CNT<2> | 536871040 | 0 | LVCMOS33 | 52
+PIN | CNT<3> | 536871040 | 0 | LVCMOS33 | 58
+PIN | TC | 536871040 | 0 | LVCMOS33 | 49

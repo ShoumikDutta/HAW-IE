@@ -1,0 +1,77 @@
+//ports M,L,D,P
+
+void configPortM(void) // PM(7..0):out
+{
+	int waitcycle=0;
+	SYSCTL_RCGCGPIO_R |= (1<<11);
+	while(!(SYSCTL_RCGCGPIO_R & (1<<11) );  //ready?
+
+	GPIO_PORTM_AHB_DEN_R |= 0x00FF; // enable pins
+	GPIO_PORTM_AHB_DIR_R |= 0x00FF; // PortM(7..0) output
+	GPIO_PORTM_AHB_DATA_R |= 0x000C; // PortM(7..0) switch on LEDs
+	
+	GPIO_PORTM_AHB_IS_R &= ~0x01; // sense to "edge-sensitive"
+	GPIO_PORTM_AHB_IBE_R &= ~0x01; // trigger set to "single edge"
+	GPIO_PORTM_AHB_IEV_R |= 0x01; // interrupt event to rising edge
+	GPIO_PORTM_AHB_ICR_R |= 0x01; // clear interrupt PORTM(0)
+	GPIO_PORTM_AHB_IM_R |= 0x01; // unmask PORTM(0) = S1
+	
+	NVIC_EN0_R |= (1<<11); // enable PortM interrupt (Int#4/Vec#20) in NVIC
+}
+
+void configPortL(void) // PL(1)
+{
+	int waitcycle=0;
+	SYSCTL_RCGCGPIO_R |= (1<<10);
+	while(!(SYSCTL_RCGCGPIO_R & (1<<10) );  //ready?
+
+	GPIO_PORTL_AHB_DEN_R |= (1<<0); // enable pins
+	GPIO_PORTL_AHB_DIR_R |= 0x000C; // PortL(1) output
+	GPIO_PORTL_AHB_DATA_R |= 0x000C; // PortL(3..2) switch on LEDs
+	
+	GPIO_PORTL_AHB_IS_R &= ~0x01; // sense to "edge-sensitive"
+	GPIO_PORTL_AHB_IBE_R &= ~0x01; // trigger set to "single edge"
+	GPIO_PORTL_AHB_IEV_R |= 0x01; // interrupt event to rising edge
+	GPIO_PORTL_AHB_ICR_R |= 0x01; // clear interrupt PORTL(0)
+	GPIO_PORTL_AHB_IM_R |= 0x01; // unmask PORTL(0) = S1
+	
+	NVIC_EN0_R |= (1<<10); // enable PortL interrupt (Int#4/Vec#20) in NVIC
+}
+
+void configPortD(void) // PD(0):in+irq, PD(1):in, PD(3..2):out
+{
+	int waitcycle=0;
+	SYSCTL_RCGCGPIO_R |= (1<<3);
+	while(!(SYSCTL_RCGCGPIO_R & (1<<3) );  //ready?
+
+	GPIO_PORTD_DEN_R |= 0x000F; // enable pins
+	GPIO_PORTD_DIR_R |= 0x000C; // PortD(3..2) output
+	GPIO_PORTD_DATA_R |= 0x000C; // PortD(3..2) switch on LEDs
+	
+	GPIO_PORTD_IS_R &= ~0x01; // sense to "edge-sensitive"
+	GPIO_PORTD_IBE_R &= ~0x01; // trigger set to "single edge"
+	GPIO_PORTD_IEV_R |= 0x01; // interrupt event to rising edge
+	GPIO_PORTD_ICR_R |= 0x01; // clear interrupt PORTD(0)
+	GPIO_PORTD_IM_R |= 0x01; // unmask PORTD(0) = S1
+	
+	NVIC_EN0_R |= (1<<3); // enable PortE interrupt (Int#4/Vec#20) in NVIC
+}
+
+void configPortP(void) // PP(1):in
+{
+	int waitcycle=0;
+	SYSCTL_RCGCGPIO_R |= (1<<13);
+	while(!(SYSCTL_RCGCGPIO_R & (1<<13) );  //ready?
+
+	GPIO_PORTP_AHB_DEN_R |= (1<<1); // enable pins
+	GPIO_PORTP_AHB_DIR_R |= (1<<1); // PortP(1) input
+	GPIO_PORTP_AHB_DATA_R |= 0x000C; // PortP(1) switch on LEDs
+	
+	GPIO_PORTP_AHB_IS_R &= ~0x01; // sense to "edge-sensitive"
+	GPIO_PORTP_AHB_IBE_R &= ~0x01; // trigger set to "single edge"
+	GPIO_PORTP_AHB_IEV_R |= 0x01; // interrupt event to rising edge
+	GPIO_PORTP_AHB_ICR_R |= 0x01; // clear interrupt PORTP(0)
+	GPIO_PORTP_AHB_IM_R |= 0x01; // unmask PORTP(0) = S1
+	
+	NVIC_EN0_R |= (1<<13); // enable PortP interrupt (Int#4/Vec#20) in NVIC
+}

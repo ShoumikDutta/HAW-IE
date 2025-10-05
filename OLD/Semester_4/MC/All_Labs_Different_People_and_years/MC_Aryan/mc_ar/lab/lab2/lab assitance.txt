@@ -1,0 +1,75 @@
+/*---------------------------------------------------------------------------------------
+ * Testprogram:  PortD Leds on/off
+ * 	             Print "MP-Labor" on console
+ *                                                                          Prosch 3/2014
+ *---------------------------------------------------------------------------------------
+*/
+#define  PART_LM3S9B92
+
+#include "lm3s9b92.h"
+#include "stdio.h"
+
+void wait(int wait_time){
+	int tmp;
+	for(tmp=0;tmp<500;tmp++);
+}
+
+
+
+int main(void)
+{
+	char temp_help  = 0x00;
+	int wait_time = 500;
+
+	SYSCTL_RCC_R = ((SYSCTL_RCC_R | 0x00000540) & ~0x0000002B1);
+	wait(100000);
+
+	// Port  Clock Gating Control
+	SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOD;// Wird für die Register Aktivierung benötigt
+	//SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOJ;
+	wait(100000);
+	 // Set direction
+	 //GPIO_PORTD_DIR_R = 0xFF;// Only Output on Register D
+	 //GPIO_PORTJ_DIR_R =0x00; // Only Inputs on register J
+	 GPIO_PORTD_DIR_R = 0x01;// Only Output on Register D
+
+	 // Digital enable
+	 //GPIO_PORTD_DEN_R = 0xFF;// All Bits on register D enable
+	 //GPIO_PORTJ_DEN_R = 0x01;// Only Bit on Register J enable
+	 GPIO_PORTD_DEN_R = 0x01;// All Bits on register D enable
+	 // config Timer 0:
+
+	 SYSCTL_RCGC1_R |= (1<< 16);
+	 wait(1000);
+	 TIMER0_CTL_R &= ~ 0x0001;
+	 TIMER0_CFG_R = 0x04;
+	 TIMER0_TAMR_R = 0x22; // Timer counts down and Match enable activ, periodic timer is set
+	 TIMER0_TAPR_R =122.07031;
+	 TIMER0_TAILR_R = 65536 -1;
+	 TIMER0_TAMATCHR_R = 65536/2 -1;
+	 TIMER0_CTL_R |= 0x0001;
+
+	 // Ports on/off
+	 while(1){
+		 GPIO_PORTD_DATA_R |= 0x01;
+		 while((TIMER0_RIS_R & (1<<4))==0); //if Matchflag from Timer0A is zero?
+
+		 TIMER0_ICR_R |= (1<<4);
+		 GPIO_PORTD_DATA_R&= ~0x01;
+
+		 while((TIMER0_RIS_R & (1<<0))==0); // if Zeroflag for Timer0A is zero?
+		 TIMER0_ICR_R |= (1<<0);
+		/*if ((GPIO_PORTJ_DATA_R & 0x01) == 1  && temp_help == 1){
+
+			set_LED_INPUT(wait_time);
+			temp_help =0;
+		}
+		if ((GPIO_PORTJ_DATA_R & 0x01) == 0  && temp_help == 0){
+
+					set_LED_INPUT(wait_time);
+					temp_help = 1;
+		}
+*/
+
+	 }
+}

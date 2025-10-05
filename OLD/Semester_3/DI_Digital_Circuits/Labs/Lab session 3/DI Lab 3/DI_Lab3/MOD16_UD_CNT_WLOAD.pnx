@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE ibis [
+<!ELEMENT ibis (part, pin+)>
+<!ELEMENT part EMPTY>
+<!ELEMENT pin EMPTY>
+<!ATTLIST part
+  arch   CDATA #REQUIRED
+  device CDATA #REQUIRED
+  spg    CDATA #REQUIRED
+  pkg    CDATA #REQUIRED>
+<!ATTLIST pin
+  nm     CDATA #REQUIRED
+  no     CDATA #REQUIRED
+  iostd  (LVTTL|SSTL3_I|LVCMOS33|LVCMOS25|SSTL2_I|LVCMOS18|LVCMOS15|HSTL_I|NA) "NA"
+  sr     (SLOW|FAST|slow|fast) "SLOW"
+  dir    (BIDIR|bidir|INPUT|input|OUTPUT|output) "BIDIR">
+]>
+<ibis><part arch="xbr" device="XC2C128" pkg="TQ144" spg="-7"/><pin dir="input" iostd="LVCMOS33" nm="ARESETN" no="35"/><pin dir="input" iostd="LVCMOS33" nm="CLK" no="30"/><pin dir="input" iostd="LVCMOS33" nm="LOAD" no="45"/><pin dir="input" iostd="LVCMOS33" nm="CNTEN" no="50"/><pin dir="input" iostd="LVCMOS33" nm="PRE&lt;0&gt;" no="56"/><pin dir="input" iostd="LVCMOS33" nm="DIR" no="49"/><pin dir="input" iostd="LVCMOS33" nm="PRE&lt;1&gt;" no="54"/><pin dir="input" iostd="LVCMOS33" nm="PRE&lt;2&gt;" no="53"/><pin dir="input" iostd="LVCMOS33" nm="PRE&lt;3&gt;" no="52"/><pin dir="input" iostd="LVCMOS33" nm="TCEN" no="51"/><pin dir="output" iostd="LVCMOS33" nm="CNT&lt;0&gt;" no="59" sr="fast"/><pin dir="output" iostd="LVCMOS33" nm="CNT&lt;1&gt;" no="60" sr="fast"/><pin dir="output" iostd="LVCMOS33" nm="CNT&lt;2&gt;" no="61" sr="fast"/><pin dir="output" iostd="LVCMOS33" nm="CNT&lt;3&gt;" no="68" sr="fast"/><pin dir="output" iostd="LVCMOS33" nm="TC" no="58" sr="fast"/></ibis>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="http://structorizer.fisch.lu/" text="&#34;displayString(int buffer[], actualBufferLength)&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<alternative text="&#34;if left edge detected&#34;" comment="" color="ffffff">
+			<qTrue>
+				<for text="&#34;k &#60; actualBufferLength&#34;" comment="" color="ffffff">
+					<qFor>
+						<alternative text="&#34;if (buffer[k] == 0x00)&#34;" comment="" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;break;&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<alternative text="&#34;else if (buffer[k] &#60; 0x41 &amp;&amp; buffer[k]&#62;0x5A)&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;all LED's off&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+										<instruction text="&#34;calculates the starting index in the global array&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+										<for text="&#34;for the length of 1 char+1&#34;" comment="&#34;&#34;" color="ffffff">
+											<qFor>
+												<alternative text="&#34;if j == 5 &#34;" comment="&#34;&#34;" color="ffffff">
+													<qTrue>
+														<instruction text="&#34;GPIO_PORTD_DATA_R = 0X00&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+													</qTrue>
+													<qFalse>
+														<instruction text="&#34;GPIO_PORTD_DATA_R = codedLetters[index + j]&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+													</qFalse>
+												</alternative>
+											</qFor>
+										</for>
+									</qFalse>
+								</alternative>
+							</qFalse>
+						</alternative>
+						<instruction text="&#34;show data on pendulum&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;set flag for edge detection to 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+			</qFalse>
+		</alternative>
+		<alternative text="&#34;if right edge detected&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;set flag to 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+			</qFalse>
+		</alternative>
+	</children>
+</root>

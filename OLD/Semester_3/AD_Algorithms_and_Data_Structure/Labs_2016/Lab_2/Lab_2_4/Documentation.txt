@@ -1,0 +1,21 @@
+Ievgenii Nudga
+2159839
+
+Software used : IntelliJ IDEA 14.1
+
+This program generates FPAEs from trees
+
+Operators covered are : + - * / ^ sin cos exp !
+
+5 test cases below (the output in the console):
+
+FPAE created from n7:
+((3 + 5) * (3 / 1))
+FPAE created from n14:
+((3.2 + 5.2) * (3.2 / 1.0))
+FPAE created from n28:
+((3.2 ^ 2) ^ (3 ^ 1))
+FPAE created from n37:
+sin((((( - ) + 2.5) / (3.8 - 1.5)) + ((3.1 * 1.9) - (-3.0 ^ 2))))
+FPAE created from n39:
+sin(-1)

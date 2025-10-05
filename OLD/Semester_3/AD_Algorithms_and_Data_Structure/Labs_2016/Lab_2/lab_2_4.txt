@@ -1,0 +1,238 @@
+Lab_2_4
+
+Main.java
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        BiNode n1 = new BiNode("3");
+        BiNode n2 = new BiNode("5");
+        BiNode n3 = new BiNode("3");
+        BiNode n4 = new BiNode("1");
+
+        BiNode n5 = new BiNode("+", n1, n2);
+        BiNode n6 = new BiNode("/", n3, n4);
+        BiNode n7 = new BiNode("*", n5, n6);
+
+        //так как все наши узлы имеют связи между собой
+        //то для создания дерева достаточно передать только рутовый (корневой) узел
+        Tree simpleTree = new Tree(n7);
+
+
+        //смотри, есть математическое выражение, которое можно представить как в инфиксной
+        //так и постфиксной форме
+        //в дереве оно хранится всегда в одной и той же - постфиксной форме
+        //так его проще всего хранить и именно по-этому постфиксная форма была придуман в свое время
+        //но теперь если обойти дерево в inorder порядке, то мы из постфиксной формы получим инфиксную
+        //просто за счет именно этого обхода дерева и от нас просят только это
+        //если же дерево обходить в Post-order, то мы получим свою постфиксную форму, что мы и делал
+        //в прошлой лабораторке
+
+        //да, инфиксная форма здесь без скобок, но от нас их и не просят, от нас просят вывести
+        // элементы именно в этом порядке
+        System.out.println(simpleTree.infixGenerator());
+
+        for(int i = 0; i < 5; ++i)
+        {
+            System.out.println("Type a postfix expression:");
+            String infixString = sc.nextLine();
+            //simpleTree = new Tree(infixString); не работает потому, что тип параметров определяется наличием конструктора
+            //в прошлой задаче мы сделали их 2, по-этому можно было дерево создать как из строки
+            //так и собрав в ручную из узлов и передав только корень
+            //в этой задаче у нас не просили второй конструктор, потому и нельзя сделать то, что ты пробовал
+            simpleTree = new Tree(infixString);
+
+            System.out.println("A tree created: ");
+            //эта функция simpleTree.infixGenerator() не выводит ничего на экран, она возвращает только строку
+            //а чтобы вывести эту строку, нужно делать так
+            System.out.println(simpleTree.infixGenerator());
+        }
+    }
+}
+
+
+BiNode.java
+
+public class BiNode
+{
+    public String item; //content
+    public BiNode left; //left child
+    public BiNode right; //right child
+
+    BiNode(String item) // Leaf constructor
+    {
+        this(item, null, null);
+    }
+
+    BiNode(String item, BiNode left, BiNode right) // inner node
+    {
+//        item= item_;
+//        right= right_;
+//        left= left_;
+        //this приходится использовать в той ситуации, когда имя поля совпадат с именем параметра функции
+        //без него неясно, где параметр, а где поле
+        this.item= item;
+        this.right= right;
+        this.left= left;
+    }
+}
+
+Tree.java
+
+import java.util.Stack;
+import java.util.StringTokenizer;
+
+//тебя немного сбивает с толку то, что класс и там и там называется Tree
+//на самом деле это абсолютно два разных класса с одним и тем же именем
+//этот класс, как и просят по заданию, умеет намного меньше. Он не умеет создавать дерево
+//он умеет только получать уже готовое и разворачивать его либо в польскую нотацию
+//(используя метод inorderTraversal)
+// или в прывычную прямую нотацию (используя метод infixGenerator)
+//больше ничего он не умеет
+//то, что умеет класс определяется только его методами, а других методов в нем просто нет
+public class Tree
+{
+    private BiNode root;
+
+    public Tree(BiNode root) //by argument they meant "BiNode root"
+    {
+        //root = root_
+        this.root = root;
+    }
+
+    private void inorderTraversal(BiNode node)
+    {
+        //в алгоритме обхода дерева понятие посетить узел для нас - "вывести его значение на экран"
+        if (node == null)
+            return; //т.к. у нас тип void, то тут как бы ничего не возвращается
+        //на самом деле такие функции свой результат какбы "возвращают" на экран
+        inorderTraversal(node.left);
+        System.out.printf("%s ", node.item);
+        inorderTraversal(node.right);
+    }
+
+    //ты вставил его между двумя методами, которые связаны между собою, добавь в самый низ, как и в прошлом классе
+
+    //здесь два метода, один публичный, другой приватный
+    //первый нужен для старта, который всегда начинается с рутовой ноды
+    //второй может быть вызвать только из самого класса и именно он совершает обход(travelsal) дерева
+    public void inorderTraversal()
+    {
+        if (root == null)
+        {
+            System.out.println("Invalid expression");
+            return;
+        }
+        inorderTraversal(root);
+        //мы выводим все дерево в одну строку, потому в конце нужно курсор перевести на новую
+        System.out.println(); //same as \n
+    }
+
+    //здесь сложность в том, что используется рекурсивный алгоритм, который сломает голову любому новичку
+    //даже я вот сейчас не совсем понимаю, как оно дало такой результат :)
+    private String infixGenerator(BiNode node)
+    {
+        String result = "";
+        if (node == null)
+            return "";
+
+        //node.item == element
+        if (node.item.equals("*") || node.item.equals("/") || node.item.equals("+") || node.item.equals("-") || node.item.equals("^") )
+        {
+            return "(" + infixGenerator(node.left) + " " + node.item + " " + infixGenerator(node.right) + ")";
+        }
+        if (node.item.equals("sin") || node.item.equals("cos") || node.item.equals("exp") || node.item.equals("!"))
+            return node.item + "(" + infixGenerator(node.left) + ")";
+        return node.item;
+        // (3 + 5)
+        //return infixGenerator(node.left) + " " + node.item + " " + infixGenerator(node.right);
+    }
+
+    //принцип использования этой пары методов такой же как и у пары inorderTraversal
+    //но та пара просто выводит строку на экран, а эта должна создать текстовую переменную
+    public String infixGenerator()
+    {
+        if (root == null)
+        {
+            return "invalid expression";
+        }
+        return infixGenerator(root);
+    }
+
+    private BiNode construct(String polishString)
+    {
+        //здесь должен бытьреализован алгоритм получения данных для дерева в виде рутового BiNode
+        //давал ли он вам алгоритм, как получить из строки в польской нотации дерево?
+        Stack<BiNode> tempStack = new Stack<>();
+        StringTokenizer st = new StringTokenizer(polishString, " \t\n\r");
+        while (st.hasMoreTokens())
+        {
+            String element = st.nextToken();
+            //функция Double.parseDouble(element) пробует прочитать строку как число
+            //если не получится - сгенерирует исключительную ситуацию
+            try
+            {
+                //если у нее это получается - она вернет преобразованное из строки в число значение
+                double value = Double.parseDouble(element);
+                //сюда программа не попадет, если строка выше вызвала исключение
+                tempStack.push(new BiNode(element));
+            } catch (Exception ex)
+            {
+                //нет ничего сложного в добавлении унарных операторов, но добавлять их нужно до
+                //проверки, что в стэке минимум 2 значения, так как они работают с одним
+
+                if (tempStack.size() < 1)
+                    return null;
+
+                if (element.equals("exp") || element.equals("sin") || element.equals("cos") ||
+                        element.equals("!"))
+                {
+                    //эти выражения бывают и слева, и справа, поэтому вместо left/right пишем null
+                    //мы написали вместо left tempStack.pop(), а вместо right = null
+                    tempStack.push(new BiNode(element, tempStack.pop(), null));
+                    continue;
+                }
+
+                //проблема в том, что мы сначала обработали уцнарную операцию, но не закончили этот шаг,
+                //а тут же попробовали обработать ее и как бинарную
+                //нужно просто перейти на следующий шаг цикла, минуя код ниже
+
+                //дело в том, что здесь два контейнера
+                //первый - это строка в польской нотации, разбитая на элементы
+                //вторая - стэк, куда мы записываем ноды
+                if (tempStack.size() < 2)
+                    //пустое дерево и есть признак ошибки
+                    //алгоритм ожидает для правильной польской нотации, что для оператора на стеке всегда должно быть
+                    //минимум 2 элемента
+                    return null;
+                if (element.equals("+") || element.equals("-") || element.equals("*")
+                        || element.equals("/") || element.equals("^"))
+                {
+                    //ошибочно считать, что мы записываем в left/right те же самые значения,
+                    // раз код такой же tempStack.pop();
+                    //первая команда, забирает то, что в тот момент на стэке и присваивает переменной right
+                    //а вторая команда забирает то, что стало на вершине после последней команды
+
+                    //4 5 10
+                    //pop()  вернет 10, а на стэке останется 4 5
+                    //pop()  вернет 5, а на стэке останется 4
+                    BiNode right = tempStack.pop();
+                    tempStack.push(new BiNode(element, tempStack.pop(), right));
+                }
+
+
+            }
+        }
+        return tempStack.pop();// returns the result
+    }
+
+    public Tree(String infixString)
+    {
+        root = construct(infixString);
+    }
+}

@@ -1,0 +1,37 @@
+general information:
+
+- the exam will have 10 topics with 3 tasks each - in total 30 tasks
+
+- the tasks are questions on the topics MOSFET/IGBT, op-amp, optoelectronics
+
+examples for questions:
+
+1) what are three main characteristics of a MOSFET compared to a bipolar junction transistor
+
+2) what is the threshold voltage of a MOSFET
+
+3) what is the equivalent circuit of a MOSFET
+
+4) what is the input stage of an op-amp
+
+5) which operation modes does the input stage of an op-amp have
+
+6) calculate the input bias current if both input currents are given
+
+7) calculate the reference voltage for a given input voltage divider of a comparator
+
+8) what is the basic circuit of a op-amp differentiator
+
+9) calculate the cut-off frequency of an op-amp first order low-pass filter
+
+10) what is the basic circuit for a LED
+
+11) what is the characteristic curve of a photodiode
+
+12) what is the basic circuit for a phototransistor
+
+13) what is the CTR of an opto coupler
+
+14) calculate the input series resistor for an opto coupler
+
+15) calculate the RMS value of the output current of an opto coupler if a sinusoidal input signal is applied

@@ -1,0 +1,34 @@
+private lecture
+
+public class GrayImage
+{
+	private int width;
+	private int height;
+	private short[][] data;
+	public static final int BIT_DEPTH = 8;
+	
+	public GrayImage (int width, int height)
+	{
+		super();
+		this.width = width;
+		this.height = height;
+		
+		data = new short[height][width];
+	}
+	public int getWidth()
+	
+	{
+		return width;
+	}
+	
+	public int getHeight()
+	{
+		return height;
+	
+	}
+	public int setPixel( int x, int y) (or getPixel???)
+	{
+		return data[y][x];
+	}
+	
+}

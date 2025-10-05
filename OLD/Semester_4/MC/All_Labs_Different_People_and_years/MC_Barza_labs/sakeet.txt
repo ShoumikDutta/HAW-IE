@@ -1,0 +1,27 @@
+
+
+
+void ConfigSys(void){
+	// activate main oscillator at 16 MHz w/ external XTAL
+			SYSCTL_RCC_R = ((SYSCTL_RCC_R | 0x00000540) & ~0x000002B1);
+			SYSCTL_RCGC2_R |= (1<<3)| (1<<6)| (1<<8)| (1<<4); // Ports Activation respective PD-PG-PJ-PE
+			wait();
+
+			// Port D as out put
+			GPIO_PORTD_DEN_R |= 0xFF; // PD(0) enable (7:0)
+			GPIO_PORTD_DIR_R |= 0xFF; // PD(0) output (7:0)
+
+			// Port E as Output
+			GPIO_PORTE_DEN_R |= 0x07; // PE(0) enable (pin 3:0)
+			GPIO_PORTE_DIR_R |= 0x07; // PE(0) output (pin 3:0)
+
+			// Port G as input
+			GPIO_PORTG_DEN_R = 0x03; // PG(0) enable (pin 1:0)
+			GPIO_PORTG_DIR_R = 0x00; // PG(0) Input (pin 1:0) Comparator Input
+
+			// Port J as input
+			GPIO_PORTJ_DEN_R = 0xFF; // PJ(0) enable (7:0)
+			GPIO_PORTJ_DIR_R = 0xFF; // PJ(0) output (7:0)
+
+			timerConfig();
+}

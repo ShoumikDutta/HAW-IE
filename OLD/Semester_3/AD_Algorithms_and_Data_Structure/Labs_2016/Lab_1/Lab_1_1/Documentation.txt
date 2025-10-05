@@ -1,0 +1,62 @@
+Ievgenii Nudga
+2159839
+
+Software used : IntelliJ IDEA 14.1
+
+This program reads postfix expressions, reverses them back and forth, and calculates the result.
+
+Operators covered are : + - * / ^
+
+5 test cases below:
+
+Enter your expression in polish notation please (don't forget spaces!!!):
+4 4 * 16 -
+Testing term.toString:
+4 4 * 16 -
+Testing reverse:
+- 16 * 4 4
+Testing one more reverse:
+4 4 * 16 -
+Answer: 0.0
+
+Enter your expression in polish notation please (don't forget spaces!!!):
+4 2 ^ 16 - 16 + 4 / 9 *
+Testing term.toString:
+4 2 ^ 16 - 16 + 4 / 9 *
+Testing reverse:
+* 9 / 4 + 16 - 16 ^ 2 4
+Testing one more reverse:
+4 2 ^ 16 - 16 + 4 / 9 *
+Answer: 36.0
+
+Enter your expression in polish notation please (don't forget spaces!!!):
+4.3 2 * 2 / 4.3 + .6 - 2 ^ 
+Testing term.toString:
+4.3 2 * 2 / 4.3 + .6 - 2 ^ 
+Testing reverse:
+^ 2 - .6 + 4.3 / 2 * 2 4.3
+Testing one more reverse:
+4.3 2 * 2 / 4.3 + .6 - 2 ^
+Answer: 64.0
+
+Enter your expression in polish notation please (don't forget spaces!!!):
+234423 3423 *
+Testing term.toString:
+234423 3423 *
+Testing reverse:
+* 3423 234423
+Testing one more reverse:
+234423 3423 *
+Answer: 8.02429929E8
+
+Enter your expression in polish notation please (don't forget spaces!!!):
+3 4 + 5 - 7 * 8 / 9 ^
+Testing term.toString:
+3 4 + 5 - 7 * 8 / 9 ^
+Testing reverse:
+^ 9 / 8 * 7 - 5 + 4 3
+Testing one more reverse:
+3 4 + 5 - 7 * 8 / 9 ^
+Answer: 153.93679428100586
+
+Process finished with exit code 0

@@ -1,0 +1,84 @@
+
+#include <stdio.h>
+#include<stdlib.h>
+#include "inc/lm3s9b92.h" // defines all registers
+void waitLoop() {
+	int delay;
+	for (delay = 0; delay < 100; delay++)
+		;
+}
+
+
+timerconfig(void ){
+
+	SYSCTL_RCC_R = ((SYSCTL_RCC_R | 0x00000540) & ~0x000002B1);// activate main oscillator at 16 MHz w/ external XTAL
+	waitLoop();
+	SYSCTL_RCGC1_R |=(1<<16);
+	waitLoop();
+	TIMER0_CTL_R &= ~0x0001; // disable Timer 0A
+	TIMER0_CFG_R = 0x04; // 2 x 16-bit mode
+	TIMER0_TAMR_R = 0x21; // periodic mode + match enable
+	TIMER0_TAPR_R = 15-1;//prescalar =(t*16MH)/65536
+	//TIMER0_TAILR_R= 2000;//loadvalue =(16*0.5)\123
+	TIMER0_TAMATCHR_R = 32785-1; //matchregister value (16Mhz*5ms)/2.44 THIS MATCH VALUE IS AFTER 5  MS //not
+
+}
+// wait function, requires wait time in µs as an integer value
+void timerWait(int time){
+	TIMER0_TAILR_R=time*16/15-1;
+}
+
+void main() {
+	// Port  Clock Gating Control
+	SYSCTL_RCGC2_R |= ((1 << 3) | (1 << 8)); // enabling clock for Port D  & J
+	GPIO_PORTD_DEN_R = 0x01;    // Enabling Port D
+	GPIO_PORTD_DIR_R = 0x00;    // set bits D(0) of Port D as input
+	GPIO_PORTJ_DEN_R = 0xFF;      // Enabling Port J
+	GPIO_PORTJ_DIR_R = 0xFF;     // set bits 0 to 3 of Port J as output
+	int i ;
+	char temp=0;
+	timerconfig();
+	char shift[29]={0x00,0x70,0x08,0x04,0x02,0x04,0x08,0x70,0x00,0x00,0x7e,0x00,0x00,0x70,
+			0x08,0x04,0x02,0x04,0x08,0x70,0x00,0x00,0x3e,0x48,0x48,0x48,0x48,0x3e,0x00};
+
+	//int delay[28]={2200,2200,2200,2200,2200,2200,2200,2200,2100,1500,1500,1500,1500,1500,1500,1500,1500,2100,2000,2000,2000,2000,2000,2000,2000,2000,2000};
+	int delay[28]={4500,4000,3800,2200,2200,2100,2000,2000,1900,1800,1800,1350,1200,1200,1500,1400,1300,1800,1700,1600,1700,1500,1300,1200,1200,1800,1600,1500};
+	timerWait(2000);
+
+/*	while (1){
+		GPIO_PORTJ_DATA_R = 0xFF;
+		TIMER0_CTL_R |= 0x0001; // enable Timer 0A
+		while((TIMER0_RIS_R & (1<<0))==0);
+		TIMER0_ICR_R|= (1<<0);
+		GPIO_PORTJ_DATA_R = 0x00;
+		TIMER0_CTL_R |= 0x0001; // enable Timer 0A
+		while((TIMER0_RIS_R & (1<<0))==0);
+		TIMER0_ICR_R|= (1<<0);*/
+
+	while (1){
+		//GPIO_PORTJ_DATA_R = shift[1];
+		if((GPIO_PORTD_DATA_R &0x01)> temp){//we are on the right side
+			for (i=0;i<29;i++) {
+							GPIO_PORTJ_DATA_R=shift[i];
+							timerWait(delay[i]);
+							TIMER0_CTL_R |= 0x0001; // enable Timer 0A
+							while((TIMER0_RIS_R & (1<<0))==0);
+							TIMER0_ICR_R|= (1<<0);
+						}
+						//temp = 1;
+		}
+		/*if((GPIO_PORTD_DATA_R &0x01)< temp){
+			for (i=30;i>0;i--) {
+							GPIO_PORTJ_DATA_R=shift[i];
+							TIMER0_CTL_R |= 0x0001; // enable Timer 0A
+							while((TIMER0_RIS_R & (1<<0))==0);
+						}
+						temp = 0;
+		}
+*/
+
+}
+
+}
+
+

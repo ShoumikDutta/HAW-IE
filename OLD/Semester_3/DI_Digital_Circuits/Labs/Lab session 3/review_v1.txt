@@ -1,0 +1,13 @@
+All tasks: read "General introduction to IE3-DI Lab" page 2 fist paragraph and verify everything is given according to the guidelines
+
+Lab task 2.1
+	- there's a lot of VHDL and Xilinx code, but no test cases given. Veifying the correct operation of the circuit is the main task here, why there is no test cases' descriptions?
+Lab task 2.2
+	- Don't be overly precise with the measurements, two digits after the decimal point is enough
+	- "All of this can be checked and compared with two Timing Reports (for Moore and Mealy respectively) on the next page." - where? how?
+Lab task 2.3
+	- The files can be found in "DI Lab 3\ISE 14\ISE_Projects\lab3-2.3\ADDED" folder
+	- "Since the board with 7-segment display didn’t have connection port on a side that would be comfortable for us,
+		we just have to keep in mind that LEDs have to be “inverted” when looking at photos." =>
+		=> You can add here the the digits could be turned in the correct position by feeding "1"
+		into the appropriate input PIN of the circuit (can be found in the Xilinx .icf file for the display), but we didn't do it for time reasons

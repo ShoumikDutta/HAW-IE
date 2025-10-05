@@ -1,0 +1,19 @@
+
+tic
+xn=1:10000;
+Y = zeros(1, 1000000);
+N=length(xn);
+for k = 1:N
+   Y(k)=0;
+  
+        Y(k) = Y(k)+(xn(n)*exp((-1j)*2*pi*(n-1)*(k-1)/N));
+   
+end
+
+toc
+
+
+tic 
+fft(xn);
+toc 
+

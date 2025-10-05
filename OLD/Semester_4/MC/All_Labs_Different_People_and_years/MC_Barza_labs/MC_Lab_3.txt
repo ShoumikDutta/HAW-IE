@@ -1,0 +1,55 @@
+#include "lm3s9b92.h"
+#define TIME 400
+
+void wait(void){
+	int i;
+	for(i=0; i<TIME; i++);
+}
+void configSys(){
+	SYSCTL_RCC_R=((SYSCTL_RCC_R | 0x00000540)&~0x000002B1);
+	SYSCTL_RCGC2_R |= (1<<8);
+	SYSCTL_RCGC2_R |= (1<<6);
+	SYSCTL_RCGC2_R |= (1<<4);
+	SYSCTL_RCGC2_R |=(1<<3);
+
+}
+void displayValue(int sar) {
+	int tmp, inter;
+	GPIO_PORTE_DATA_R= 0x01;
+	tmp=(int)(sar * 19.53125);
+	inter=tmp % 100;
+	GPIO_PORTJ_DATA_R= (int)(((inter/10)<<4)|(inter%10));
+	tmp/= 100;
+	GPIO_PORTE_DATA_R= 0x02;
+	GPIO_PORTJ_DATA_R= (int)(((tmp/10)<<4)|(tmp%10));
+	wait();
+}
+int main(void){
+	int sar = 171;
+	configSys();
+	GPIO_PORTD_DEN_R |= 0xFF;//8 bit
+	GPIO_PORTD_DIR_R |=0xFF;
+	GPIO_PORTE_DEN_R |=0x07;
+	GPIO_PORTE_DIR_R |=0x07;
+	GPIO_PORTG_DEN_R |=0x03;//2 bit case
+	GPIO_PORTG_DIR_R =0x00;
+	GPIO_PORTJ_DEN_R |= 0xFF;
+	GPIO_PORTJ_DIR_R |=0xFF;
+	GPIO_PORTE_DIR_R |= (0<<7);
+	GPIO_PORTE_DEN_R &= ~0x80;
+	GPIO_PORTE_AFSEL_R |=0x80;
+	GPIO_PORTE_AMSEL_R |= 0x80;
+	SYSCTL_RCGC0_R|=(1<<16);
+	wait();
+
+	ADC0_ACTSS_R &=~0x0F; // disable all 4 sequencers of ADC0
+	ADC0_SSMUX0_R |= 0x00000003; // sequencer 0, channel AIN3 only
+	ADC0_ACTSS_R |= 0x00000002; // END0 set => sequence length =1
+	ADC0_ACTSS_R |= 0x01; // enable sequencer ADC0_SS0
+
+
+	while(1){
+		displayValue(sar);
+
+	}
+}

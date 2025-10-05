@@ -1,0 +1,33 @@
+# could not find interpreter "ScintillaTk"
+# Compile of Traffic_light.vhd was successful.
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim PE Student Edition vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 14:29:12 on Jan 13,2015
+# vcom -reportprogress 300 -93 -work work Traffic_light.vhd 
+# -- Loading package STANDARD
+# -- Compiling entity Traffic_light
+# -- Compiling architecture CONTROLLER of Traffic_light
+# End time: 14:29:14 on Jan 13,2015, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# //  ModelSim PE Student Edition 10.3d Oct  7 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
+# vsim -gui 
+# Start time: 14:29:14 on Jan 13,2015
+# Loading std.standard
+# Loading work.traffic_light(controller)
+# .main_pane.wave.interior.cs.body.pw.wf
+# hexadecimal
+# End time: 15:37:34 on Jan 13,2015, Elapsed time: 1:08:20
+# Errors: 0, Warnings: 0

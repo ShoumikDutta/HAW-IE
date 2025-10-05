@@ -1,0 +1,24 @@
+##
+## HOST xc2c128tqg144 
+#
+#
+#NET CLK LOC = P38 | IOSTANDARD=LVCMOS33 ;
+#
+#NET ARESETN LOC = P35 | IOSTANDARD=LVCMOS33 ;				# Systemreset
+#NET SYSCLK LOC = P38;		# Oszillator
+#NET SCLK LOC = P32;		#Single Step
+#NET SCLK BUFG=CLK;
+#######################################################################
+################  7-Segment Display  ##################################
+################   TOP-CONNECTOR     ##################################
+#######################################################################
+NET CNT<0> LOC = P94 | IOSTANDARD=LVCMOS33 ;	# digit0
+NET CNT<1> LOC = P95 | IOSTANDARD=LVCMOS33 ;	# digit0
+NET CNT<2> LOC = P96 | IOSTANDARD=LVCMOS33 ;	# digit0
+NET CNT<3> LOC = P97 | IOSTANDARD=LVCMOS33 ;	# digit0
+#
+#NET RHS LOC = P129 | IOSTANDARD=LVCMOS33 ;	## RHS right hand side:  <= 1
+#
+#######################################################################
+
+

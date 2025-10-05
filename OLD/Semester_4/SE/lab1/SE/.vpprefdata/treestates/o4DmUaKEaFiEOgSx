@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProjectTreeState projectID="sTH6UaKEaFiEOgAQ" projectPath="D:\my_documents\Universitate\SE\untitled.vpp">
+	<TreeState name="ModelRepository" viewX="0" viewY="0">
+		<ExpandedPath>ModelRepository</ExpandedPath>
+	</TreeState>
+	<TreeState name="DiagramNavigator" viewX="0" viewY="0">
+		<ExpandedPath>DiagramNavigator</ExpandedPath>
+		<ExpandedPath>DiagramNavigator,UML Diagrams</ExpandedPath>
+		<ExpandedPath>DiagramNavigator,Requirements Capturing</ExpandedPath>
+		<ExpandedPath>DiagramNavigator,Database Modeling</ExpandedPath>
+		<ExpandedPath>DiagramNavigator,SysML</ExpandedPath>
+		<ExpandedPath>DiagramNavigator,SoaML</ExpandedPath>
+		<ExpandedPath>DiagramNavigator,Impact Analysis</ExpandedPath>
+		<ExpandedPath>DiagramNavigator,Others</ExpandedPath>
+	</TreeState>
+	<TreeState name="ClassBrowser" viewX="0" viewY="0">
+		<ExpandedPath>ClassBrowser</ExpandedPath>
+		<ExpandedPath>ClassBrowser,ClassBrowser</ExpandedPath>
+		<ExpandedPath>ClassBrowser,Instant Reverse</ExpandedPath>
+		<SelectedPath>ClassBrowser,ClassBrowser,_tpGUaKEaFiEOgNR</SelectedPath>
+	</TreeState>
+	<TreeState name="LogicalView" viewX="0" viewY="0"/>
+</ProjectTreeState>

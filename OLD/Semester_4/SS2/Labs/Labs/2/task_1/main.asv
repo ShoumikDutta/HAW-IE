@@ -1,0 +1,11 @@
+x = [2,4,1,3,6];
+tic;
+%profile on;
+Y = DFT(x)
+%profile viewer
+toc;
+
+tic;
+%fftshift()
+fft(x)
+toc;

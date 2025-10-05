@@ -1,0 +1,32 @@
+function [ X ] = DFT( input )
+%step1------------
+%making the u1 * k . n 
+N=length(input);
+n=0:N-1;
+
+k=-:2;
+
+y=n';
+u1=y*k;
+
+
+
+
+%step 2 -------------- 
+ 
+
+u2=exp(-1i*u1*2*pi/5);
+
+%step 3 -----------------------------
+
+
+xMat=input'*ones(1,N);
+%step4----------
+
+argMat=u2.*xMat;
+%step 5 ---------------------
+
+X=sum(argMat,1);
+
+
+end

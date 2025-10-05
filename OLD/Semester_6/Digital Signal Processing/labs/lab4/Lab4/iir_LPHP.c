@@ -1,0 +1,159 @@
+//-----------------------------------------------------------
+// Digital Signal Processing  Lab
+// Testprogram read/write
+//
+// AIC23 version
+//
+// Filename : get_started.c
+//
+// Author Svg 8-Jan-07
+//
+// version 1 : modified 27-Nov-08, Kup
+// version 2 : 31-Jan-10, JR
+
+
+//#define SIMULATOR
+
+// for usage of input MIC_IN and output HEADPHONE with DC coupling: 
+//#define MIC_IN
+
+#include "c6713dskinit.h"		//codec-DSK support file
+#include "dsk6713.h"
+#include <math.h>				//math library
+#include "IIR_LP_Ellip.h"
+#include "IIR_LP_Cheb1.h"
+#include "IIR_HP.h"
+
+#define LEFT 1
+#define RIGHT 0
+#define BUFLEN 1000
+
+//  external beim DSK-Board, hier zu deklarieren für Simulator:
+#ifdef SIMULATOR
+MCBSP_Handle DSK6713_AIC23_DATAHANDLE;
+#else
+extern MCBSP_Handle DSK6713_AIC23_DATAHANDLE;
+#endif
+
+static Uint32 CODECEventId;
+Uint32 fs=DSK6713_AIC23_FREQ_8KHZ;     //for sampling frequency
+//Uint32 fs;            			     //for sampling frequency
+
+// two buffers for input and output samples with two counters
+short int IIR_accu16, IIR1_accu16, IIR2_accu16, IIR3_accu16, x_in, x1_in, x2_in, x3_in;
+int delay[M][2] = {0}, delay1[M1][2] = {0}, delay2[M2][2] = {0}, delay3[M2][4] = {0};
+int i, IIR_accu32=0, IIR1_accu32=0, IIR2_accu32=0, IIR3_accu32=0;
+short int switch_filters=2;
+
+union {
+	Uint32 both;
+	short channel[2];
+} AIC23_data;
+
+
+interrupt void intser_McBSP1() 
+{
+	AIC23_data.both = MCBSP_read(DSK6713_AIC23_DATAHANDLE); //input data
+
+	//Always output the LP eliptic on the left channel
+	x_in = AIC23_data.channel[LEFT];
+
+	//LP IIR Elliptic
+	for(i=0; i<M; i++){
+		IIR_accu32 = sos_Matrix_LP_Ellip[i][0] * x_in + delay[i][0];
+		IIR_accu16 = (short)((IIR_accu32) >> 15);
+		delay[i][0]   = sos_Matrix_LP_Ellip[i][1] * x_in - sos_Matrix_LP_Ellip[i][4] * IIR_accu16 + delay[i][1];
+		delay[i][1]   = sos_Matrix_LP_Ellip[i][2] * x_in - sos_Matrix_LP_Ellip[i][5] * IIR_accu16;
+		x_in = IIR_accu16;
+	}
+	AIC23_data.channel[LEFT] = IIR_accu16;
+//Choose which filter to output on the right channel
+	switch (switch_filters){
+	//	LP IIR Chebyshev1
+	case (1):
+					x1_in = AIC23_data.channel[RIGHT];
+
+	for(i=0; i<M1; i++){
+		IIR1_accu32 = sos_Matrix_LP_Cheb1[i][0] * x1_in + delay1[i][0];
+		IIR1_accu16 = (short)( IIR1_accu32 >> 15);
+		delay1[i][0]   = sos_Matrix_LP_Cheb1[i][1] * x1_in - sos_Matrix_LP_Cheb1[i][4] * IIR1_accu16 + delay1[i][1];
+		delay1[i][1]   = sos_Matrix_LP_Cheb1[i][2] * x1_in - sos_Matrix_LP_Cheb1[i][5] * IIR1_accu16;
+		x1_in = IIR1_accu16;
+	}
+	AIC23_data.channel[RIGHT] = IIR1_accu16;
+	break;
+	//HP IIR Elliptic
+	case (2):
+
+										x2_in = AIC23_data.channel[RIGHT];
+	for(i=0; i<M2; i++){
+		IIR2_accu32 = sos_Matrix_HP[i][0] * x2_in + delay2[i][0];
+		IIR2_accu16 = (short)( IIR2_accu32 >> 15);
+		delay2[i][0]   = sos_Matrix_HP[i][1] * x2_in - sos_Matrix_HP[i][4] * IIR2_accu16 + delay2[i][1];
+		delay2[i][1]   = sos_Matrix_HP[i][2] * x2_in - sos_Matrix_HP[i][5] * IIR2_accu16;
+		x2_in = IIR2_accu16;
+	}
+	AIC23_data.channel[RIGHT] = IIR2_accu16;
+	break;
+
+	//LP IIR Elliptic -- T-->2T
+	case (3):
+							x3_in = AIC23_data.channel[RIGHT];
+	for(i=0; i<M; i++){
+		IIR3_accu32  = sos_Matrix_LP_Ellip[i][0] * x3_in + delay3[i][0];
+		IIR3_accu16  = (short)((IIR3_accu32) >> 15);
+		delay3[i][0] = delay3[i][1];
+		delay3[i][1] = sos_Matrix_LP_Ellip[i][1] * x3_in - sos_Matrix_LP_Ellip[i][4] * IIR3_accu16 + delay3[i][2];
+		delay3[i][2] = delay3[i][3];
+		delay3[i][3] = sos_Matrix_LP_Ellip[i][2] * x3_in - sos_Matrix_LP_Ellip[i][5] * IIR3_accu16;
+		x3_in = IIR3_accu16;
+	}
+	AIC23_data.channel[RIGHT] = IIR3_accu16;
+	break;
+	default:
+		AIC23_data.channel[RIGHT] = IIR_accu16;
+	}
+
+	MCBSP_write(DSK6713_AIC23_DATAHANDLE, AIC23_data.both);   //output 32 bit data, LEFT and RIGHT 
+
+	return;
+}
+///////////////////////////////////////////////////////////////////
+
+void main()
+{
+	IRQ_globalDisable();           		//disable interrupts
+
+#ifndef SIMULATOR
+	DSK6713_init();                   	//call BSL to init DSK-EMIF,PLL)
+#ifdef MIC_IN
+	config.regs[4] = 0x14;
+	config.regs[5] = 0x1;
+#endif
+
+	hAIC23_handle=DSK6713_AIC23_openCodec(0, &config);//handle(pointer) to codec
+	DSK6713_AIC23_setFreq(hAIC23_handle, fs);  //set sample rate
+
+#else	// Nur für Simulator:
+	DSK6713_AIC23_DATAHANDLE= MCBSP_open(MCBSP_DEV1, MCBSP_OPEN_RESET);
+#endif
+
+	MCBSP_config(DSK6713_AIC23_DATAHANDLE,&AIC23CfgData);//interface 32 bits toAIC23
+
+	MCBSP_start(DSK6713_AIC23_DATAHANDLE, MCBSP_XMIT_START | MCBSP_RCV_START |
+			MCBSP_SRGR_START | MCBSP_SRGR_FRAMESYNC, 220);//start data channel again
+
+	CODECEventId= MCBSP_getXmtEventId(DSK6713_AIC23_DATAHANDLE);//McBSP1 Xmit
+
+
+	IRQ_map(CODECEventId, 5);			//map McBSP1 Xmit to INT5
+	IRQ_reset(CODECEventId);    		//reset codec INT5
+	IRQ_globalEnable();       			//globally enable interrupts
+	IRQ_nmiEnable();          			//enable NMI interrupt
+	IRQ_enable(CODECEventId);			//enable CODEC eventXmit INT5
+	IRQ_set(CODECEventId);              //manually start the first interrupt
+
+
+	while(1);                	        //infinite loop
+}
+

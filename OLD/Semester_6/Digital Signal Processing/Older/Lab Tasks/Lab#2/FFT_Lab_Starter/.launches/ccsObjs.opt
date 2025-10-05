@@ -1,0 +1,1 @@
+"./cfftr2_dit.obj" "./bitrev.obj" "./FFT_LAB_starter.obj" "./DSK_vectors_AIC23.obj" "../C6713dsk_AIC23.cmd" -l"libc.a" 

@@ -1,0 +1,56 @@
+1) Read element
+2) If it is value - push it on stack. Else - create node with operand as value
+   and values from stack as left and right leaves
+3) End put this node on to the stack
+
+1/sqrt(2*pi/a)*exp(-(a*t^2-b)*cos(2*pi*t/c))
+
+для примера возьмем только кусочек этого выражения
+1/sqrt(2*pi/a)
+
+в польской нотации можешь его записать?
+1 2 pi * a / sqrt / 
+по аналогии
+2 pi *
+2 = 1
+pi = 2 pi * a / sqrt
+* = /
+
+stack
+1
+2
+pi
+*
+
+turn into:
+1
+2 * pi
+
+stack
+1
+2 * pi
+a
+/
+
+turn into:
+1
+(2 * pi)/a
+
+stack
+1
+(2 * pi)/a
+sqrt
+
+turn into:
+1
+sqrt(2 * pi)/a
+
+stack
+1
+sqrt(2 * pi)/a
+/
+
+turn into:
+1/(sqrt(2 * pi)/a)
+
+

@@ -1,0 +1,3789 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/templates/sidebar/sidebar.html?referrer= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+
+    <title>PIA Sidebar</title>
+
+    <link rel="stylesheet" href="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/css/style.css">
+  </head>
+
+  <body ng-controller="SidebarController as sidebarController" class="ng-scope">
+    <!-- ngIf: !sidebarController.isMaintenanceModeActive --><div class="sidebar ng-scope" ng-if="!sidebarController.isMaintenanceModeActive">
+      <header class="sidebar-header">
+  <button class="sidebar-header__logo" type="button" ng-click="sidebarHeaderController.onLogoClicked()">
+    Payback
+  </button>
+
+  <!-- ngIf: sidebarHeaderController.hasPointsInformation --><div ng-if="sidebarHeaderController.hasPointsInformation" class="ng-scope">
+    <h1 class="sidebar-header__balance-heading ng-binding">
+      Punktestand
+    </h1>
+
+    <p class="sidebar-header__available-points">
+      <button class="sidebar-header__amount-of-points ng-binding" type="button" ng-click="sidebarHeaderController.onAvailablePointsClicked()">
+        736
+        °P
+      </button>
+    </p>
+  </div><!-- end ngIf: sidebarHeaderController.hasPointsInformation -->
+
+  <div class="sidebar-header__pointee" style="background-image: url(&#39;https://www.payback.de/pb/res/default/id/781056/ver/9/imageDay.png&#39;)">
+  </div>
+</header>
+
+      <!-- ngIf: bannersController.hasBanners -->
+
+      <div class="accordion">
+  <!-- ngIf: accordionController.canRedeemPoints --><div class="accordion-item ng-scope ng-isolate-scope is-changing-footer-size" ng-class="{
+      &#39;accordion-item--with-body&#39;: accordionItemController.hasBody,
+      &#39;accordion-item--with-footer&#39;: accordionItemController.hasFooter,
+      &#39;accordion-item--with-large-footer&#39;: !accordionItemController.getHasSmallFooter(),
+      &#39;is-changing-footer-size&#39;: accordionItemController.isChangingFooterSize,
+      &#39;is-expanded&#39;: accordionItemController.isExpanded
+    }" id="redeemPoints" has-small-footer="accordionController.alwaysTrue" ng-if="accordionController.canRedeemPoints">
+  <header class="accordion-item__header" ng-click="accordionItemController.onHeaderClicked()">
+  
+      <redeem-points class="ng-scope"><button class="redeem-points ng-binding" type="button" ng-click="redeemPointsController.onRedeemPointsClicked($event)">
+  Punkte einlösen
+</button>
+</redeem-points>
+  </header>
+
+  <main class="accordion-item__body">
+  </main>
+
+  <footer class="accordion-item__footer">
+  </footer>
+</div><!-- end ngIf: accordionController.canRedeemPoints -->
+
+  <div class="accordion-item ng-isolate-scope accordion-item--with-body is-expanded is-changing-footer-size" ng-class="{
+      &#39;accordion-item--with-body&#39;: accordionItemController.hasBody,
+      &#39;accordion-item--with-footer&#39;: accordionItemController.hasFooter,
+      &#39;accordion-item--with-large-footer&#39;: !accordionItemController.getHasSmallFooter(),
+      &#39;is-changing-footer-size&#39;: accordionItemController.isChangingFooterSize,
+      &#39;is-expanded&#39;: accordionItemController.isExpanded
+    }" id="shopping" is-expanded="true" has-small-footer="accordionController.alwaysTrue">
+  <header class="accordion-item__header" ng-click="accordionItemController.onHeaderClicked()">
+  <header class="ng-scope">
+      <shopping-header><header class="shopping-header ng-binding">
+  Punkte sammeln
+</header>
+</shopping-header>
+    </header></header>
+
+  <main class="accordion-item__body">
+  <main class="ng-scope">
+      <shopping-body><main class="shopping-body">
+  <div class="scrollable-content ng-isolate-scope ps-container ps-theme-default ps-active-y" is-listening-for-update-event="true" data-ps-id="38eb8652-64ec-814f-6a1e-5b240ea1522b">
+  
+    <!-- ngIf: suppressedShopTeaserController.isVisible -->
+
+    <!-- ngIf: shoppingBodyController.shouldDisplayMarketBanner --><button class="marketing-banner ng-scope" style="background-image: url(&#39;https://www.payback.de/pb/res/default/id/781046/ver/10/marketingBannerImage.jpg&#39;)" type="button" ng-click="marketingBannerController.onMarketingBannerClicked()" ng-if="shoppingBodyController.shouldDisplayMarketBanner">
+</button><!-- end ngIf: shoppingBodyController.shouldDisplayMarketBanner -->
+
+    <sidebar-notifications class="ng-scope"><div class="sidebar-notifications">
+  <!-- ngRepeat: notification in sidebarNotificationsController.notifications -->
+
+  <button class="sidebar-notifications__coupon-center-link ng-binding" type="button" ng-click="sidebarNotificationsController.onCouponCenterLinkClicked()">
+    Zu Ihren eCoupons
+  </button>
+</div>
+</sidebar-notifications>
+  
+<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 107px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 55px;"></div></div></div>
+</main>
+</shopping-body>
+    </main></main>
+
+  <footer class="accordion-item__footer">
+  </footer>
+</div>
+
+  <div class="accordion-item ng-isolate-scope accordion-item--with-body accordion-item--with-footer accordion-item--with-large-footer" ng-class="{
+      &#39;accordion-item--with-body&#39;: accordionItemController.hasBody,
+      &#39;accordion-item--with-footer&#39;: accordionItemController.hasFooter,
+      &#39;accordion-item--with-large-footer&#39;: !accordionItemController.getHasSmallFooter(),
+      &#39;is-changing-footer-size&#39;: accordionItemController.isChangingFooterSize,
+      &#39;is-expanded&#39;: accordionItemController.isExpanded
+    }" has-small-footer="accordionController.areShopTilesRestricted" id="search" is-expanded="accordionController.isSearchExpanded">
+  <header class="accordion-item__header" ng-click="accordionItemController.onHeaderClicked()">
+  <header class="ng-scope">
+      <search-header is-expanded="accordionController.isSearchExpanded" class="ng-isolate-scope"><header class="search-header">
+  <span class="search-header__label ng-binding">
+    Shop finden
+  </span>
+
+  <form class="search-header__form ng-pristine ng-valid">
+    <input class="search-header__input ng-pristine ng-untouched ng-valid ng-empty" placeholder="Partnershop" type="text" ng-change="searchHeaderController.onSearchInputChanged()" ng-click="searchHeaderController.consumeEvent($event)" ng-focus="searchHeaderController.onInputFocused()" ng-model="searchHeaderController.query" ng-model-options="{
+          debounce: 500
+        }">
+
+    <!-- ngIf: searchHeaderController.hasQuery() -->
+  </form>
+</header>
+</search-header>
+    </header></header>
+
+  <main class="accordion-item__body">
+  <main class="ng-scope">
+      <search-body><main class="search-body">
+  <div class="scrollable-content ng-isolate-scope ps-container ps-theme-default ps-active-y" is-listening-for-update-event="true" data-ps-id="f4150be6-cd70-0c3b-57ec-be174ddb74c7">
+  
+    <input name="shop-count" type="hidden" ng-value="searchBodyController.shops.length" class="ng-scope" value="26">
+
+    <p class="search-body__disclaimer ng-binding ng-scope">
+      Punkte sammeln über PAYBACK.de!
+    </p>
+
+    <!-- ngIf: !searchBodyController.hasQuery() --><div class="filter-select ng-scope ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: filterSelectController.areOptionsVisible
+    }" options="searchBodyController.filterOptions" on-change="searchBodyController.onSelectedFilterChanged()" ng-if="!searchBodyController.hasQuery()" model="searchBodyController.selectedFilter">
+  <span class="filter-select__label ng-binding">
+    Anzeigen:
+  </span>
+
+  <div class="filter-select__select">
+    <span class="filter-select__current-value ng-binding" ng-click="filterSelectController.toggleOptions()">
+      Top Online Shops
+    </span>
+
+    <!-- ngIf: filterSelectController.areOptionsVisible -->
+  </div>
+
+  <div class="filter-select__overlay" ng-click="filterSelectController.toggleOptions()">
+  </div>
+</div><!-- end ngIf: !searchBodyController.hasQuery() -->
+
+    <!-- ngIf: searchBodyController.currentSearchState === searchBodyController.searchStates.COMPETITOR -->
+
+    <!-- ngIf: searchBodyController.currentSearchState === searchBodyController.searchStates.FAIL -->
+
+    <!-- ngIf: searchBodyController.currentSearchState === searchBodyController.searchStates.SUPPRESSED -->
+
+    <div vs-excess="40" vs-repeat="" vs-scroll-parent=".scrollable-content" class="search-body__shops ng-scope"><div class="vs-repeat-before-content" style="width: 100%; min-height: 0px;"></div><!-- ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/ebay_220x130/18/0/1/ebay_220x130.png&#39;)" title="eBay Online Shop" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"><p>Punkte erhalten Sie ab einem Mindestumsatz von 2 Euro. PAYBACK behält sich vor, unrechtmäßig gesammelte Punkten zu stornieren. Es sind nur Auktionen und Sofortkäufe bis 2.000 Euro Kaufpreis incentivierungsfähig. Auf Bücher gibt es keine PAYBACK Punkte. Die Verbuchung der PAYBACK Punkte erfolgt nach ca. 5 Werktagen.</p></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/tchibo_1/18/0/1/tchibo_1.png&#39;)" title="Tchibo" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"><p>Bitte beachten Sie, dass Punkte nur für Einkäufe im Tchibo Online Shop vergeben werden und nicht bei Einkäufen in den Tchibo Filialen im gesamten Bundesgebiet.</p> <p>Für die Themenbereiche "Reisen", "Blumen", "Tchibo Auktionen", "Kaffee-Abos" und "Partner Aktionen" sowie für den Kauf von Geschenk- und Warengutscheinen können keine Punkte gesammelt werden.</p> <p>Sie erhalten Punkte auf den Warenkorbbetrag exkl. Versandkosten, optionalen Gutscheinwerten und Servicegebühren.</p> <p>Für Bestellungen, die in eine Tchibo-Filiale geliefert werden, werden keine PAYBACK Punkte vergeben.</p> <p>Bitte beachten Sie darüber hinaus, dass Ihnen für Käufe über die Tchibo APP ebenfalls keine Punkte gutgeschrieben werden können.</p></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/mytoys_logo_1/18/0/1/mytoys_logo_1.png&#39;)" title="myToys.de" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        Doppelte Punkte*
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          2 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/qvc/18/0/1/qvc.png&#39;)" title="QVC.de Online-Shop" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        Doppelte Punkte
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          2 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/weltbild/18/0/1/weltbild.png&#39;)" title="Weltbild" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/bonprix_fs/18/0/1/bonprix_fs.png&#39;)" title="bonprix" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 10 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/lotto/18/0/1/lotto.png&#39;)" title="Lotto.de" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/deichmann/18/0/1/deichmann.png&#39;)" title="Deichmann Online Shop" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/conrad/18/0/1/conrad.png&#39;)" title="Conrad.de" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"><p>Bitte beachten Sie, dass Punkte nur für einen Einkauf im Conrad Online Shop vergeben werden und nicht bei Einkäufen in den Conrad Filialen im gesamten Bundesgebiet.</p></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/hse24_220x130/18/0/1/hse24_220x130.png&#39;)" title="HSE24" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/lieferando/18/0/1/lieferando.png&#39;)" title="lieferando" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/c_a/18/0/1/c_a.png&#39;)" title="C&amp;A Online Shop" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        Doppelte Punkte
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          2 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/asos/18/0/1/asos.png&#39;)" title="asos.de" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/soliver/18/0/1/soliver.png&#39;)" title="s.Oliver" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/zooroyal/18/0/1/zooroyal.png&#39;)" title="ZooRoyal.de" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/heine/18/0/1/heine.png&#39;)" title="Heine" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"><p>Bitte beachten Sie, dass Ihnen nur PAYBACK Punkte gutgeschrieben werden, wenn Sie über www.payback.de bei heine bestellen. Sollten Sie als Sammelbesteller etwa schon Rabatte erhalten, werden Ihnen leider keine PAYBACK Punkte gutgeschrieben. Mitarbeiter aus dem Konzern erhalten keine Punkte. Auch Käufe in den stationären heine-Läden sind von der Bepunktung ausgenommen. Gehen Sie jetzt auf Tuchfühlung mit der Vielfalt und shoppen Sie im heine Online Shop!</p></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/emp/18/0/1/emp.png&#39;)" title="EMP" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/klingel/18/0/1/klingel.png&#39;)" title="Versandhaus Klingel" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/bader/18/0/1/bader.png&#39;)" title="Bader" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/redcoon/18/0/1/redcoon.png&#39;)" title="redcoon.de" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/otto_office/18/0/1/otto_office.png&#39;)" title="OTTO Office" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 4 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 4 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/cyberport/18/0/1/cyberport.png&#39;)" title="Cyberport" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/jako_o/18/0/1/jako_o.png&#39;)" title="JAKO-O" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"><p>* UND 150 Extra-Punkte für Neukunden.</p></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/dawanda/18/0/1/dawanda.png&#39;)" title="DaWanda" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/baby_walz/18/0/1/baby_walz.png&#39;)" title="Baby Walz" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div ng-repeat="shop in $vs_collection" class="vs-repeat-repeated-element ng-scope">
+        <div class="shop ng-isolate-scope" ng-class="{
+      &#39;is-expanded&#39;: shopController.isExpanded
+    }" shop="shop">
+  <div class="shop__main">
+    <button class="shop__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/quelle/18/0/1/quelle.png&#39;)" title="QUELLE" type="button" ng-click="shopController.onCallToActionClicked()">
+    </button>
+
+    <div class="shop__details">
+      <h2 class="shop__incentive ng-binding">
+        1 °P pro 2 € Umsatz
+      </h2>
+
+      <!-- ngIf: shopController.hasException -->
+    </div>
+
+    <button class="shop__expand" type="button" ng-click="shopController.toggleAdditionalInformation()">
+    </button>
+
+    <button class="shop__call-to-action" type="button" ng-click="shopController.onCallToActionClicked()">
+      <span class="shop__call-to-action__label ng-binding">
+        Zum Shop
+      </span>
+    </button>
+  </div>
+
+  <aside class="shop__additional-information js-content-container">
+    <div class="shop__additional-information__full-height-container js-full-height-container">
+      <div class="shop__additional-information__content js-content">
+        <h2 class="shop__additional-information__heading ng-binding">
+          1 °P pro 2 € Umsatz
+        </h2>
+
+        <h2 class="shop__additional-information__subheading ng-binding">
+          Informationen zum Online Punkten
+        </h2>
+
+        <div class="shop__additional-information__body">
+          <div ng-bind-html="shopController.conditions" class="ng-binding"></div>
+
+          <div ng-bind-html="shopController.exceptionText" class="ng-binding"><ul><li>Wir können Ihnen nur Punkte gutschreiben, wenn Sie Ihren Einkauf über PIA starten. Loggen Sie sich in PIA einfach mit Ihrer PAYBACK Kundennummer ein. Die 10-stellige Kundennummer finden Sie auf der Rückseite ihrer PAYBACK Karte.</li><li>Die PAYBACK Kundennummer wird automatisch beim Klick auf den Button in der Benachrichtigung übergeben. Sie werden somit nicht mehr nach der Eingabe bei dem Shop gefragt. Solange Sie die Kundennummer direkt bei PIA eingeben, werden die Punkte automatisch gutgeschrieben.</li><li>Stornierte Bestellungen können nicht bepunktet werden.</li><li>Die Punkte werden nach erfolgtem Kauf in den nächsten Tagen auf Ihrem Punktekonto gesperrt gutgeschrieben.</li><li>Wenn Sie nicht von Ihrem Umtauschrecht Gebrauch machen, erfolgt die Entsperrung der Punkte nach ca. 6 Wochen</li></ul></div>
+       </div>
+      </div>
+
+      <div class="shop__additional-information__scrolling-cover js-cover">
+        <textarea class="shop__additional-information__scrolling-cover__well js-well ng-binding">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+      </div>
+    </div>
+  </aside>
+</div>
+      </div><!-- end ngRepeat: shop in $vs_collection --><div class="vs-repeat-after-content" style="width: 100%; min-height: 0px;"></div></div>
+
+    <!-- ngIf: searchBodyController.canSwitchToShowingAllShops() --><button class="search-body__show-all ng-binding ng-scope" type="button" ng-click="searchBodyController.showAllShops()" ng-if="searchBodyController.canSwitchToShowingAllShops()">
+      Alle Shops anzeigen
+    </button><!-- end ngIf: searchBodyController.canSwitchToShowingAllShops() -->
+  
+<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 267px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 31px;"></div></div></div>
+</main>
+</search-body>
+    </main></main>
+
+  <footer class="accordion-item__footer">
+  <footer class="ng-scope">
+      <div class="shop-tiles ng-isolate-scope" is-restricted="accordionController.areShopTilesRestricted">
+  <!-- ngRepeat: shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber --><div class="shop-tile ng-scope ng-isolate-scope" ng-repeat="shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber" shop="shop">
+  <div class="shop-tile__body" ng-click="shopTileController.onCallToActionClicked()">
+    <div class="shop-tile__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/ebay_220x130/18/0/1/ebay_220x130.png&#39;)" title="eBay Online Shop">
+    </div>
+
+    <h2 class="shop-tile__incentive ng-binding">
+      1 °P pro 2 € Umsatz
+    </h2>
+  </div>
+</div><!-- end ngRepeat: shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber --><div class="shop-tile ng-scope ng-isolate-scope" ng-repeat="shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber" shop="shop">
+  <div class="shop-tile__body" ng-click="shopTileController.onCallToActionClicked()">
+    <div class="shop-tile__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/tchibo_1/18/0/1/tchibo_1.png&#39;)" title="Tchibo">
+    </div>
+
+    <h2 class="shop-tile__incentive ng-binding">
+      1 °P pro 2 € Umsatz
+    </h2>
+  </div>
+</div><!-- end ngRepeat: shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber --><div class="shop-tile ng-scope ng-isolate-scope" ng-repeat="shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber" shop="shop">
+  <div class="shop-tile__body" ng-click="shopTileController.onCallToActionClicked()">
+    <div class="shop-tile__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/mytoys_logo_1/18/0/1/mytoys_logo_1.png&#39;)" title="myToys.de">
+    </div>
+
+    <h2 class="shop-tile__incentive ng-binding">
+      Doppelte Punkte*
+    </h2>
+  </div>
+</div><!-- end ngRepeat: shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber --><div class="shop-tile ng-scope ng-isolate-scope" ng-repeat="shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber" shop="shop">
+  <div class="shop-tile__body" ng-click="shopTileController.onCallToActionClicked()">
+    <div class="shop-tile__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/qvc/18/0/1/qvc.png&#39;)" title="QVC.de Online-Shop">
+    </div>
+
+    <h2 class="shop-tile__incentive ng-binding">
+      Doppelte Punkte
+    </h2>
+  </div>
+</div><!-- end ngRepeat: shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber --><div class="shop-tile ng-scope ng-isolate-scope" ng-repeat="shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber" shop="shop">
+  <div class="shop-tile__body" ng-click="shopTileController.onCallToActionClicked()">
+    <div class="shop-tile__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/weltbild/18/0/1/weltbild.png&#39;)" title="Weltbild">
+    </div>
+
+    <h2 class="shop-tile__incentive ng-binding">
+      1 °P pro 2 € Umsatz
+    </h2>
+  </div>
+</div><!-- end ngRepeat: shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber --><div class="shop-tile ng-scope ng-isolate-scope" ng-repeat="shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber" shop="shop">
+  <div class="shop-tile__body" ng-click="shopTileController.onCallToActionClicked()">
+    <div class="shop-tile__logo" style="background-image: url(&#39;https://images.payback.de/images/channel-resources/1/bonprix_fs/18/0/1/bonprix_fs.png&#39;)" title="bonprix">
+    </div>
+
+    <h2 class="shop-tile__incentive ng-binding">
+      1 °P pro 2 € Umsatz
+    </h2>
+  </div>
+</div><!-- end ngRepeat: shop in shopTilesController.shops | limitTo: shopTilesController.limitNumber -->
+</div>
+
+      <button class="accordion__show-top-shops ng-binding" type="button" ng-click="accordionController.showTopShopsInSearch()">
+        Alle Top Shops anzeigen
+      </button>
+    </footer></footer>
+</div>
+</div>
+
+      <footer class="sidebar-footer" ng-class="{
+      &#39;is-showing-overlay&#39;: sidebarFooterController.isOverlayVisible
+    }">
+  <button class="sidebar-footer__toggle" ng-click="sidebarFooterController.toggle()">
+    Toggle
+  </button>
+
+  <div class="sidebar-footer__overlay">
+    <button class="sidebar-footer__version-number" type="button" ng-click="sidebarFooterController.toggle()">
+      <span class="sidebar-footer__version-number__label ng-binding">
+        Version: 2.2.1
+      </span>
+    </button>
+
+    <div>
+      <button class="sidebar-footer__toggle sidebar-footer__toggle--close" type="button" ng-click="sidebarFooterController.toggle()">
+        Close
+      </button>
+
+      <ol class="sidebar-footer__actions">
+        <li class="sidebar-footer__actions__item">
+          <button class="sidebar-footer__action sidebar-footer__action--open-payback ng-binding" type="button" ng-click="sidebarFooterController.openMyPayback()">
+            Mein PAYBACK
+          </button>
+        </li>
+
+        <li class="sidebar-footer__actions__item">
+          <button class="sidebar-footer__action sidebar-footer__action--open-faq ng-binding" type="button" ng-click="sidebarFooterController.openFAQ()">
+            FAQ
+          </button>
+        </li>
+
+        <li class="sidebar-footer__actions__item">
+          <button class="sidebar-footer__action sidebar-footer__action--open-privacy ng-binding" type="button" ng-click="sidebarFooterController.openPrivacy()">
+            Datenschutz
+          </button>
+        </li>
+
+        <li class="sidebar-footer__actions__item">
+          <button class="sidebar-footer__action sidebar-footer__action--logout ng-binding" type="button" ng-click="sidebarFooterController.logout()">
+            Bei PIA ausloggen
+          </button>
+        </li>
+      </ol>
+    </div>
+  </div>
+</footer>
+
+      <privacy-settings><!-- ngIf: privacySettingsController.isVisible --></privacy-settings>
+
+      <terms-of-service><!-- ngIf: termsOfServiceController.isVisible -->
+</terms-of-service>
+
+      <user-onboarding><!-- ngIf: userOnboardingController.shouldBeShown -->
+</user-onboarding>
+    </div><!-- end ngIf: !sidebarController.isMaintenanceModeActive -->
+
+    <!-- ngIf: sidebarController.isMaintenanceModeActive -->
+
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/jquery.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/angular.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/angular-locale_de-de.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/angular-sanitize.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/angular-translate.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/angular-ui-router.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/angular-vs-repeat.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/loglevel.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/perfect-scrollbar.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/underscore.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/libs/extint.js"></script>
+    <script src="chrome-extension://pbfjbhoglggakhkngkbfehgghkaadeba/js/sidebar.js"></script>
+  
+
+</body></html>

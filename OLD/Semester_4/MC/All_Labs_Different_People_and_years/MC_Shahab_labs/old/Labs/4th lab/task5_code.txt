@@ -1,0 +1,106 @@
+/*---------------------------------------------------------------------------------------
+ * Testprogram:  PortD Leds on/off
+ * 	             Print "MP-Labor" on console
+ *                                                                          Prosch 8/2013
+ *---------------------------------------------------------------------------------------
+*/
+#define  PART_LM3S9B92
+
+#include "lm3s9b92.h"
+#include "stdio.h"
+#define BUFFERLENGTH 10
+
+void config(void) {
+	int waitCycle=0;
+
+// activate main quartz oscillator at 16MHz
+	SYSCTL_RCC_R = ((SYSCTL_RCC_R | 0x00000540) & ~0x000002B1);
+	waitCycle++;
+	SYSCTL_RCGC2_R |= (1<<6) | (1<<3); // switch on clock for PortG and PortH
+	waitCycle++; // short delay for stable clock
+
+	GPIO_PORTG_DEN_R |= 0x03; // digital I/O enable for pin PG1 and PG0
+	GPIO_PORTG_DIR_R |= 0x02; // PG1 is set to output and PG0 as input.
+	GPIO_PORTG_AFSEL_R |= 0x03; // PG1 set to alternate func
+	GPIO_PORTG_PCTL_R |= 0x00000011; // alternate func is U2T2
+
+	GPIO_PORTD_DEN_R |= 0x01;
+	GPIO_PORTD_DIR_R |= 0x00;
+
+	SYSCTL_RCGC1_R |= 0x00000004; // switch on clock for UART2
+	waitCycle++; // short delay for stable clock
+	UART2_CTL_R &= ~0x0001; // disable UART2 for config
+
+	UART2_IBRD_R = 8; // set DIVINT of BRD
+	UART2_FBRD_R = 44; // set DIVFRAC of BRD
+	UART2_LCRH_R = 0x0000004A; // serial format 7O2
+	UART2_CTL_R |= 0x0001; // re-enable UART2
+}
+void wait(){
+	int i;
+	for(i=0; i<1000; i++){}
+}
+ void transmit(char ch[BUFFERLENGTH]){
+	 int i;
+	 for(i=0; i<BUFFERLENGTH; i++){
+		 if(ch[i]=='\0')
+			 break;
+		 UART2_DR_R = ch[i];
+		 wait();
+	 }
+ }
+
+//	while(1) {
+//		while(UART2_FR_R & (1<<5)); // while transmit FIFO full
+//		UART2_DR_R = 'E';
+//	}
+
+
+void main(void)
+{
+	// configure all the ports and enable clocks
+	config();
+	char buffer[BUFFERLENGTH]; // Rx data buffer
+	int i=0; // buffer index
+
+
+	while(1)
+	{
+		i=0;
+		while(GPIO_PORTD_DATA_R & 1){
+			while(UART2_FR_R & (1<<4));
+			if (buffer[i] == 0x04)
+				break;
+			buffer[i]=UART2_DR_R;
+			buffer[i+1] = '\0';
+			transmit(buffer);
+		}
+
+		while(i < BUFFERLENGTH)
+			{ // loop while buffer not full
+				while(UART2_FR_R & (1<<4)) ; // wait for Rx FIFO not empty
+
+				buffer[i]=UART2_DR_R; // read byte from UART2 data register
+
+				if (buffer[i] == 0x04)
+				{										// break loop if "EOF" received
+					buffer[i]=0x00; // console input for EOF = CTRL + D
+					break; // replace last element by \0 to terminate string
+				}
+
+				if ((buffer[i] == 0x08) && (i != 0))
+				{									// break loop if backspace received
+					buffer[i--]=0x00; // set the terminator and decrement i
+					continue;
+
+				}
+
+				i++; // increment buffer index
+
+			}
+		//printf("Content of Data Buffer \n%s\n",buffer);
+		transmit(buffer);
+
+	}
+}
+

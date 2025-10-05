@@ -1,0 +1,448 @@
+.specialoffer{
+    font-family: Arial;
+	font-size: 32px;
+	font-weight: 800;	
+}
+a.specialofferlink {
+     text-decoration:none;
+     color:	#ff0000;
+        }
+a.specialofferlink:hover {
+     text-decoration: none;
+     color:#A52A2A;
+        }
+.tinamenu {
+    font-family: Arial;
+	font-size: 12px;
+	font-weight: 800;	
+	padding : 1px 10px 1px 10px;
+}
+a.tinamenulink {
+     text-decoration:none;
+     color:	#ffffff;;
+        }
+a.tinamenulink:hover {
+     text-decoration: none;
+     color:#daedf3;
+        }
+.fejlecszin{          
+  background-color:#4a5f6d;
+}
+/* Tina allap div változata*/
+#container
+  {
+  position : relative;
+  top:20px;
+  width : 90%;
+  border-style:solid;
+  border-width:1px;
+  border-color:#000066;
+  margin: 0 auto;  
+  text-align: left;
+}
+
+#head
+ {
+  position : relative;
+  top:0px;
+  left:0px;
+  background-color:#000066;
+  width:100%;
+  height:82px;
+ }
+
+#headimg
+ {
+  position : relative;
+  float:left;
+ }
+#headtina
+ {
+ position :relative;
+ float : right;
+ top:45px;
+ }
+#headbook
+ {
+  position : relative;
+  float:right;
+  top : 45px;
+ }
+#main2
+ {
+  position : relative;
+  width : 95%;
+  margin: 0 auto;
+  margin-left:2%;  
+  text-align: left;
+ }
+ #version
+{
+  position : absolute;
+  top:20px;
+  right:270px;
+}    
+.sz {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000066;
+}
+.sz_bold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000066;
+}
+a.sz_bold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: none;
+
+}
+a.sz_bold:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: none;
+
+}
+.c {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000066;
+}
+.lin {
+	font-family:  Arial, Helvetica, Verdana, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	letter-spacing: 0px;
+	text-decoration: none;
+}
+.lip {
+	font-family:  Arial, Helvetica, Verdana, sans-serif;
+	font-size: 9px;
+	font-weight: bold;
+	color: #FFFFFF;
+	letter-spacing: 0px;
+	text-decoration: none;
+}
+.tbl{
+	border : 1px solid #000066;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000066;
+	font-weight: normal;
+}
+.alcim {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: none;
+}
+.alcim2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000066;
+	text-decoration: none;
+}
+.marq {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF0000;
+	text-decoration: none;
+}
+.bt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: justify;
+
+
+}
+.bt_left {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: left;
+}
+a.bt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: underline;
+	font-weight: normal;
+	text-align: justify;
+
+
+}
+a.bt:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: justify;
+
+
+}
+.bt14bold {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+
+
+}
+.btbold {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: justify;
+}
+a.btbold {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: justify;
+}
+a.btbold:hover {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: justify;
+}
+BODY {
+	scrollbar-3dlight-color: #ffffff; scrollbar-arrow-color: #000000; scrollbar-base-color: #F7E9CE; scrollbar-darkshadow-color: #F7E9CE; scrollbar-face-color: #F7E9CE; scrollbar-highlight-color: #F7E9CE; scrollbar-shadow-color: #F7E9CE; scrollbar-track-color: #ffffff
+}
+li { list-style-image : url(li_sarga.jpg);}
+.alcimfeher {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.btboldpiros {
+
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: justify;
+}
+.btleft {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: left;
+}
+.button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #333333;
+	background-color: #F7E9CE;
+}
+.bt_fordit {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: justify;
+
+
+}
+a.bt_fordit {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: justify;
+
+
+}
+a.bt_fordit:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: underline;
+	font-weight: normal;
+	text-align: justify;
+
+
+}.btcenter {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+}
+.urlap {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	border: 2px solid #F7E9CE;
+}
+.urlapii {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	background-color: #F7E9CE;
+
+}
+.btpiros {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.btpirosul {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: underline;
+	font-weight: normal;
+}
+.btpirosul:hover{ text-decoration:none; }
+
+
+.btright {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: right;
+}
+.bt14boldfeher {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+.bt16boldpiros {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FF0000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.btboldcenter {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+}
+a.btboldcenter {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+}
+a.btboldcenter:hover {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+}.picifekete {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+.alahuzas {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: underline;
+}
+.linfekete {
+
+	font-family:  Arial, Helvetica, Verdana, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	letter-spacing: 0px;
+	text-decoration: none;
+}
+.btszines {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #993300;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: justify;
+}
+a.btszines {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #993300;
+	text-decoration: underline;
+	font-weight: normal;
+	text-align: justify;
+
+
+}
+a.btszines:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #993300;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: justify;
+}

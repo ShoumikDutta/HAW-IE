@@ -1,0 +1,1 @@
+"./radix2.obj" "./butterfly.obj" "./FFT64_Analyzer.obj" "./DSK_vectors_AIC23.obj" "../C6713dsk_AIC23.cmd" -l"libc.a" 

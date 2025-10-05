@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1308</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b22066fb-cc7b-4ea6-84eb-babb84b82988</dc:identifier>
+        <dc:title>LEGO MINDSTORMS EV3 Laboratory: Build, Program, and Experiment With Five Wicked Cool Robots</dc:title>
+        <dc:creator opf:file-as="Benedetelli, Daniele" opf:role="aut">Daniele Benedetelli</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (0.9.42) [http://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-01-14T14:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;The LEGO® MINDSTORMS® EV3 set offers so many new and exciting features that it can be hard to know where to begin. Without the help of an expert, it could take months of experimentation to learn how to use the advanced mechanisms and numerous programming features.  In The LEGO MINDSTORMS EV3 Laboratory, author Daniele Benedettelli, robotics expert and member of the elite LEGO MINDSTORMS Expert Panel, shows you how to use gears, beams, motors, sensors, and programming blocks to create sophisticated robots that can avoid obstacles, walk on two legs, and even demonstrate autonomous behavior. You'll also dig into related math, engineering, and robotics concepts that will help you create your own amazing robots. Programming experiments throughout will challenge you, while a series of comics and countless illustrations inform the discussion and keep things fun.  As you make your way through the book, you'll build and program five wicked cool robots:  ROV3R, a vehicle you can modify to do things like follow a line, avoid obstacles, and even clean a room WATCHGOOZ3, a bipedal robot that can be programmed to patrol a room using only the Brick Program App (no computer required!) SUP3R CAR, a rear-wheel-drive armored car with an ergonomic two-lever remote control SENTIN3L, a walking tripod that can record and execute color-coded sequences of commands T-R3X, a fearsome bipedal robot that will find and chase down prey   With The LEGO MINDSTORMS EV3 Laboratory as your guide, you'll become an EV3 master in no time.  Requirements: One LEGO® MINDSTORMS EV3 set (LEGO SET #31313)&lt;/p&gt;</dc:description>
+        <dc:publisher>No Starch Press</dc:publisher>
+        <dc:identifier opf:scheme="GOOGLE">HbEdAgAAQBAJ</dc:identifier>
+        <dc:identifier opf:scheme="ISBN">9781593275334</dc:identifier>
+        <dc:language>eng</dc:language>
+        <dc:subject>Technology &amp; Engineering</dc:subject>
+        <dc:subject>Models</dc:subject>
+        <dc:subject>Crafts &amp; Hobbies</dc:subject>
+        <dc:subject>Robotics</dc:subject>
+        <meta content="{&quot;Daniele Benedetelli&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="0.0" name="calibre:rating"/>
+        <meta content="2014-01-21T07:03:48+00:00" name="calibre:timestamp"/>
+        <meta content="LEGO MINDSTORMS EV3 Laboratory: Build, Program, and Experiment With Five Wicked Cool Robots" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="LEGO MINDSTORMS EV3 Laboratory_ Build, Program, and Exent With Five Wicked Cool Robots - Daniele Benedetelli.jpg" title="Cover" type="cover"/>
+    </guide>
+</package>

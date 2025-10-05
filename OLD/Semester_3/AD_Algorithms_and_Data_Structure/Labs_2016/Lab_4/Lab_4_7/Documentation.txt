@@ -1,0 +1,12 @@
+Ievgenii Nudga
+2159839
+
+Software used : IntelliJ IDEA 14.1
+
+This program adds random numbers (10000100 in total) into a heap (all fully sorted),
+then changes (decreases) the heap by removing the smallest numbers each time
+
+The console output (with 1e5, since the process with 1e8 takes too long):
+
+All items are added. Heap contains 100100 element now. Max count is 102400
+All items are removed. Heap contains 0 element now. Max count is 102400

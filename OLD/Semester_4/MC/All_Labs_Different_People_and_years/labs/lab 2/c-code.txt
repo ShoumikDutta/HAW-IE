@@ -1,0 +1,65 @@
+#include "lm3s9b92.h"
+
+void timerWait(unsigned short);
+void timerConfig(void);
+
+int main(){
+	SYSCTL_RCGC2_R = 0x18;
+	timerWait(100);
+
+	GPIO_PORTD_DEN_R |= 0xFF;
+	GPIO_PORTD_DIR_R |= 0xFF;
+
+	GPIO_PORTE_DEN_R |= 0x01;
+	GPIO_PORTE_DIR_R &= ~0x01;
+
+	GPIO_PORTD_DATA_R = 0x00;
+
+	timerWait(100);
+	int flag = 0;
+	while(1){
+		//starts at high with flag 0 and displays all Leds 
+		if ((GPIO_PORTE_DATA_R & 0x01) == 1 && flag==0){
+			GPIO_PORTD_DATA_R = 0x0F;
+			timerWait (2000);				//2 ms
+			GPIO_PORTD_DATA_R = 0x00;		
+			flag = 1;					//sets the flag to 1
+		}
+		if ((GPIO_PORTE_DATA_R & 0x01) == 0 && flag == 1){
+			GPIO_PORTD_DATA_R = 0x0F;
+			timerWait (2000);
+			GPIO_PORTD_DATA_R = 0x00;			
+			flag = 0;					//sets the flag to 0
+		}	
+	}
+}
+void timerConfig(void){
+	int wait = 0;
+
+	SYSCTL_RCGC2_R |= (1 << 16);	 //Enable timer0A
+	wait++;
+	TIMER0_CTL_R &= ~0X0001;	 //disable timer0A
+	TIMER0_CFG_R = 0X04;		//CONFIGURE timer0 in 16bit mode
+
+	TIMER0_TAMR_R |= 0x02;		//count down, no match enabled, periodic
+	TIMER0_TAPR_R |= 3 - 1;		//Pre= (0.01*16*10^6/2^16)-1
+}
+void timerWait(unsigned short usec){
+	timerConfig();
+	TIMER0_TAILR_R |= (unsigned long)(usec* 16/3); //Calculates ILV from usec
+	TIMER0_CTL_R |= 0X0001;			//Enable timer0A
+	while (1){
+		
+		if ((TIMER0_RIS_R & 0x01) == 1){		//reads the timeout flag
+
+			TIMER0_ICR_R &= ~0x01;		// clears interupt flag
+			TIMER0_CTL_R &= ~0X0001;	// diables timer0A
+		}
+	}
+}
+
+
+/*
+	int LED[] = {0x00,0x00,0x00,0x00,0x00,0xFF,0x88,0x88,0x70,0x00,0xFF,0x00,0xFF,0x88,0x88,0x77,
+			0x00,0xFF,0x00,0xFF,0x60,0x18,0x06,0xFF,0x00,0x00,0x00,0x00,0x00,0x00};
+*/

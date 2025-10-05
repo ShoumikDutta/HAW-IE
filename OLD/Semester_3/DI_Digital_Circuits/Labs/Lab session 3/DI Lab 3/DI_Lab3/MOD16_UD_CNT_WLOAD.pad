@@ -1,0 +1,155 @@
+Release 8.1i - Fit P.49d
+Copyright(c) 1995-2003 Xilinx Inc. All rights reserved
+
+12- 1-2015 10:46AM
+
+NOTE: This file is designed to be imported into a spreadsheet program
+such as Microsoft Excel for viewing, printing and sorting. The pipe '|'
+character is used as the data field separator.
+This file is also designed to support parsing.
+
+Input file:  MOD16_UD_CNT_WLOAD.ngd
+output file: MOD16_UD_CNT_WLOAD.pad
+Part type:   xc2c128
+Speed grade: -7
+Package:     tq144
+
+Pinout by Pin Number:
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|{blank}|Slew Rate|Termination|{blank}|Voltage|Constraint|
+P1||VCC|VCC||||||||||
+P2|KPR||I/O/GTS2|||2|||||||
+P3|KPR||I/O/GTS3|||2|||||||
+P4|KPR||I/O|||2|||||||
+P5|KPR||I/O/GTS0|||2|||||||
+P6|KPR||I/O/GTS1|||2|||||||
+P7|KPR||I/O|||2|||||||
+P8||VCCAUX|VAUX||||||||||
+P9|KPR||I/O|||2|||||||
+P10|KPR||I/O|||2|||||||
+P11|KPR||I/O|||2|||||||
+P12|KPR||I/O|||2|||||||
+P13|KPR||I/O|||2|||||||
+P14|KPR||I/O|||2|||||||
+P15|KPR||I/O|||2|||||||
+P16|KPR||I/O|||2|||||||
+P17|KPR||I/O|||2|||||||
+P19|KPR||I/O|||1|||||||
+P21|KPR||I/O|||1|||||||
+P22|KPR||I/O|||1|||||||
+P23|KPR||I/O|||1|||||||
+P24|KPR||I/O|||1|||||||
+P25|KPR||I/O|||1|||||||
+P26|KPR||I/O|||1|||||||
+P27||VCCIO-3.3|VCCIO|||1|||||||
+P28|KPR||I/O|||1|||||||
+P29|GND||GND||||||||||
+P30|CLK|GCK|I/O/GCK0||LVCMOS33|1||FAST||||
+P32|KPR||I/O/GCK1|||1|||||||
+P35|ARESETN|I|I/O/CDR|INPUT|LVCMOS33|1||FAST||||
+P36|GND||GND||||||||||
+P37||VCC|VCC||||||||||
+P38|KPR||I/O/GCK2|||1|||||||
+P39|KPR||I/O/DGE0|||1|||||||
+P40|KPR||I/O|||1|||||||
+P41|KPR||I/O|||1|||||||
+P43|KPR||I/O|||1|||||||
+P45|LOAD|I|I/O|INPUT|LVCMOS33|1||FAST||||
+P47|GND||GND||||||||||
+P49|DIR|I|I/O|INPUT|LVCMOS33|1||FAST||||
+P50|CNTEN|I|I/O|INPUT|LVCMOS33|1||FAST||||
+P51|TCEN|I|I/O|INPUT|LVCMOS33|1||FAST||||
+P52|PRE<3>|I|I/O|INPUT|LVCMOS33|1||FAST||||
+P53|PRE<2>|I|I/O|INPUT|LVCMOS33|1||FAST||||
+P54|PRE<1>|I|I/O|INPUT|LVCMOS33|1||FAST||||
+P55||VCCIO-3.3|VCCIO|||1|||||||
+P56|PRE<0>|I|I/O|INPUT|LVCMOS33|1||FAST||||
+P57|KPR||I/O|||1|||||||
+P58|TC|O|I/O|OUTPUT|LVCMOS33|1||FAST||||
+P59|CNT<0>|O|I/O|OUTPUT|LVCMOS33|1||FAST||||
+P60|CNT<1>|O|I/O|OUTPUT|LVCMOS33|1||FAST||||
+P61|CNT<2>|O|I/O|OUTPUT|LVCMOS33|1||FAST||||
+P62|GND||GND||||||||||
+P63|TDI||TDI||||||||||
+P64|KPR||I/O|||1|||||||
+P65|TMS||TMS||||||||||
+P67|TCK||TCK||||||||||
+P68|CNT<3>|O|I/O|OUTPUT|LVCMOS33|1||FAST||||
+P69|KPR||I/O|||1|||||||
+P70|KPR||I/O|||1|||||||
+P71|KPR||I/O|||1|||||||
+P72|GND||GND||||||||||
+P73||VCCIO-3.3|VCCIO|||1|||||||
+P74|KPR||I/O|||1|||||||
+P76|KPR||I/O|||1|||||||
+P77|KPR||I/O|||1|||||||
+P78|KPR||I/O|||1|||||||
+P79|KPR||I/O|||1|||||||
+P80|KPR||I/O|||1|||||||
+P81|KPR||I/O|||1|||||||
+P82|KPR||I/O|||1|||||||
+P83|KPR||I/O|||1|||||||
+P84||VCC|VCC||||||||||
+P85|KPR||I/O|||1|||||||
+P86|KPR||I/O|||1|||||||
+P87|KPR||I/O|||1|||||||
+P88|KPR||I/O|||1|||||||
+P89|GND||GND||||||||||
+P90|GND||GND||||||||||
+P91|KPR||I/O|||1|||||||
+P92|KPR||I/O|||1|||||||
+P93||VCCIO-3.3|VCCIO|||1|||||||
+P94|KPR||I/O|||2|||||||
+P95|KPR||I/O|||2|||||||
+P96|KPR||I/O|||2|||||||
+P97|KPR||I/O|||2|||||||
+P98|KPR||I/O|||2|||||||
+P99|GND||GND||||||||||
+P100|KPR||I/O|||2|||||||
+P101|KPR||I/O|||2|||||||
+P102|KPR||I/O|||2|||||||
+P103|KPR||I/O|||2|||||||
+P104|KPR||I/O|||2|||||||
+P105|KPR||I/O|||2|||||||
+P108|GND||GND||||||||||
+P109||VCCIO-UNUSED|VCCIO|||2|||||||
+P110|KPR||I/O|||2|||||||
+P111|KPR||I/O|||2|||||||
+P112|KPR||I/O|||2|||||||
+P113|KPR||I/O|||2|||||||
+P115|KPR||I/O|||2|||||||
+P116|KPR||I/O|||2|||||||
+P117|KPR||I/O|||2|||||||
+P118|KPR||I/O|||2|||||||
+P119|KPR||I/O|||2|||||||
+P120|KPR||I/O|||2|||||||
+P121|KPR||I/O|||2|||||||
+P122|TDO||TDO||||||||||
+P123|GND||GND||||||||||
+P124|KPR||I/O/DGE1|||2|||||||
+P125|KPR||I/O|||2|||||||
+P126|KPR||I/O|||2|||||||
+P127||VCCIO-UNUSED|VCCIO|||2|||||||
+P128|KPR||I/O|||2|||||||
+P129|KPR||I/O|||2|||||||
+P130|KPR||I/O|||2|||||||
+P131|KPR||I/O|||2|||||||
+P132|KPR||I/O|||2|||||||
+P133|KPR||I/O|||2|||||||
+P134|KPR||I/O|||2|||||||
+P136|KPR||I/O|||2|||||||
+P138|KPR||I/O|||2|||||||
+P140|KPR||I/O|||2|||||||
+P141||VCCIO-UNUSED|VCCIO|||2|||||||
+P143|KPR||I/O/GSR|||2|||||||
+P144|GND||GND||||||||||
+
+To preserve the pinout above for future design iterations in
+Project Navigator simply execute the (Lock Pins) process
+located under the (Implement Design) process in a toolbox named
+(Optional Implementation Tools) or invoke PIN2UCF from the
+command line. The location constraints will be written into your
+specified UCF file
+
+

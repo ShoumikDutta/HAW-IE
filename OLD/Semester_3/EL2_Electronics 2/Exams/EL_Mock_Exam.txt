@@ -1,0 +1,2 @@
+EL mock exam, Q1, there is a mistake in the solution, the right answer is:
+Vout,ss = -gm2( (1/gm3) || ro3 || ro2 || ro1). that what i think at least

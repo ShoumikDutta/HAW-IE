@@ -1,0 +1,94 @@
+/*---------------------------------------------------------------------------------------
+ * Testprogram:  PortD Leds on/off
+ * 	             Print "MP-Labor" on console
+ *                                                                          Prosch 3/2014
+ *---------------------------------------------------------------------------------------
+ */
+#define  PART_LM3S9B92
+#include "lm3s9b92.h"
+#include "stdio.h"
+int find_index(int bits_pattern);
+void wait(void);
+void keyboard_reader(char keys[][4]);
+
+void wait(void){
+	int tmp;
+	for(tmp=0;tmp<100;tmp++);
+}
+int find_index(int bits_pattern) // find row or column for which the bit is 0
+{
+	int i;
+	for (i=0; i < 4; i++)
+	{
+		if (bits_pattern % 2 == 0)
+			return i;
+		bits_pattern /= 2;
+	}
+	return 4;
+}
+
+void main()
+{
+	char keys[][4] = {
+			{'1','2','3','F'},
+			{'4','5','6','E'},
+			{'7','8','9','D'},
+			{'A','0','B','C'}
+	};
+
+	SYSCTL_RCGC2_R = (1<<3)|(1<<8);  // clock ports D and J
+	wait();
+	GPIO_PORTD_DEN_R |= 0x0F; // PD(3:0) enable
+	GPIO_PORTD_DIR_R |= 0x0F; // PD(3:0) output
+	GPIO_PORTJ_DEN_R |= 0x0F; // PJ(3:0) enable
+	GPIO_PORTJ_DIR_R &= 0x00; // PJ(3:0) input
+
+	GPIO_PORTD_DATA_R = 0x07; // setting the initial X input bit pattern to "0111"
+
+
+	while (1){
+		keyboard_reader(keys);
+	}
+}
+
+void keyboard_reader(char keys[][4]){
+	static char repeat = 'X';		//Static chat that will remember the last printed value
+	int i,j;
+	static int rem_i=4;				//Static int that will remember the PD(3:0) value for the last print
+
+
+	for (i=0; i < 4; i++){
+		GPIO_PORTD_DATA_R = ((GPIO_PORTD_DATA_R) | ((GPIO_PORTD_DATA_R & 0x01) << 4)) >> 1; // shift the bits by 1 then pad in front with the last digit in the previous pattern
+		wait();
+
+		int col = find_index(GPIO_PORTD_DATA_R);	//calculate the column index only once in the loop
+
+		for (j=0; j < 4; j++){
+			int row = find_index(GPIO_PORTJ_DATA_R); //calculate the row index only once in the loop
+
+			if (rem_i == i && row == 4){			//compares the output column and its current value to determine if the key was released
+				repeat = 'X';
+			}
+
+			if (row == 4 )          				//checks of the other inputs are 1111 ie one button pressed for this value of PD(3:0) is the same
+			{
+				continue;
+			}
+
+			else if (repeat==keys[row][col]){		//checks if the last printed value is the same in case of pressing the key for long
+				continue;
+			}
+			else{
+				if (row < 4 && col < 4)
+				{
+					printf("%c", keys[row][col]);  // find row and column and print the key from the array
+					printf("\n");
+					repeat = keys[row][col];
+					rem_i = i;				       //remembers the PD(3:0) of the printed value
+				}
+			}
+		}
+	}
+
+}
+

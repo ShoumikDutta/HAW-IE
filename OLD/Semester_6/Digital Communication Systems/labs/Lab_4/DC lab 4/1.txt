@@ -1,0 +1,1 @@
+-> 1 period is 63 micro second at 16 Khz

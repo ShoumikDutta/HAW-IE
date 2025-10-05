@@ -1,0 +1,33 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../lm3s9b92.cmd 
+
+C_SRCS += \
+../student.c \
+../uartstdio.c 
+
+OBJS += \
+./student.obj \
+./uartstdio.obj 
+
+C_DEPS += \
+./student.pp \
+./uartstdio.pp 
+
+C_DEPS__QUOTED += \
+"student.pp" \
+"uartstdio.pp" 
+
+OBJS__QUOTED += \
+"student.obj" \
+"uartstdio.obj" 
+
+C_SRCS__QUOTED += \
+"../student.c" \
+"../uartstdio.c" 
+
+

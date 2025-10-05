@@ -1,0 +1,7 @@
+//int_handler.h
+
+#define TRUE 1
+#define FALSE 0
+
+void IntPortPHandler(void);
+extern unsigned char Inverted;

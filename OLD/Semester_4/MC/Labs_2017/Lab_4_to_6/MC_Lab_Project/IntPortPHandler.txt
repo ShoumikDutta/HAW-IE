@@ -1,0 +1,16 @@
+//IntPortPHandler
+
+#include "int_handler.h"
+
+void IntPortPHandler(void)
+{
+	GPIO_PORTP_ICR_R | = (1<<0);
+	if(Inverted)
+	{
+		Inverted = 0;
+	}
+	else
+	{
+		Inverted = 1;
+	}
+}

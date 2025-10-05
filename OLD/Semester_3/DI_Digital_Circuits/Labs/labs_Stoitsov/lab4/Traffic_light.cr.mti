@@ -1,0 +1,7 @@
+{C:/Users/Plamen/Desktop/Semester 3/DI/Lab 4/Traffic_light.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Plamen/Desktop/Semester 3/DI/Lab 4/Traffic_light.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Compiling entity Traffic_light
+-- Compiling architecture CONTROLLER of Traffic_light
+
+} {} {}}

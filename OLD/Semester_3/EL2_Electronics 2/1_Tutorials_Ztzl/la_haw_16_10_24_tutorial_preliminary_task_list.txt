@@ -1,0 +1,13 @@
+1) Devise a CMOS driver based on a ECH8660. Calculate the gate resistor for a symmetric gate control based on a worst case scenario.
+
+2) Devise a MOSFET amplifier with a variable voltage gain of 1 <= A_V <= 100 based on a BS108.
+
+3) Derive the AC equivalent circuit (h-parameter model) of the MOSFET amplifier of task 2.
+
+4) Devise an op-amp amplifier with the same characteristic as the MOSFET amplifier of task 2.
+
+5) Calculate the transfer characteristic of an AC op-amp amplifier acc. to Figure 1.
+
+6) Devise an active first order low pass filter with a cut-off frequency of f_c = 5kHz and a voltage gain of A_V = 8. The input signal has an amplitude of v_in,max = 50mV and shall be loaded with maximum 1mA. Calculate the transit frequency and the slew-rate if f_c,op-amp : f_c = 10 : 1.
+
+¯\_(ツ)_/¯

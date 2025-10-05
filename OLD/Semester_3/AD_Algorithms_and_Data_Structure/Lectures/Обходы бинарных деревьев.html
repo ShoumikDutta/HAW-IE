@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0037)http://algolist.manual.ru/ds/walk.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+        <title>Обходы бинарных деревьев</title>
+<style type="text/css">
+body { position: relative; padding-bottom: 100px; }
+#lrek { position: absolute; width:100%; bottom: 0; font-size: 10px }
+#lrek * { font-size: 10px;}
+a,.out {text-decoration: none; cursor:pointer;color:#06c}
+a:hover,.out:hover {text-decoration: underline; color: #ff6600;cursor:pointer }
+h2 {font-size:14pt; font-family:sans-serif; font-weight:bold }
+pre {font-size:12pt}
+.source {font-size:12pt; color: #666699}
+.l2 {font-size:13pt}
+.l3 {font-size:12pt}
+a,.out, p, td { font-size: 13pt }
+</style>
+<meta name="keywords" content="алгоритм, построение, создание, написание, исходник, программа, определение, метод, вычисление, поиск, нахождение, реализация, описание, структуры данных, словари, хэширование, индексация, хранение, быстрый, оптимальный, вставка, удаление, замена, поиск, дерево, обход, прямой, обратный, симметричный, граф, вглубь, вширь, в ширину, в глубину">
+<meta name="description" content="Структуры данных и хэширование. Обходы бинарных деревьев.">
+<meta name="copyright" content="Основной контент - Кантор Илья, дизайн - Владимир Городулин, основа движка и разнообразная помощь - Алексей Фортуна">
+<script type="text/javascript" async="" src="http://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript">try {
+window.AG_onLoad = function(func) { if (window.addEventListener) { window.addEventListener('DOMContentLoaded', func); } };
+window.AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+window.AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+window.AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AG_removeParent = function(el, fn) { while (el && el.parentNode) { if (fn(el)) { el.parentNode.removeChild(el); return; } el = el.parentNode; } };
+var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
+var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+var AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+var AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
+(function() { window.Ya = window.Ya || {}; window.Ya.Metrika = function() { var noop = function() {}; this.addFileExtension = noop; this.extLink = noop; this.file = noop; this.hit = noop; this.notBounce = noop; this.params = noop; this.reachGoal = noop; this.replacePhones = noop; }; })();
+var _gaq = []; var _gat = { _getTracker: function() { return { _initData: function(){}, _trackPageview: function(){}, _trackEvent: function(){}, _setAllowLinker: function() {}, _setCustomVar: function() {} } }, _createTracker: function() { return this._getTracker(); }, _anonymizeIp: function() {} };
+function urchinTracker() {};
+var nol_t = function() { return { record: function() { return { post: function() {} } } } };
+window.uabInject = function() {};
+} catch (ex) { console.error('Error executing AG js: ' + ex); }</script></head>
+
+<body bgcolor="#eeeeee" link="#0066cc" vlink="#0066cc" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" data-feedly-mini="yes">
+
+<style>
+#logotable img { border-style:none }
+</style>
+<!-- logo header ... -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="logotable">
+<tbody><tr><td colspan="2" width="100%" bgcolor="#DD6E00"><a href="http://algolist.manual.ru/"><img src="./Обходы бинарных деревьев_files/mlogo1.gif" width="313" height="41"></a></td></tr>
+<tr><td colspan="2" bgcolor="#ffffff"><a href="http://algolist.manual.ru/"><img src="./Обходы бинарных деревьев_files/mlogo2.gif" width="313" height="3"></a></td></tr>
+<tr><td><a href="http://algolist.manual.ru/"><img src="./Обходы бинарных деревьев_files/mlogo3.gif" width="313" height="33"></a></td><td width="100%" background="./Обходы бинарных деревьев_files/mgrad.gif" bgcolor="#FE7E00" nowrap=""><table border="0" cellpadding="0" cellspacing="3" align="right">
+      <tbody><tr valign="middle">
+<!--
+
+      <FORM NAME="search_form" METHOD=GET ACTION="/cgi-bin/search.cgi">
+      <td><INPUT TYPE="text" NAME="q" SIZE=30 VALUE="" class="inputfield"></td>
+      <td><INPUT TYPE="image" src="/img/search.gif" width=68 height=19 border=0 onclick="this.blur()"></td>
+      </FORM>
+
+-->
+      </tr>
+      </tbody></table></td></tr>
+<tr><td colspan="2" bgcolor="#ffffff"><img src="./Обходы бинарных деревьев_files/0.gif" width="1" height="1"></td></tr>
+</tbody></table>
+<!-- ...logo header -->
+
+<!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://d8.c7.bf.a0.top.list.ru/counter'+
+'?id=1013908;js='+js+a+';rand='+Math.random()+
+'" height=1 width=1/>')
+if(11<js)d.write('<'+'!-- ')//--></script><img src="http://d8.c7.bf.a0.top.list.ru/counter?id=1013908;js=13;r=;j=false;s=2048*1152;d=24;rand=0.08547618995179218" height="1" width="1/" style="display: none !important;"><!-- <noscript><img
+src="http://d8.c7.bf.a0.top.list.ru/counter?js=na;id=1013908"
+height=1 width=1 alt=""/></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--><!--/COUNTER-->
+
+
+<!-- main menu ... -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr><td bgcolor="#57A7EA">
+        <table border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+        <td><a href="http://algolist.manual.ru/"><img src="./Обходы бинарных деревьев_files/bs0.gif" width="140" height="17" border="0" alt=":: алгоритмы  и методы ::"></a></td>
+        <td><a href="http://algolist.manual.ru/olimp/"><img src="./Обходы бинарных деревьев_files/bs1.gif" width="140" height="17" border="0" alt=":: олимпиадные задачи ::"></a></td>
+        <td><a href="http://algolist.manual.ru/contact.php"><img src="./Обходы бинарных деревьев_files/bs2.gif" width="47" height="17" border="0" alt=":: связь ::"></a></td>
+        <td><a href="http://algolist.manual.ru/aboutsite.php"><img src="./Обходы бинарных деревьев_files/bs3.gif" width="57" height="17" border="0" alt=":: о сайте ::"></a></td>
+<!--	<td><img onclick="window.location='http://forum.algolist.ru/'" style="cursor:pointer" src="/img/bs6.gif" width=49 height=17 border=0 alt=":: форум ::"></td> -->
+<!--        <td><a href="/links/"><img src="/img/bs5.gif" width=57 height=17 border=0 alt=":: ссылки ::"></a></td>-->
+        </tr></tbody></table>
+</td></tr>
+<tr><td bgcolor="#ffffff"><img src="./Обходы бинарных деревьев_files/0.gif" width="1" height="1"></td></tr>
+</tbody></table>
+<!-- ...main menu -->
+
+<!-- path line... -->
+<table cellspacing="2" cellpadding="2" border="0" width="100%" bgcolor="#dddddd">
+<tbody><tr><td style="white-space:nowrap"><b>Путь:  <a href="http://algolist.manual.ru/ds/">Структуры данных</a> » Обходы бинарных деревьев</b></td></tr>
+</tbody></table>
+<!-- ...path line -->
+
+<!-- 
+==============
+ MAIN CONTENT:
+==============
+-->
+
+
+<!-- табличка для создания отступов... -->
+<table cellspacing="0" cellpadding="12" border="0" width="100%">
+<tbody><tr><td>
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+
+
+
+<tbody><tr><td colspan="2"><font face="Arial" color="#333333" size="4"><b>&nbsp; Обходы бинарных деревьев</b></font></td></tr>
+
+<tr><td colspan="2" bgcolor="#999999"><img src="./Обходы бинарных деревьев_files/0.gif" width="1" height="1"><br></td></tr>
+
+                                                           
+
+<tr valign="top">
+        <td align="center"><img src="./Обходы бинарных деревьев_files/0.gif" width="160" height="1"><br></td>
+        <td width="100%"><br>
+
+        
+
+
+<p>Существует достаточно много алгоритмов работы с древовидными структурами, в которых часто встречается понятие обхода (traversing) дерева или "прохода" по дереву. При таком методе исследования дерева каждый узел посещается только один раз, а полный обход задает линейное упорядочивание узлов, что позволяет упростить алгоритм, так как при этом можно использовать понятие "следующий" узел. т.е. узел стоящий после данного при выбранном порядке обхода.</p>
+
+Существует несколько принципиально разных способов обхода дерева:
+
+<h3><font color="#003F73"><b>Обход в прямом порядке</b></font></h3>
+
+<p>Каждый узел посещается <i>до</i> того, как посещены его потомки.</p>
+<p>Для корня дерева рекурсивно вызывается следующая процедура:</p>
+
+<pre class="source">Посетить узел
+Обойти левое поддерево
+Обойти правое поддерево
+</pre>
+<p>Примеры использования обхода:</p>
+
+<ul>
+<li>решение задачи методом деления на части</li>
+<li>разузлование сверху</li>
+<li>стратегия "разделяй и властвуй" (Сортировка Фон Hеймана, быстрая сортировка, одновременное нахождение максимума и минимума последовательности чисел, умножение длинных чисел).</li>
+</ul>
+
+       
+<h3><font color="#003F73"><b>Симметричный обход</b></font></h3>
+
+<p>Посещаем сначало левое поддерево, затем узел, затем - правое поддерево.</p>
+
+<p>Для корня дерева рекурсивно вызывается следующая процедура:</p>
+
+<pre class="source">Обойти левое поддерево
+Посетить узел
+Обойти правое поддерево
+</pre>
+
+<h3><font color="#003F73"><b>Обход в обратном порядке</b></font></h3>
+
+<p>Узлы посещаются 'снизу вверх'.</p>
+
+<p>Для корня дерева рекурсивно вызывается следующая процедура:</p>
+
+<pre class="source">Обойти левое поддерево
+Обойти правое поддерево
+Посетить узел
+</pre>
+
+<p>Примеры использования обхода:</p>
+<ul>
+<li>анализ игр с полной информацией</li>
+<li>разузлование снизу</li>
+<li>динамическое программирование</li>
+</ul>
+
+
+<h3><font color="#003F73"><b>Обход в ширину</b></font></h3>
+
+<p>При обходе в ширину узлы посещаются уровень за уровнем(N-й <i>уровень</i> дерева - множество узлов с 
+высотой N). Каждый уровень обходится слева направо.</p>
+
+<p>Для реализации используется структура queue - очередь с методами</p>
+<ul>
+<li>enqueue - поставить в очередь</li>
+<li>dequeue - взять из очереди</li>
+<li>empty - возвращает TRUE, если очередь пуста, иначе - FALSE</li>
+</ul>
+
+<pre class="source">q.enqueue(root);        <font color="#009999">// корень в очередь
+</font>while (! q.empty) {
+  x = q.dequeue();
+  visit x;              <font color="#009999">// посетить x
+</font>  if (! x.left.empty)   <font color="#009999">// x.left - левое поддерево
+</font>    q.enqueue(x.left);
+  if (! x.right.empty)  <font color="#009999">// x.right - правое поддерево
+</font>    q.enqueue(x.right);
+}
+
+</pre>
+<p>Рекурсивные обходы можно, очевидно, организовать и с помощью стека, 'развернув' рекурсию.</p>
+                
+                  
+</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<!-- ...табличка для создания отступов-->
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2056213-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter21593104 = new Ya.Metrika({id:21593104,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>&lt;div&gt;&lt;img src="//mc.yandex.ru/watch/21593104" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;</noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+
+
+
+
+</td></tr></tbody></table><input type="hidden" value="mata-inactive-38.png" id="mata-icon-name"><div id="feedly-mini" title="feedly Mini tookit"></div><div id="pia_notifications_container" class="ng-scope">
+              <web-page-notifications class="ng-scope"><div class="web-page-notifications" style="top: 30px !important" ng-class="{
+            &#39;has-multiple-notifications&#39;: webPageNotificationsController.hasMultipleNotifications()
+        }">
+    <!-- ngRepeat: notification in webPageNotificationsController.notifications -->
+
+    <!-- ngIf: webPageNotificationsController.canCloseAll -->
+</div>
+</web-page-notifications>
+            </div><div></div><iframe id="pia_sidebar" src="./Обходы бинарных деревьев_files/sidebar.html" style="right: -334px;"></iframe></body></html>

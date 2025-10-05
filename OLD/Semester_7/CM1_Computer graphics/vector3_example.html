@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Vector3 example</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript" src="three.min.js"></script>
+		<script type="text/javascript">
+			function specRef(vin, n){
+				var n2 = n.clone();
+				n2.normalize();
+				var vout = vin.clone();
+				var f = 2*n2.dot(vin);
+				vout.sub(n2.multiplyScalar(f));
+				console.log("vout = "+vout );
+				return vout;
+			}
+			var vin = new THREE.Vector3(1,0,0);
+			var n = new THREE.Vector3(1,2,0);
+			n.normalize();
+			var out = specRef(vin,n);
+		</script>
+	</body>
+</html>

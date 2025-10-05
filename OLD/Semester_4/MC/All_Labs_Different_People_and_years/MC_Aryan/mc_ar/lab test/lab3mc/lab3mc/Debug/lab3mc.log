@@ -1,0 +1,22 @@
+﻿Der Buildvorgang wurde am 02.05.2015 20:15:51 gestartet.
+     1>Projekt "E:\Google Drive\Education\IE4 aryan\mc\lab test\lab3mc\lab3mc\lab3mc.vcxproj" auf Knoten "2", build Ziel(e).
+     1>InitializeBuildStatus:
+         "Debug\lab3mc.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       ClCompile:
+         e:\programfile\java\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt mc.c
+         mc.c
+     1>e:\google drive\education\ie4 aryan\mc\lab test\lab3mc\lab3mc\mc.c(10): warning C4101: 'temp1': Unreferenzierte lokale Variable
+       Link:
+         e:\programfile\java\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Google Drive\Education\IE4 aryan\mc\lab test\lab3mc\Debug\lab3mc.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\lab3mc.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Google Drive\Education\IE4 aryan\mc\lab test\lab3mc\Debug\lab3mc.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Google Drive\Education\IE4 aryan\mc\lab test\lab3mc\Debug\lab3mc.lib" /MACHINE:X86 Debug\mc.obj
+         LINK : E:\Google Drive\Education\IE4 aryan\mc\lab test\lab3mc\Debug\lab3mc.exe wurde nicht gefunden oder beim letzten inkrementellen Linkvorgang nicht erstellt; vollständiger Link wird durchgeführt.
+         lab3mc.vcxproj -> E:\Google Drive\Education\IE4 aryan\mc\lab test\lab3mc\Debug\lab3mc.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\Google Drive\Education\IE4 aryan\mc\lab test\lab3mc\Debug\lab3mc.exe;#1" /manifest Debug\lab3mc.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Die Datei "Debug\lab3mc.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Debug\lab3mc.lastbuildstate".
+     1>Die Erstellung des Projekts "E:\Google Drive\Education\IE4 aryan\mc\lab test\lab3mc\lab3mc\lab3mc.vcxproj" ist abgeschlossen, build Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:00.54

@@ -1,0 +1,11 @@
+
+MATLAB documentation - Preallocating arrays URL:
+http://www.mathworks.de/de/help/matlab/matlab_prog/techniques-for-improving-performance.html link 
+
+
+MATLAB documentation - Vectorization URL:
+http://www.mathworks.de/de/help/matlab/matlab_prog/vectorization.html 
+
+
+MATLAB documentation - Profiling for Improving Performance URL:
+http://www.mathworks.de/de/help/matlab/matlab_prog/profiling-for-improving-performance.html

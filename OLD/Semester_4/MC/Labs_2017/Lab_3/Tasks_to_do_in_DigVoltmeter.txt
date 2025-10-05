@@ -1,0 +1,3 @@
+Following two assignments only: 
+2.1.3 Weighting conversion method (sucessive approximation), C program w/o interrupts
+2.2.1 Internal A/D converter, C program w/o interrupts

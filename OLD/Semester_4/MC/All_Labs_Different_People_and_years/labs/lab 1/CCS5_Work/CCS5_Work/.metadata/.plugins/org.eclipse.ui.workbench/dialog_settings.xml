@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="LicensetupDialog">
+	</section>
+	<section name="ShowViewDialog">
+		<item value="331" key="DIALOG_WIDTH"/>
+		<item value="org.eclipse.tm.terminal.view.TerminalView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="298" key="DIALOG_Y_ORIGIN"/>
+		<item value="639" key="DIALOG_X_ORIGIN"/>
+		<item value="436" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="Terminal"/>
+		</list>
+	</section>
+</section>

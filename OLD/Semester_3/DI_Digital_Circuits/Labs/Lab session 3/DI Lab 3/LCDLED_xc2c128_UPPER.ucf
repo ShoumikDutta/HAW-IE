@@ -1,0 +1,38 @@
+##
+## HOST xc2c128tqg144 
+#
+#
+NET CLK LOC = P38 | IOSTANDARD=LVCMOS33 ;
+#
+NET N_RES LOC = P35 | IOSTANDARD=LVCMOS33 ;				# Systemreset
+#NET SYSCLK LOC = P38;		# Oszillator
+#NET SCLK LOC = P32;		#Single Step
+#NET SCLK BUFG=CLK;
+#######################################################################
+################  7-Segment Display  ##################################
+################   TOP-CONNECTOR     ##################################
+#######################################################################
+NET D_LED<0> LOC = P94 | IOSTANDARD=LVCMOS33 ;	# digit0
+NET D_LED<1> LOC = P95 | IOSTANDARD=LVCMOS33 ;	# digit0
+NET D_LED<2> LOC = P96 | IOSTANDARD=LVCMOS33 ;	# digit0
+NET D_LED<3> LOC = P97 | IOSTANDARD=LVCMOS33 ;	# digit0
+NET D_LED<4> LOC = P101 | IOSTANDARD=LVCMOS33 ;	  # digit1
+NET D_LED<5> LOC = P102 | IOSTANDARD=LVCMOS33 ;	  # digit1
+NET D_LED<6> LOC = P103 | IOSTANDARD=LVCMOS33 ;   # digit1
+NET D_LED<7> LOC = P104 | IOSTANDARD=LVCMOS33 ;   # digit1
+##
+NET D_LED<8> LOC = P112 | IOSTANDARD=LVCMOS33 ;     # digit2
+NET D_LED<9> LOC = P113 | IOSTANDARD=LVCMOS33 ;	    # digit2
+NET D_LED<10> LOC = P115 | IOSTANDARD=LVCMOS33 ;    # digit2
+NET D_LED<11> LOC = P116 | IOSTANDARD=LVCMOS33 ;    # digit2
+NET D_LED<12> LOC = P117 | IOSTANDARD=LVCMOS33 ;      # digit3
+NET D_LED<13> LOC = P118 | IOSTANDARD=LVCMOS33 ;      # digit3
+NET D_LED<14> LOC = P119 | IOSTANDARD=LVCMOS33 ;      # digit3
+NET D_LED<15> LOC = P120 | IOSTANDARD=LVCMOS33 ;      # digit3
+###
+#
+NET RHS LOC = P129 | IOSTANDARD=LVCMOS33 ;	## RHS right hand side:  <= 1
+#
+#######################################################################
+
+

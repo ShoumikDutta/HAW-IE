@@ -1,0 +1,42 @@
+% Code 
+
+clear;clc;
+a=1/2;
+R=3;
+x=[1:10];
+Y = eco_filter(a,R,x);
+subplot(2,1,1);
+h=abs(fftshift(fft(Y)))
+plot(h)
+% figure (2);
+subplot(2,1,2);
+plot(angle(fftshift(fft(Y))));
+
+
+
+% Function eco_filter
+
+function [ Y ] = eco_filter( a,R,x )
+% eco_filter Summary of this function goes here
+%   Detailed explanation goes here
+ % Y = zeros(1, 1000);
+  Y=zeros(1,(length(x)+R));
+   Y1=zeros(1,(length(x)+R));
+    Y2=zeros(1,(length(x)+R));
+  
+for n=1:length(x)
+    if n<4
+     %   Y(n)=x(n);
+        Y1(n)=x(n);
+  else
+    %   Y(n)=x(n)+a*x(n-R)
+         Y2(n)=x(n);
+    end
+end
+
+Y=Y1+a*Y2;
+end
+
+
+
+

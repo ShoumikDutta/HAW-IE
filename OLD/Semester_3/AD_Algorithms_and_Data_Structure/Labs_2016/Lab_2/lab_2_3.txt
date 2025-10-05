@@ -1,0 +1,390 @@
+Lab 2_3
+
+Main.java
+
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.StringTokenizer;
+
+public class Main {
+
+    public static void main(String[] args)
+    {
+
+        Scanner sc = new Scanner(System.in);
+
+        //first four (n1-n4) are "leaves"
+        //здесь мы тоже создаем дерево, но только узел за узлом, предварительно разобрав его на элементы
+        BiNode n1 = new BiNode("3");
+        BiNode n2 = new BiNode("5");
+        BiNode n3 = new BiNode("3");
+        BiNode n4 = new BiNode("1");
+
+        BiNode n5 = new BiNode("+", n1, n2);
+        BiNode n6 = new BiNode("/", n3, n4);
+        BiNode n7 = new BiNode("*", n5, n6);
+
+        //так как все наши узлы имеют связи между собой
+        //то для создания дерева достаточно передать только рутовый (корневой) узел
+        Tree simpleTree = new Tree(n7);
+
+        //было бы хорошо конечно, но дерево непросто вывести как строку
+        //его можно нарисовать, но это ведь не строка
+        //для того, что бы получить результат, нам позднее скажут создать специалшьный метод
+        //System.out.printf(simpleTree);
+
+        //call method for the object = нужно вызвать метод у объекта, который был ранее создан
+        //в общем виде имя_переменной.имя_метода()
+
+        //Call the postorderTraversal method for the tree constructed in the main program of step 2.
+        System.out.println("Test tree created by hands");
+        simpleTree.postorderTraversal();
+
+        //а теперьр мы создадим дерево используя специалный метод, который упростит нам всю работу
+        System.out.println("Test tree created by special constructor");
+        Tree autoTree = new Tree("3 5 + 3 1 / *");
+        //действительно немного странным выглядит то, что мы вводим строку, что-то с ней делаем
+        //и на выходе получаем туже самую строку, если не наделали ошибок в коде :)
+        //но цель этой лабораторной работы, понять, что такое дерево, как его обходят
+        //и понять алгоритм, который позволяет путем обхода дерева обработать польскую нотацию
+        autoTree.postorderTraversal();
+
+        //если ошибок нет - то у нас будет выведено две одинаковые строки
+
+
+        for(int i = 0; i < 5; ++i)
+        {
+            System.out.println("Type a postfix expression:");
+            String postfixString = sc.nextLine();
+            autoTree = new Tree(postfixString);
+
+            System.out.println("A tree created: ");
+            autoTree.postorderTraversal();
+        }
+    }
+
+}
+
+ArithmeticTerm.java
+
+import java.util.Stack;
+import java.util.StringTokenizer;
+
+public class ArithmeticTerm
+{
+    //Там просят создать конструктор, который получит в качестве параметра строку
+    //которую мы получали в переменной polishString
+    //и констрктор должен сохранить значение этой переменной во внутреннем поле класса
+
+    //можно писать String polishString_; - слово private подставится автоматически
+    private String polishString_;  //не "метод", а "поле"
+
+    //конструктор - это метод, который имеет такое же имя, как и имя класса
+    //только у него нету типа возвращаемого результата
+
+    //для того, чтобы продолжить, нам нужно создать поле, в которое мы должны скопировать
+    //параметру, полученныйв конструкторе
+    public ArithmeticTerm(String polishString)
+    {
+        //здесь просто копируется не строка, а ее адрес
+        //и могут быть побычные действия, но посмотрим это позднее
+        polishString_ = polishString;
+    }
+
+    public String toString()
+    {
+        return polishString_;
+    }
+
+    public void reverse()
+    {
+        //нам сказали, используйте класс стэк, для того, чтобы решить задачу
+        //сначала, нам нужно создать объект этого класса
+        //строка ниже представляет шаблон кода, создающего объект стэка из строк
+        //we were asked to use class Stack for solving the problem
+        Stack<String> tempStack = new Stack<>();
+        StringTokenizer st = new StringTokenizer(polishString_, " \t\n\r");
+        while (st.hasMoreTokens())
+        {
+            //now we have a tokenizer that allows to "break" a big string into substrings
+            //теперь, когда у нас есть стэк и мы умеем токенайзером разбивать большую строку
+            //на подстроки, все очень просто
+            //записываем подстроки в стэк
+            //они будут добавлены в прямом порядке
+            //но, когда мы будем их забирать, он будут получены в обратном
+            tempStack.push(st.nextToken());
+        }
+
+        //здесь мы нашей начальной строке присваиваем значение с вершины стэка
+        //(самый последний элемент из первоначальной строки)
+        //если строка polishString_ = "2 3 + 4 -"
+        //то в строку polishString_ будет записан "-"
+        //for example we type 2 3 + 4 -
+        //then a - will be inserted first into polishString_ - yes, it's recorded in inverse order
+        polishString_ = tempStack.pop();
+
+        //теперь, чтобы получить элементы из стэка в обратном порядке, нам не нужно
+        //напрягаться, просто забираем их оттуда
+        //ошибка оказалась в том, что когда мы перебирали стэк через фор
+        //он забирал элементы не в сконца, а с начала
+        while (tempStack.size() > 0)
+        {
+            //здесь мы прибавляем к строке, которая есть в текущий момент,
+            // все элементы со стэка именно в обратном порядке
+            //here we add all elements to an existing string in inverse order
+            polishString_ = polishString_ + " " + tempStack.pop();
+        }
+    }
+
+    public Double evaluate()
+    {
+        // сначала нам нужно дать возможность пользователю ввести строку в польской нотации
+        //String polishString = sc.nextLine();
+        //затем нужно уметь разобрать эту строку на отдельные символы (операнды) - это джава умеет в одну строку кода ;)
+        //now we have to make it into separate symbols
+        StringTokenizer st = new StringTokenizer(polishString_, " \t\n\r");
+
+        //так создается объект, который представляет собой стэк, в понимании языка джава
+        Stack<Double> algorithmStack = new Stack<>();
+        //теперь перебираем все символы строки по порядку
+        //это особая форма записи цикла для списков и массивов - она переберет все элементы,
+        // записывая очередной в переменную element
+        while (st.hasMoreTokens())
+        {
+            String element = st.nextToken();
+            //функция Double.parseDouble(element) пробует прочитать строку как число
+            //если не получится - сгенерирует исключительную ситуацию
+            try
+            {
+                //если у нее это получается - она вернет преобразованное из строки в число значение
+                double value = Double.parseDouble(element);
+                //сюда программа не попадет, если строка выше вызвала исключение
+                algorithmStack.push(value);
+            }
+            //а вот сюда мы попадем, если функция не сможет преобразовать нашу строку в число.
+            //значит это было не число, а например знак операции, ну или явная ошибка пользователя
+            catch (Exception ex)
+            {
+                if (algorithmStack.size() < 2)
+                {
+                    System.out.println("Error");
+                    return 0.0;
+                }
+                //в джава, к сожалению нельзя просто написать element == "+", сказывается дурная наследственность языка Си
+                //точнее написать можно, но он поймет это не так, а совпадают ли адреса этих строк
+                //так как они никогда не будут совпадать, то всегда резлуьтат будет неправдой
+                if (element.equals("+"))
+                {
+                    //в стэк записываем в прямом порядке, а вот читает в обратном, нужно быть внимательным!
+                    double b = algorithmStack.pop();
+                    double a = algorithmStack.pop();
+                    double res = a + b;
+                    algorithmStack.push(res);
+                } else if (element.equals("-"))
+                {
+                    //в стэк записываем в прямом порядке, а вот читает в обратном, нужно быть внимательным!
+                    double b = algorithmStack.pop();
+                    double a = algorithmStack.pop();
+                    double res = a - b;
+                    algorithmStack.push(res);
+                } else if (element.equals("*"))
+                {
+                    //в стэк записываем в прямом порядке, а вот читает в обратном, нужно быть внимательным!
+                    double b = algorithmStack.pop();
+                    double a = algorithmStack.pop();
+                    double res = a * b;
+                    algorithmStack.push(res);
+                } else if (element.equals("/"))
+                {
+                    //в стэк записываем в прямом порядке, а вот читает в обратном, нужно быть внимательным!
+                    double b = algorithmStack.pop();
+                    double a = algorithmStack.pop();
+                    double res = a / b;
+                    algorithmStack.push(res);
+                } else if (element.equals("^"))
+                {
+                    //в стэк записываем в прямом порядке, а вот читает в обратном, нужно быть внимательным!
+                    double b = algorithmStack.pop();
+                    double a = algorithmStack.pop();
+                    double res = Math.pow(a, b);
+                    algorithmStack.push(res);
+                } else
+                {
+                    System.out.println("Error");
+                    //это для того, чтобы когда нашли ошибку - больше не продолжали считать
+                    break;
+                }
+            }
+        }
+        //этот код решает проблему, когда нехватает операций
+        //например 2 2 2 2 +, а должно ведь быть что-то типа 2 2 2 2 + - *
+        //так как программа не может догадываться, что было на самом деле -
+        // просто говорим об ошибке
+        if (algorithmStack.size() != 1)
+        {
+            System.out.print("Error");
+            return 0.0;
+        }
+        //команда pop не нуждается в параметре, она забирает с вершины стэка ближайшее число
+        return algorithmStack.pop();
+
+    }
+}
+
+BiNode.java
+
+public class BiNode
+{
+    public String item; //content
+    public BiNode left; //left child
+    public BiNode right; //right child
+
+    BiNode(String item) // Leaf constructor
+    {
+        this(item, null, null);
+    }
+
+    BiNode(String item, BiNode left, BiNode right) // inner node
+    {
+//        item= item_;
+//        right= right_;
+//        left= left_;
+        //this приходится использовать в той ситуации, когда имя поля совпадат с именем параметра функции
+        //без него неясно, где параметр, а где поле
+        this.item= item;
+        this.right= right;
+        this.left= left;
+    }
+}
+
+Tree.java
+
+import java.util.Stack;
+import java.util.StringTokenizer;
+
+//этот класс, как и прошлый, умеет хранить себя в виде дерева (конструктор Tree(BiNode root))
+//умеет отображать девево на экране в польской нотации используя метод (postorderTraversal()).
+// Этот метод отличается от метода infixGenerator() в задании 2.4 тем, что postorderTraversal() -
+//выводит дерево на экран, а infixGenerator() возвращает дерево как текстовую строку,
+//которуюу потом так же можно вывести на экран и получить тоже самое что и вызвав postorderTraversal()
+//кроме этого, этот класс умеет сам строить дерево, используя второй конструктор Tree(String postfix),
+//которого нерту в 2.4. В этом конструкторе он вызывает метод constuct, который тоже часть этого класса
+public class Tree
+{
+    private BiNode root;
+
+    public Tree(BiNode root) //by argument they meant "BiNode root"
+    {
+        //root = root_
+        this.root = root;
+    }
+
+    private void postorderTraversal(BiNode node)
+    {
+        //в алгоритме обхода дерева понятие посетить узел для нас - "вывести его значение на экран"
+        if(node == null)
+            return; //т.к. у нас тип void, то тут как бы ничего не возвращается
+        //на самом деле такие функции свой результат какбы "возвращают" на экран
+        postorderTraversal(node.left);
+        postorderTraversal(node.right);
+        System.out.printf("%s ", node.item);
+    }
+
+
+    //здесь два метода, один публичный, другой приватный
+    //первый нужен для старта, который всегда начинается с рутовой ноды
+    //второй может быть вызвать только из самого класса и именно он совершает обход(travelsal) дерева
+    public void postorderTraversal()
+    {
+        if (root == null)
+        {
+            System.out.println("Invalid expression");
+            return;
+        }
+        postorderTraversal(root);
+        //мы выводим все дерево в одну строку, потому в конце нужно курсор перевести на новую
+        System.out.println(); //same as \n
+    }
+
+    private BiNode construct(String polishString)
+    {
+        //здесь должен бытьреализован алгоритм получения данных для дерева в виде рутового BiNode
+        //давал ли он вам алгоритм, как получить из строки в польской нотации дерево?
+        Stack<BiNode> tempStack = new Stack<>();
+        StringTokenizer st = new StringTokenizer(polishString, " \t\n\r");
+        while (st.hasMoreTokens())
+        {
+            String element = st.nextToken();
+            //функция Double.parseDouble(element) пробует прочитать строку как число
+            //если не получится - сгенерирует исключительную ситуацию
+            try
+            {
+                //если у нее это получается - она вернет преобразованное из строки в число значение
+                double value = Double.parseDouble(element);
+                //сюда программа не попадет, если строка выше вызвала исключение
+                tempStack.push(new BiNode(element));
+            } catch (Exception ex)
+            {
+                //нет ничего сложного в добавлении унарных операторов, но добавлять их нужно до
+                //проверки, что в стэке минимум 2 значения, так как они работают с одним
+
+                if (tempStack.size() < 1)
+                    return null;
+
+                if (element.equals("exp") || element.equals("sin") || element.equals("cos") ||
+                        element.equals("!"))
+                {
+                    //эти выражения бывают и слева, и справа, поэтому вместо left/right пишем null
+                    //мы написали вместо left tempStack.pop(), а вместо right = null
+                    tempStack.push(new BiNode(element, tempStack.pop(), null));
+                    continue;
+                }
+
+                //проблема в том, что мы сначала обработали уцнарную операцию, но не закончили этот шаг,
+                //а тут же попробовали обработать ее и как бинарную
+                //нужно просто перейти на следующий шаг цикла, минуя код ниже
+
+                //дело в том, что здесь два контейнера
+                //первый - это строка в польской нотации, разбитая на элементы
+                //вторая - стэк, куда мы записываем ноды
+                if (tempStack.size() < 2)
+                    //пустое дерево и есть признак ошибки
+                    //алгоритм ожидает для правильной польской нотации, что для оператора на стеке всегда должно быть
+                    //минимум 2 элемента
+                    return null;
+                if (element.equals("+") || element.equals("-") || element.equals("*")
+                        || element.equals("/") || element.equals("^"))
+                {
+                    //ошибочно считать, что мы записываем в left/right те же самые значения,
+                    // раз код такой же tempStack.pop();
+                    //первая команда, забирает то, что в тот момент на стэке и присваивает переменной right
+                    //а вторая команда забирает то, что стало на вершине после последней команды
+
+                    //4 5 10
+                    //pop()  вернет 10, а на стэке останется 4 5
+                    //pop()  вернет 5, а на стэке останется 4
+                    BiNode right = tempStack.pop();
+                    tempStack.push(new BiNode(element, tempStack.pop(), right));
+                }
+
+
+            }
+        }
+        return tempStack.pop();// returns the result
+    }
+
+    public Tree(String postfix)
+    {
+        root = construct(postfix);
+    }
+
+
+    //эта функция нужна, если мы не хотим для нашей программы делать отдельный класс
+    //с функцией мэин и это плохая практика на самом деле
+    //каждый класс должен делать только свою работу
+    //для основной программы лучше использовать отдельный класс
+//    public static void main(String[]a)
+//    {
+//        //BiNode
+//    }
+}

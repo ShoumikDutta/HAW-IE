@@ -1,0 +1,218 @@
+////////////////////////////////////////////////////////////////
+//	MC_Lab2
+//	Participants: 	Kulakov Mykhailo
+//			Jeonghyun Son			
+//		 	Svhets  Volodymyr
+////////////////////////////////////////////////////////////////
+#include "tm4c1294ncpdt.h"
+#include "stdio.h"
+
+
+/*unsigned char symbols[] =  {0x00, 0x7F, 0x90, 0x90, 0x90, 0x7F,
+						 0x00, 0xFF, 0x90, 0x90, 0x90, 0xF0,
+						 0x00, 0xFF, 0x90, 0x90, 0x90, 0xF0,
+						 0x00, 0xFF, 0x01, 0x01, 0x01, 0x01,
+						 0x00, 0xFF, 0x91, 0x91, 0x91, 0x91, 0x00}; //APPLE
+*/
+unsigned char symbols[] = {0x00, 0x7F, 0x00, 0x00, 0x00, 0x00,
+						   0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+						   0x00, 0x00, 0x00, 0x00, 0x00,
+						   0x00, 0x00, 0x00, 0x10, 0x00, 0x00,
+						   0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+						   0x00, 0x00, 0x00, 0x07, 0x00, 0x00,
+						   0x00, 0xF0, 0x00, 0x00, 0x00, 0x00,
+						   0x00, 0x00, 0x00, 0x70, 0x00, 0x00,
+						   0x00, 0x00, 0x00, 0x00, 0x00, 0x00}; // 53 elements(17 + 36), after 17th stop delay time
+
+#define AR_SIZE  sizeof(symbols)/sizeof(symbols[0])
+#define DELAY 4000
+#define SMALL_DELAY 1800
+
+int ballPosition = 20;
+
+void UARTconfig()
+{
+	// switch over to main quartz oscillator at 25MHz
+	 // clear MOSC power down, high oscillator range setting, and no crystal present setting
+	 SYSCTL_MOSCCTL_R &= ~(SYSCTL_MOSCCTL_OSCRNG | SYSCTL_MOSCCTL_PWRDN |SYSCTL_MOSCCTL_NOXTAL);
+	 SYSCTL_MOSCCTL_R |= SYSCTL_MOSCCTL_OSCRNG;                             // increase the drive strength for MOSC
+	 SYSCTL_RSCLKCFG_R = SYSCTL_RSCLKCFG_OSCSRC_MOSC;                    // set the main oscillator as main clock source
+
+	SYSCTL_RCGCGPIO_R |= (1 << 14);
+	while(!(SYSCTL_PRGPIO_R & (1 << 14)));
+	GPIO_PORTP_DEN_R |= 0x01; //PP(0)
+	GPIO_PORTP_AFSEL_R |= 0x01; //PP(0)
+	GPIO_PORTP_PCTL_R |= 0x01000000;
+
+	SYSCTL_RCGCUART_R |= (1<<6); //switch clock on for UART 6
+	while(!(SYSCTL_PRUART_R & (1<<6)));
+	UART6_CTL_R &= ~0x0001;
+	UART6_IBRD_R = 6;
+	UART6_FBRD_R = 50;
+	UART6_LCRH_R |= 0x066;
+	UART6_CTL_R |= 0x201;
+}
+
+//should represent TimerA0 settings -compare, count down, no capture
+void timerConfig()
+{
+	// configure Timer 0
+	SYSCTL_RCGCTIMER_R |= (1<<0); // timer 0
+	while(!(SYSCTL_PRTIMER_R & (1<<0))); // wait for timer 0 activation
+	TIMER0_CTL_R &= ~0x0001; // disable Timer 0A
+	TIMER0_CFG_R = 0x04; // 2 x 16-bit mode
+
+	// compare mode, down, periodic: TAMR=0x2 -no match value
+	TIMER0_TAMR_R |= 1<<1; //last 8 bits: 0000 0010 = 0x02
+						   //4th bit = counts down, 2nd bit = 0x02 - periodic
+
+}
+
+//make a delay of usec(up to 10ms)
+void timerWait(unsigned short usec)
+{
+	timerConfig();
+
+	long pre = 3;//ceil((fCPU / pow(2.0, 16)) * 0.01); //prescaler Tmax = 10ms
+
+	TIMER0_TAPR_R = pre - 1;
+	TIMER0_TAILR_R = 16/pre * usec - 1; //0.5? probably needs also rounding //ceil((fCPU / pre) * (double)usec * pow(10.0, -6)) - 1; //load value
+	TIMER0_CTL_R |= 0x0001; //start Timer0A
+
+	while(!(TIMER0_RIS_R & 0x0001)); //flag set when 0x0000 reached(time-out)
+	TIMER0_ICR_R |= 0x01; //clear TIMER0_RIS_R(0) bit
+	TIMER0_CTL_R &= ~0x0001; //disable the Timer0A
+
+}
+
+void showDisplay()
+{
+	int tempDelay = 0;
+	int i = 0;
+
+	timerWait(DELAY);
+
+				for(i = 0; i < AR_SIZE; i++)
+				{
+					GPIO_PORTM_DATA_R = symbols[i];
+					if(i < 17)
+					{
+						tempDelay = SMALL_DELAY - 50 * i;
+						timerWait(tempDelay);
+						//GPIO_PORTM_DATA_R = 0x00;
+						//timerWait(SMALL_DELAY - tempDelay);
+					}
+					else
+					{
+						timerWait(tempDelay);
+						//GPIO_PORTM_DATA_R = 0x00;
+						//timerWait(SMALL_DELAY - tempDelay);
+					}
+
+					if(i >= AR_SIZE - 1)
+					{
+						GPIO_PORTM_DATA_R = 0x00;
+					}
+				}
+}
+
+void swap(int i)
+{
+	int temp;
+	temp = symbols[i];
+	symbols[i] = symbols[i+1];
+	symbols[i+1] = temp;
+}
+
+void shiftObstacleAndBall(int i)
+{
+	swap(ballPosition++);
+	swap(i);
+}
+
+void moveObstacles()
+{
+	int i = 0;
+	//char temp;
+
+	for(i = 0; i <= AR_SIZE - 2; i++)
+	{
+		if((i == ballPosition - 1) && symbols[i])
+		{
+			//if true = game is over
+			if(ballPosition == AR_SIZE - 1)
+			{
+				//printf("%s", "GAME OVER!"); //add here game interrupt - GAME OVER
+			}
+			shiftObstacleAndBall(i);
+			i += 2;
+		}
+		else if(symbols[i] && i != ballPosition)
+		{
+			swap(i++);
+		}
+
+		if((i == AR_SIZE - 1) && symbols[i])
+		{
+			symbols[i] = 0x00;
+		}
+	}
+}
+
+void main()
+{
+
+	// Port  Clock Gating Control
+	SYSCTL_RCGCGPIO_R |= 0x800;	    				// Port M clock ini
+    while ((SYSCTL_PRGPIO_R & 0x00000800) == 0);		// Port M ready ?
+
+    // Digital enable
+	GPIO_PORTM_DEN_R = 0xFF; //M(7:0) port enable
+    // Set direction
+	GPIO_PORTM_DIR_R = 0xFF;  //(7:0) symbols output of the chip
+
+	//Lab2 task 1 - catch rising & falling edges
+	SYSCTL_RCGCGPIO_R |= 1<<10;//activate port L
+	while((SYSCTL_RCGCGPIO_R & 1<<10) == 0); //wait until port L is activated
+	GPIO_PORTL_DEN_R  = 0x01; //enable first bit only
+	GPIO_PORTL_DIR_R  = ~(1<<0); //set the first to 0(means as input to chip)
+
+	char edgeDetection = 0;
+   // int i = 0;
+    //int tempDelay = 0;
+    int speed = 5;
+    int counter = 0;
+	timerConfig();
+
+while(1)
+{
+	if(counter <= speed)
+	{
+		//left(rising) edge
+		if((GPIO_PORTL_DATA_R & 0x01) && !edgeDetection)
+		{
+			counter++;
+			edgeDetection = 1;
+			showDisplay();
+		}
+		else if(!(GPIO_PORTL_DATA_R & 0x01) && edgeDetection)
+		{
+			edgeDetection = 0;
+			/*edgeDetection = 0;
+			timerWait(DELAY);
+				for(i = AR_SIZE - 1; i >=0; i--)
+						{
+							GPIO_PORTM_DATA_R = symbols[i];
+							timerWait(SMALL_DELAY);
+						}*/
+		}
+	}
+	else
+	{
+		counter = 0;
+		moveObstacles();
+	}
+}
+}
+
+
